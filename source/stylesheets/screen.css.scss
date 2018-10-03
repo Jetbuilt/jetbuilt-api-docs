@@ -74,8 +74,8 @@ html, body {
   // This is the logo at the top of the ToC
   .logo {
     display: block;
-    max-width: 100%;
-    margin-bottom: $logo-margin;
+    width: 190px;
+    margin: 4em auto 2em auto;
   }
 
   &>.search {
@@ -353,7 +353,6 @@ html, body {
     margin-top: 2em;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
   }
 
   h1:first-child, div:first-child + h1 {
@@ -612,4 +611,8 @@ html, body {
 
 .highlight, .highlight .w {
   background-color: $code-bg;
+}
+
+a {
+  color: inherit;
 }
