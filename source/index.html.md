@@ -16,12 +16,13 @@ search: true
 # Introduction
 
 Welcome to the Jetbuilt Vendor API! As a manufacturer or distributor, you can use this API to keep
-your products and or pricing current for Jetbuilt users to use in their projects.
+your products, pricing, images and descriptions current for Jetbuilt users - your dealers - to
+place in their projects.
 
 The Jetbuilt Vendor API is a REST-style API over HTTPS that uses JSON for serialization and
 HTTP Token authentication.
 
-Fields passed in the request body can either be JSON or form style name-value pairs
+Fields passed in the request body can either be JSON or form style name-value pairs.
 
 ## Base URLs
 
