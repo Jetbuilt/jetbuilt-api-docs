@@ -2,6 +2,8 @@
 title: Jetbuilt Vendor API
 
 language_tabs: # must be one of https://git.io/vQNgJ
+  - shell--json: JSON
+  - shell--kv: Key/Value
 
 includes:
   - products
@@ -22,29 +24,38 @@ place in their projects.
 The Jetbuilt Vendor API is a REST-style API over HTTPS that uses JSON for serialization and
 HTTP Token authentication.
 
-Fields passed in the request body can either be JSON or form style name-value pairs.
-
 ## Base URLs
 
 While developing your application, we'd recommend you utilize the staging environment at
 [https://staging.jetbuilt.com/api](https://staging.jetbuilt.com/api) and when you're ready,
 switch to production at [https://app.jetbuilt.com/api](https://app.jetbuilt.com/api)
 
+## Passing data
+
+Fields are passed with the request body, and can either be:
+
+- **JSON**
+- Form **Key/Value** pairs
+
+If sending JSON, be sure to set the `Content-Type` header to
+`application/json` to identify the request format, otherwise it will
+default to form key/value pairs.
+
 # Authentication
 
 > Sample request with Authorization:
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "https://staging.jetbuilt.com/api/products"
-  -H "Authorization: Token token=YOURAPIKEY"
-```
+<%= shell_example('/products') %>
 
-> Make sure to replace `YOURAPIKEY` with your API key.
+> Make sure to replace `<%= api_key %>` with your API key.
 
 The Jetbuilt Vendor API uses API keys to allow access to the API. Contact us for an API key at [help@jetbuilt.com](mailto:help@jetbuilt.com).
 
 You should include your API key in all API requests to the server in a header that looks like the
 following:
 
-`Authorization: Token token=YOURAPIKEY`
+`<%= auth_token %>`
+
+<aside class="notice">
+  Make sure to replace <code><%= api_key %></code> with your API key.
+</aside>

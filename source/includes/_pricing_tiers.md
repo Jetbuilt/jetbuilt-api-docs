@@ -1,13 +1,10 @@
 # Pricing Tiers
 
-## List Pricing Tiers
+## Get all your pricing tiers
 
-```shell
-curl "https://app.jetbuilt.com/api/pricing_tiers"
-  -H "Authorization: Token token=YOURAPIKEY"
-```
+<%= shell_example('/pricing_tiers') %>
 
-> The above command returns JSON structured like this:
+> Response:
 
 ```json
 [
@@ -30,15 +27,19 @@ This endpoint retrieves all of your pricing tiers.
 
 ### HTTP Request
 
-`GET https://app.jetbuilt.com/api/pricing_tiers`
+`GET <%= api_url('/pricing_tiers') %>`
 
-## Create Pricing Tier
 
-```shell
-curl "https://app.jetbuilt.com/api/pricing_tiers"
-  -d pricing_tier[name]=Gold
-  -H "Authorization: Token token=YOURAPIKEY"
-```
+## Create a pricing tier
+<%
+  data =
+    {
+      "name": "Gold"
+    }
+%>
+<%= shell_example('/pricing_tiers', command: 'POST', data: data) %>
+
+> Response:
 
 ```json
 {
@@ -49,14 +50,14 @@ curl "https://app.jetbuilt.com/api/pricing_tiers"
 }
 ```
 
-This endpoint allows you to create a pricing tier.
+This endpoint creates a new pricing tier.
 
 ### HTTP Request
 
-`POST https://app.jetbuilt.com/api/pricing_tiers`
+`POST <%= api_url('/pricing_tiers') %>`
 
-### URL Parameters
+### Data Parameters
 
 Parameter | Description
 --------- | -----------
-pricing_tier[name] | The name of the tier to create
+name | The name of the tier (required)

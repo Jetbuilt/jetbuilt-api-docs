@@ -55,4 +55,5 @@ set :port, 4567
 
 helpers do
   require './lib/toc_data.rb'
+  require './lib/api_request.rb'
 end
