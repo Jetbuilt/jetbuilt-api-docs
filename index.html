@@ -228,6 +228,9 @@
                   <li>
                     <a href="#passing-data" class="toc-h2 toc-link" data-title="Passing data">Passing data</a>
                   </li>
+                  <li>
+                    <a href="#versioning" class="toc-h2 toc-link" data-title="Versioning">Versioning</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -281,6 +284,9 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
       </ul>
     </div>
     <div class="page-wrapper">
@@ -308,15 +314,32 @@ switch to production at <a href="https://app.jetbuilt.com/api">https://app.jetbu
 <p>If sending JSON, be sure to set the <code>Content-Type</code> header to
 <code>application/json</code> to identify the request format, otherwise it will
 default to form key/value pairs.</p>
+<h2 id='versioning'>Versioning</h2>
+<blockquote>
+<p>Example request header specifying the version</p>
+</blockquote>
+<pre class="highlight shell tab-shell--json"><code>curl -H <span class="s1">'Accept: application/vnd.jetbuilt.v1'</span>
+</code></pre><pre class="highlight shell tab-shell--kv"><code>curl -H <span class="s1">'Accept: application/vnd.jetbuilt.v1'</span>
+</code></pre>
+<p>Since the API could change over time, we recommend specifying the version you&#39;re using
+with each request. This will help keep your integration working should a new
+version be released. Otherwise it will default to the latest version. (Currently
+there is only Version 1.)</p>
+
+<p>Set the version by specifying <code>application/vnd.jetbuilt.v1</code> in the <code>Accept</code> header.</p>
+
+<p>Replace <code>v1</code> with the desired version number. e.g v1, v2, v3, etc...</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>Sample request with Authorization:</p>
 </blockquote>
 <pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
 </code></pre>
 <blockquote>
 <p>Make sure to replace <code>YOURAPIKEY</code> with your API key.</p>
@@ -334,9 +357,11 @@ following:</p>
 </aside>
 <h1 id='products'>Products</h1><h2 id='search-all-products'>Search all products</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products?query=acme-123"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products?query=acme-123"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
 </code></pre>
 <blockquote>
 <p>Response:</p>
@@ -361,6 +386,10 @@ following:</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
 <p>This endpoint allows querying all products by model.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://app.jetbuilt.com/api/products?query=sm57-lc</code></p>
@@ -382,12 +411,16 @@ following:</p>
 </tbody></table>
 <h2 id='get-your-products'>Get your products</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
 </code></pre>
 <blockquote>
 <p>Response: Similar to <a href="#search-all-products">Search all products</a></p>
+
+<p>Status: 200 OK</p>
 </blockquote>
 
 <p>This endpoint retrieves all of your products.</p>
@@ -407,9 +440,11 @@ following:</p>
 </tbody></table>
 <h2 id='get-a-product'>Get a product</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;ID&gt;"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;ID&gt;"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
 </code></pre>
 <blockquote>
 <p>Response:</p>
@@ -431,6 +466,10 @@ following:</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
 <p>This endpoint retrieves a product by ID.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET https://app.jetbuilt.com/api/products/&lt;ID&gt;</code></p>
@@ -453,6 +492,7 @@ following:</p>
 <pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{
         "model": "JBTEST-1",
@@ -464,6 +504,7 @@ following:</p>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -F <span class="s2">"product[model]=JBTEST-1"</span> <span class="se">\</span>
   -F <span class="s2">"product[short_description]=JB Test product 1"</span> <span class="se">\</span>
   -F <span class="s2">"product[part_number]=ABC123"</span> <span class="se">\</span>
@@ -473,6 +514,8 @@ following:</p>
 </code></pre>
 <blockquote>
 <p>Response: Similar to <a href="#get-a-product">Get a product</a></p>
+
+<p>Status: 201 Created</p>
 </blockquote>
 
 <p>This endpoint creates a new product.</p>
@@ -529,6 +572,7 @@ rather than as JSON.</aside>
 <h2 id='update-a-product'>Update a product</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;ID&gt;"</span> <span class="se">\</span>
   -X PUT <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{
         "model": "JBTEST-2",
@@ -538,12 +582,15 @@ rather than as JSON.</aside>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;ID&gt;"</span> <span class="se">\</span>
   -X PUT <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -F <span class="s2">"product[model]=JBTEST-2"</span> <span class="se">\</span>
   -F <span class="s2">"product[short_description]=JB Test product 2"</span> <span class="se">\</span>
   -F <span class="s2">"product[msrp]=12.99"</span>
 </code></pre>
 <blockquote>
 <p>Response: Similar to <a href="#get-a-product">Get a product</a></p>
+
+<p>Status: 200 OK</p>
 </blockquote>
 
 <p>This endpoint updates one of your products.</p>
@@ -566,13 +613,15 @@ rather than as JSON.</aside>
 <h2 id='discontinue-a-product'>Discontinue a product</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;ID&gt;"</span> <span class="se">\</span>
   -X DELETE <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;ID&gt;"</span> <span class="se">\</span>
   -X DELETE <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
 </code></pre>
 <blockquote>
-<p>Response: Status - No Content</p>
+<p>Status: 204 No Content</p>
 </blockquote>
 
 <p>This endpoint discontinues a product by ID.</p>
@@ -592,9 +641,11 @@ rather than as JSON.</aside>
 </tbody></table>
 <h1 id='pricing-tiers'>Pricing Tiers</h1><h2 id='get-all-your-pricing-tiers'>Get all your pricing tiers</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/pricing_tiers"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/pricing_tiers"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
 </code></pre>
 <blockquote>
 <p>Response:</p>
@@ -614,12 +665,17 @@ rather than as JSON.</aside>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
 <p>This endpoint retrieves all of your pricing tiers.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://app.jetbuilt.com/api/pricing_tiers</code></p>
 <h2 id='create-a-pricing-tier'>Create a pricing tier</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/pricing_tiers"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{
         "name": "Gold"
@@ -627,6 +683,7 @@ rather than as JSON.</aside>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/pricing_tiers"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -F <span class="s2">"pricing_tier[name]=Gold"</span>
 </code></pre>
 <blockquote>
@@ -639,6 +696,10 @@ rather than as JSON.</aside>
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="s2">"2018-10-02T18:36:59.949-07:00"</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<blockquote>
+<p>Status: 201 Created</p>
+</blockquote>
+
 <p>This endpoint creates a new pricing tier.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://app.jetbuilt.com/api/pricing_tiers</code></p>
@@ -656,9 +717,11 @@ rather than as JSON.</aside>
 </tbody></table>
 <h1 id='prices'>Prices</h1><h2 id='get-all-product-prices-in-your-pricing-tier'>Get all product prices in your pricing tier</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/pricing_tiers/&lt;TIER_ID&gt;/prices"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/pricing_tiers/&lt;TIER_ID&gt;/prices"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
 </code></pre>
 <blockquote>
 <p>Response:</p>
@@ -672,6 +735,10 @@ rather than as JSON.</aside>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
 <p>This endpoint retrieves all of your product prices for a particular pricing tier.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://app.jetbuilt.com/api/pricing_tiers/&lt;TIER_ID&gt;/prices</code></p>
@@ -690,6 +757,7 @@ rather than as JSON.</aside>
 <h2 id='create-update-a-product-price-for-a-pricing-tier'>Create/Update a product price for a pricing tier</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/pricing_tiers/&lt;TIER_ID&gt;/prices"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{
         "product_id": "1234",
@@ -698,6 +766,7 @@ rather than as JSON.</aside>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/pricing_tiers/&lt;TIER_ID&gt;/prices"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -F <span class="s2">"price[product_id]=1234"</span> <span class="se">\</span>
   -F <span class="s2">"price[amount]=500.5"</span>
 </code></pre>
@@ -711,6 +780,10 @@ rather than as JSON.</aside>
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-15T13:27:38.004-07:00"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<blockquote>
+<p>Status: 201 Created / 200 OK</p>
+</blockquote>
+
 <p>This endpoint allows you to create or update a price for a product within a pricing tier.</p>
 
 <p>If a price for the product, on the price tier, doesn&#39;t yet exist, then it will be created.
@@ -748,13 +821,15 @@ Otherwise the existing price is updated.</p>
 <h2 id='delete-a-product-price-from-a-price-tier'>Delete a product price from a price tier</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/pricing_tiers/&lt;TIER_ID&gt;/prices/&lt;ID&gt;"</span> <span class="se">\</span>
   -X DELETE <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/pricing_tiers/&lt;TIER_ID&gt;/prices/&lt;ID&gt;"</span> <span class="se">\</span>
   -X DELETE <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
 </code></pre>
 <blockquote>
-<p>Response: Status - No Content</p>
+<p>Status: 204 No Content</p>
 </blockquote>
 
 <p>This endpoint allows you to delete a price from a pricing tier.</p>
@@ -774,6 +849,52 @@ Otherwise the existing price is updated.</p>
 <tr>
 <td>ID</td>
 <td>The ID of the product price to delete</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<p>The Jetbuilt API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- You don&#39;t have access to the resource.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified item could not be found.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested an unsupported format.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Unprocessable Entity -- Unable to save because some required data was missing.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re making too many requests. Please slow down.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
 
