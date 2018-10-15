@@ -93,6 +93,8 @@ ID | The ID of the product to retrieve
 
 
 ## Create a product
+> If setting a product image, use cURL's ([Key/Value](?shell--kv#create-a-product)) format
+
 <%
   data =
     {
@@ -100,7 +102,8 @@ ID | The ID of the product to retrieve
       "short_description": "JB Test product 1",
       "part_number": "ABC123",
       "msrp": 10.0,
-      "mapp": 15.99
+      "mapp": 15.99,
+      "image": "/path/to/file/test.jpg"
     }
 %>
 <%= shell_example('/products', command: 'POST', data: data) %>
@@ -127,8 +130,9 @@ msrp | Suggested retail price
 mapp | Minimum advertised price
 image | A product image
 
-The `image` should be a file, if posting as form data. Otherwise the request
-body should be the file's raw binary data.
+<aside class="notice">The <code>image</code> should be a file on your system.
+In the cURL example, give the file path as form data (<a href="?shell--kv#create-a-product">Key/Value</a>),
+rather than as JSON.</aside>
 
 
 ## Update a product
@@ -154,7 +158,7 @@ This endpoint updates one of your products.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the product to retrieve
+ID | The ID of the product to update
 
 ### Data Parameters
 

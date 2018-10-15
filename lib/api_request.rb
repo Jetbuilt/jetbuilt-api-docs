@@ -26,7 +26,11 @@ def curl_form_request(endpoint, options = {})
   curl = curl_cmd(endpoint, options)
   if options[:data]
     options[:data].each do |k, v|
-      curl += "  -F '#{options[:name]}[#{k}]=#{v}' \\\n"
+      if k == :image
+        curl += "  -F \"#{options[:name]}[#{k}]=@#{v}\" \\\n"
+      else
+        curl += "  -F \"#{options[:name]}[#{k}]=#{v}\" \\\n"
+      end
     end
   end
   curl
@@ -36,10 +40,12 @@ def curl_json_request(endpoint, options = {})
   curl = curl_cmd(endpoint, options)
   curl += "  -H 'Content-Type: application/json' \\\n"
   if options[:data]
+    data = options[:data].clone
+    image = data.delete(:image)
     curl += "  -d '{\n"
-    options[:data].each do |k, v|
+    data.each do |k, v|
       curl += "        \"#{k}\": \"#{v}\""
-      curl += ",\n" unless k == options[:data].keys.last
+      curl += ",\n" unless k == data.keys.last
     end
     curl += "\n      }'"
   end
