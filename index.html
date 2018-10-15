@@ -446,7 +446,11 @@ following:</p>
 <td>The ID of the product to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='create-a-product'>Create a product</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products"</span> <span class="se">\</span>
+<h2 id='create-a-product'>Create a product</h2>
+<blockquote>
+<p>If setting a product image, use cURL&#39;s (<a href="?shell--kv#create-a-product">Key/Value</a>) format</p>
+</blockquote>
+<pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -460,11 +464,12 @@ following:</p>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -F <span class="s1">'product[model]=JBTEST-1'</span> <span class="se">\</span>
-  -F <span class="s1">'product[short_description]=JB Test product 1'</span> <span class="se">\</span>
-  -F <span class="s1">'product[part_number]=ABC123'</span> <span class="se">\</span>
-  -F <span class="s1">'product[msrp]=10.0'</span> <span class="se">\</span>
-  -F <span class="s1">'product[mapp]=15.99'</span>
+  -F <span class="s2">"product[model]=JBTEST-1"</span> <span class="se">\</span>
+  -F <span class="s2">"product[short_description]=JB Test product 1"</span> <span class="se">\</span>
+  -F <span class="s2">"product[part_number]=ABC123"</span> <span class="se">\</span>
+  -F <span class="s2">"product[msrp]=10.0"</span> <span class="se">\</span>
+  -F <span class="s2">"product[mapp]=15.99"</span> <span class="se">\</span>
+  -F <span class="s2">"product[image]=@/path/to/file/test.jpg"</span>
 </code></pre>
 <blockquote>
 <p>Response: Similar to <a href="#get-a-product">Get a product</a></p>
@@ -518,8 +523,9 @@ following:</p>
 </tr>
 </tbody></table>
 
-<p>The <code>image</code> should be a file, if posting as form data. Otherwise the request
-body should be the file&#39;s raw binary data.</p>
+<aside class="notice">The <code>image</code> should be a file on your system.
+In the cURL example, give the file path as form data (<a href="?shell--kv#create-a-product">Key/Value</a>),
+rather than as JSON.</aside>
 <h2 id='update-a-product'>Update a product</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;ID&gt;"</span> <span class="se">\</span>
   -X PUT <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
@@ -532,9 +538,9 @@ body should be the file&#39;s raw binary data.</p>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;ID&gt;"</span> <span class="se">\</span>
   -X PUT <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -F <span class="s1">'product[model]=JBTEST-2'</span> <span class="se">\</span>
-  -F <span class="s1">'product[short_description]=JB Test product 2'</span> <span class="se">\</span>
-  -F <span class="s1">'product[msrp]=12.99'</span>
+  -F <span class="s2">"product[model]=JBTEST-2"</span> <span class="se">\</span>
+  -F <span class="s2">"product[short_description]=JB Test product 2"</span> <span class="se">\</span>
+  -F <span class="s2">"product[msrp]=12.99"</span>
 </code></pre>
 <blockquote>
 <p>Response: Similar to <a href="#get-a-product">Get a product</a></p>
@@ -552,7 +558,7 @@ body should be the file&#39;s raw binary data.</p>
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the product to retrieve</td>
+<td>The ID of the product to update</td>
 </tr>
 </tbody></table>
 <h3 id='data-parameters-2'>Data Parameters</h3>
@@ -621,7 +627,7 @@ body should be the file&#39;s raw binary data.</p>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/pricing_tiers"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -F <span class="s1">'pricing_tier[name]=Gold'</span>
+  -F <span class="s2">"pricing_tier[name]=Gold"</span>
 </code></pre>
 <blockquote>
 <p>Response:</p>
@@ -692,8 +698,8 @@ body should be the file&#39;s raw binary data.</p>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/pricing_tiers/&lt;TIER_ID&gt;/prices"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -F <span class="s1">'price[product_id]=1234'</span> <span class="se">\</span>
-  -F <span class="s1">'price[amount]=500.5'</span>
+  -F <span class="s2">"price[product_id]=1234"</span> <span class="se">\</span>
+  -F <span class="s2">"price[amount]=500.5"</span>
 </code></pre>
 <blockquote>
 <p>Response:</p>
