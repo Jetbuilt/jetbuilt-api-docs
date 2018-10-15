@@ -23,6 +23,8 @@
 ]
 ```
 
+> Status: 200 OK
+
 This endpoint retrieves all of your pricing tiers.
 
 ### HTTP Request
@@ -49,6 +51,8 @@ This endpoint retrieves all of your pricing tiers.
   "updated_at":"2018-10-02T18:36:59.949-07:00",
 }
 ```
+
+> Status: 201 Created
 
 This endpoint creates a new pricing tier.
 

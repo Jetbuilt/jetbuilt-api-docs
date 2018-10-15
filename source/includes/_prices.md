@@ -17,6 +17,8 @@
 ]
 ```
 
+> Status: 200 OK
+
 This endpoint retrieves all of your product prices for a particular pricing tier.
 
 ### HTTP Request
@@ -52,6 +54,8 @@ TIER_ID | The ID of the pricing tier
 }
 ```
 
+> Status: 201 Created / 200 OK
+
 This endpoint allows you to create or update a price for a product within a pricing tier.
 
 If a price for the product, on the price tier, doesn't yet exist, then it will be created.
@@ -78,7 +82,7 @@ amount | A decimal representing the price in the currency of the product
 
 <%= shell_example('/pricing_tiers/<TIER_ID>/prices/<ID>', command: 'DELETE') %>
 
-> Response: Status - No Content
+> Status: 204 No Content
 
 This endpoint allows you to delete a price from a pricing tier.
 

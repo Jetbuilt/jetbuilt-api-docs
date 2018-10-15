@@ -34,6 +34,8 @@
 ]
 ```
 
+> Status: 200 OK
+
 This endpoint allows querying all products by model.
 
 ### HTTP Request
@@ -53,6 +55,8 @@ page | A specific page of results. 50 per page.
 <%= shell_example('/products') %>
 
 > Response: Similar to [Search all products](#search-all-products)
+
+> Status: 200 OK
 
 This endpoint retrieves all of your products.
 
@@ -78,6 +82,8 @@ page | A specific page of results. 50 per page.
   <%= example_json_response.chomp %>
 ]
 ```
+
+> Status: 200 OK
 
 This endpoint retrieves a product by ID.
 
@@ -109,6 +115,8 @@ ID | The ID of the product to retrieve
 <%= shell_example('/products', command: 'POST', data: data) %>
 
 > Response: Similar to [Get a product](#get-a-product)
+
+> Status: 201 Created
 
 This endpoint creates a new product.
 
@@ -148,6 +156,8 @@ rather than as JSON.</aside>
 
 > Response: Similar to [Get a product](#get-a-product)
 
+> Status: 200 OK
+
 This endpoint updates one of your products.
 
 ### HTTP Request
@@ -169,7 +179,7 @@ Same as [Create a product](#create-a-product).
 
 <%= shell_example('/products/<ID>', command: 'DELETE') %>
 
-> Response: Status - No Content
+> Status: 204 No Content
 
 This endpoint discontinues a product by ID.
 
