@@ -8,6 +8,7 @@ def curl_cmd(endpoint, options = {})
   curl =  "curl \"#{api_url(endpoint)}\" \\\n"
   curl += "  -X #{options[:command]} \\\n" unless options[:command] == 'GET'
   curl += "  -H \"#{auth_token}\" \\\n"
+  curl += "  -H \"Accept: application/vnd.jetbuilt.v1\" \\\n"
 end
 
 def curl_request(endpoint, format, options = {})
