@@ -109,6 +109,7 @@ ID | The ID of the product to retrieve
       "part_number": "ABC123",
       "msrp": 10.0,
       "mapp": 15.99,
+      "currency": "EUR",
       "image": "/path/to/file/test.jpg"
     }
 %>
@@ -136,6 +137,7 @@ discontinued | If the product is active or discontinued. Default is `false`.
 url | A product URL
 msrp | Suggested retail price
 mapp | Minimum advertised price
+currency | A 3 letter ISO code (e.g. USD, EUR, JPY). Default is `USD`.
 image | A product image
 
 <aside class="notice">The <code>image</code> should be a file on your system.
