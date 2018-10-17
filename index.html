@@ -499,7 +499,8 @@ following:</p>
         "short_description": "JB Test product 1",
         "part_number": "ABC123",
         "msrp": "10.0",
-        "mapp": "15.99"
+        "mapp": "15.99",
+        "currency": "EUR"
       }'</span>
 </code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
@@ -510,6 +511,7 @@ following:</p>
   -F <span class="s2">"product[part_number]=ABC123"</span> <span class="se">\</span>
   -F <span class="s2">"product[msrp]=10.0"</span> <span class="se">\</span>
   -F <span class="s2">"product[mapp]=15.99"</span> <span class="se">\</span>
+  -F <span class="s2">"product[currency]=EUR"</span> <span class="se">\</span>
   -F <span class="s2">"product[image]=@/path/to/file/test.jpg"</span>
 </code></pre>
 <blockquote>
@@ -559,6 +561,10 @@ following:</p>
 <tr>
 <td>mapp</td>
 <td>Minimum advertised price</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>A 3 letter ISO code (e.g. USD, EUR, JPY). Default is <code>USD</code>.</td>
 </tr>
 <tr>
 <td>image</td>
