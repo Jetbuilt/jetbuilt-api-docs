@@ -14,7 +14,7 @@
         "id": 12345,
         "model": "ACME-123",
         "short_description": "Microphone",
-        "longer_description": "Handheld Microphone",
+        "long_description": "Handheld Microphone",
         "part_number": "ACME-123A",
         "discontinued": false,
         "url": null,
@@ -131,7 +131,7 @@ Parameter | Description
 --------- | -----------
 model | The model name (required)
 short_description | A short product description
-longer_description | A longer product description
+long_description | A longer product description
 part_number | The part number
 discontinued | If the product is active or discontinued. Default is `false`.
 url | A product URL
