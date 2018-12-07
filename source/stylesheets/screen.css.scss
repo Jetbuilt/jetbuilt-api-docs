@@ -74,8 +74,17 @@ html, body {
   // This is the logo at the top of the ToC
   .logo {
     display: block;
-    width: 190px;
     margin: 4em auto 2em auto;
+    text-decoration: none;
+  }
+  .logo img {
+    display: block;
+    width: 190px;
+  }
+  .logo .logo-title {
+    color: white;
+    font-size: 16px;
+    margin-left: 50px;
   }
 
   &>.search {
@@ -240,6 +249,28 @@ html, body {
 
   &:hover { opacity: 1; }
   &.open {left: $nav-width}
+}
+
+.button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  background: #40A0FF;
+  color: #FFF;
+  text-decoration: none;
+}
+.button:hover {
+  background: #1665DB;
 }
 
 
