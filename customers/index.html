@@ -1,0 +1,837 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Jetbuilt Customer API</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="../stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all.js"></script>
+  </head>
+
+  <body class="customers customers_index" data-languages="[&quot;shell--json&quot;,&quot;shell--kv&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="/" class="logo">
+        <img src="../images/logo.png" alt="Logo" />
+        <span class="logo-title">Customer API</span>
+      </a>
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell--json">JSON</a>
+              <a href="#" data-language-name="shell--kv">Key/Value</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#rest" class="toc-h2 toc-link" data-title="REST">REST</a>
+                  </li>
+                  <li>
+                    <a href="#base-urls" class="toc-h2 toc-link" data-title="Base URLs">Base URLs</a>
+                  </li>
+                  <li>
+                    <a href="#passing-data" class="toc-h2 toc-link" data-title="Passing data">Passing data</a>
+                  </li>
+                  <li>
+                    <a href="#versioning" class="toc-h2 toc-link" data-title="Versioning">Versioning</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#clients" class="toc-h1 toc-link" data-title="Clients">Clients</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-clients" class="toc-h2 toc-link" data-title="Get all clients">Get all clients</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-client" class="toc-h2 toc-link" data-title="Get a client">Get a client</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#projects" class="toc-h1 toc-link" data-title="Projects">Projects</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-projects" class="toc-h2 toc-link" data-title="Get all projects">Get all projects</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-project" class="toc-h2 toc-link" data-title="Get a project">Get a project</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#project-items" class="toc-h1 toc-link" data-title="Project Items">Project Items</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-items-in-your-project" class="toc-h2 toc-link" data-title="Get all items in your project">Get all items in your project</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#project-options" class="toc-h1 toc-link" data-title="Project Options">Project Options</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-options-change-orders-in-your-project" class="toc-h2 toc-link" data-title="Get all options/change orders in your project">Get all options/change orders in your project</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Jetbuilt Customer API! As a customer, you can use this API to access your data.</p>
+<h2 id='rest'>REST</h2>
+<p>The Jetbuilt API is a REST-style API over HTTPS that uses JSON for serialization and
+HTTP Token authentication.</p>
+<h2 id='base-urls'>Base URLs</h2>
+<p>While developing your application, we&#39;d recommend you utilize the <strong>staging</strong> environment at:</p>
+
+<p><a href="https://staging.jetbuilt.com/api">https://staging.jetbuilt.com/api</a></p>
+
+<p>When you&#39;re ready, switch to <strong>production</strong> at:</p>
+
+<p><a href="https://app.jetbuilt.com/api">https://app.jetbuilt.com/api</a></p>
+<h2 id='passing-data'>Passing data</h2>
+<p>Fields are passed with the request body, and can either be:</p>
+
+<ul>
+<li><strong>JSON</strong></li>
+<li>Form <strong>Key/Value</strong> pairs</li>
+</ul>
+
+<p>If sending JSON, be sure to set the <code>Content-Type</code> header to
+<code>application/json</code> to identify the request format, otherwise it will
+default to form key/value pairs.</p>
+<h2 id='versioning'>Versioning</h2>
+<blockquote>
+<p>Example request header specifying the version</p>
+</blockquote>
+<pre class="highlight shell tab-shell--json"><code>curl -H <span class="s1">'Accept: application/vnd.jetbuilt.v1'</span>
+</code></pre><pre class="highlight shell tab-shell--kv"><code>curl -H <span class="s1">'Accept: application/vnd.jetbuilt.v1'</span>
+</code></pre>
+<p>Since the API could change over time, we recommend specifying the version you&#39;re using
+with each request. This will help keep your integration working should a new
+version be released. Otherwise it will default to the latest version. (Currently
+there is only Version 1.)</p>
+
+<p>Set the version by specifying <code>application/vnd.jetbuilt.v1</code> in the <code>Accept</code> header.</p>
+
+<p>Replace <code>v1</code> with the desired version number. e.g v1, v2, v3, etc...</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>Sample request with Authorization:</p>
+</blockquote>
+<pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>YOURAPIKEY</code> with your API key.</p>
+</blockquote>
+
+<aside class="notice">
+  The Customer API is still in beta. Contact us for an API key at <a href="mailto:help@jetbuilt.com">help@jetbuilt.com</a>
+</aside>
+
+<p>The Jetbuilt API uses API keys to allow access.</p>
+
+<p>(Once out of beta, you will find your API Key under your Company Settings.)</p>
+
+<p>You should include your API key in all API requests to the server in a header that looks like the
+following:</p>
+
+<p><code>Authorization: Token token=YOURAPIKEY</code></p>
+
+<aside class="notice">
+  Make sure to replace <code>YOURAPIKEY</code> with your API key.
+</aside>
+<h1 id='clients'>Clients</h1><h2 id='get-all-clients'>Get all clients</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith's AV World"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"payment_schedule"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-08T08:22:16.929-08:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-10T14:20:55.195-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Cool St"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tallahassee"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32312"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all of your clients.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/clients</code></p>
+<h2 id='get-a-client'>Get a client</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;ID&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;ID&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-clients">Get all clients</a></p>
+
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves a client by ID.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/clients/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the client to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='projects'>Projects</h1><h2 id='get-all-projects'>Get all projects</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test project"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"short_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"payment_schedule"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"custom_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P - 182"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_valid_until"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-15"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-16T08:17:33.273-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-31T14:19:14.241-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lost"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"labor_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sales_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"equipment_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22257.98"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"labor_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33000.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tax_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3366.5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58624.48"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"herbert"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fl"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2914</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"client"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">63117</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"company_location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jetbuilt Testing"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/project-avatar-3.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shared"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">,</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all of your projects.</p>
+
+<p>It includes any shared projects, and only lists the active version (if multiple versions exist).</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/projects</code></p>
+
+<p><code>GET https://app.jetbuilt.com/api/projects?page=2</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>A specific page of results. 50 per page.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-project'>Get a project</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59123</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test project"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"short_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"payment_schedule"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"custom_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P - 182"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"price_valid_until"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-15"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-16T08:17:33.273-07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-31T14:19:14.241-07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"budget"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lost"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"labor_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sales_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"equipment_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22257.98"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"labor_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33000.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tax_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3366.5"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58624.48"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"herbert"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fl"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2914</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"client"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">63117</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"company_location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jetbuilt Testing"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/project-avatar-3.jpg"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"shared"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rooms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">242060</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Room 1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"scope"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">246767</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Room 2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"scope"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"systems"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">196878</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System A"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"scope"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"phases"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"labor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">329891</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Senior Engineer"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"engineering"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">329892</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Wire"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"install"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"165.0"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves a project by ID.</p>
+
+<p>It contains additional project info like Rooms, Systems, Phases, and Labor.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/projects/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='project-items'>Project Items</h1><h2 id='get-all-items-in-your-project'>Get all items in your project</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1900102</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"manufacturer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sonos"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUB-GB"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"part_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"699.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"433.38"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"short_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subwoofer Gloss BlackWireless subwoofer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipping_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"subtotal_equipment_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13980.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-19T10:42:21.736-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-25T13:52:34.062-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"room"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">242060</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Room 1"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">196878</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System A"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"phase"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"option"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"labor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"install"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"600.0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"taxable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"700.0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1650.0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"labor_type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">329892</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Wire"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"factors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25144</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Management"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hours per day of install"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"factor_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hours_per_day"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total_cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"taxed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-30T11:31:59.120-07:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-30T11:33:18.807-07:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves the items in your project.</p>
+
+<p>Includes line items and factors.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items</code></p>
+
+<p><code>GET https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items?page=2</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PROJECT_ID</td>
+<td>The ID of the project</td>
+</tr>
+<tr>
+<td>page</td>
+<td>A specific page of line item results. 50 per page. All factors are always returned.</td>
+</tr>
+</tbody></table>
+<h1 id='project-options'>Project Options</h1><h2 id='get-all-options-change-orders-in-your-project'>Get all options/change orders in your project</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/options"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/options"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">27409</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"option1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"payment_schedule"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-06T09:31:43.646-08:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-06T09:32:02.156-08:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"change_order"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"room"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2329476</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves the options in your project.</p>
+
+<p>Options become known as &#39;Change Orders&#39; once the project moves to the contract stage.</p>
+
+<p>Includes the option&#39;s line items.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/options</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PROJECT_ID</td>
+<td>The ID of the project</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<p>The Jetbuilt API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- You don&#39;t have access to the resource.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified item could not be found.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested an unsupported format.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Unprocessable Entity -- Unable to save because some required data was missing.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re making too many requests. Please slow down.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell--json">JSON</a>
+                <a href="#" data-language-name="shell--kv">Key/Value</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
