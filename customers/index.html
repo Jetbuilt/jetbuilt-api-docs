@@ -237,6 +237,9 @@
                   <li>
                     <a href="#versioning" class="toc-h2 toc-link" data-title="Versioning">Versioning</a>
                   </li>
+                  <li>
+                    <a href="#pagination" class="toc-h2 toc-link" data-title="Pagination">Pagination</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -327,6 +330,37 @@ there is only Version 1.)</p>
 <p>Set the version by specifying <code>application/vnd.jetbuilt.v1</code> in the <code>Accept</code> header.</p>
 
 <p>Replace <code>v1</code> with the desired version number. e.g v1, v2, v3, etc...</p>
+<h2 id='pagination'>Pagination</h2>
+<blockquote>
+<p>Sample fetching the 2nd page of clients:</p>
+</blockquote>
+<pre class="highlight shell tab-shell--json"><code>curl --include <span class="s2">"https://app.jetbuilt.com/api/clients?page=2"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span>
+</code></pre><pre class="highlight shell tab-shell--kv"><code>curl --include <span class="s2">"https://app.jetbuilt.com/api/clients?page=2"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre>
+<blockquote>
+<p>Response header includes &#39;Link&#39;:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Link: &lt;https://app.jetbuilt.com/api/clients?page=1&gt;; rel="first",
+  &lt;https://app.jetbuilt.com/api/clients?page=1&gt;; rel="prev",
+  &lt;https://app.jetbuilt.com/api/clients?page=4&gt;; rel="last",
+  &lt;https://app.jetbuilt.com/api/clients?page=3&gt;; rel="next"
+
+</code></pre>
+<p>The collection (i.e &#39;Get all&#39;) endpoints paginate their results, with <strong>25</strong> returned per page.</p>
+
+<p>The Jetbuilt API follows the RFC5988 convention of using the <code>Link</code> header to provide URLs for
+the next page. Use these links to retrieve the next page of data.</p>
+
+<p><strong>Note</strong>: You can use <code>curl --include</code> to see your response headers. This is different
+than the response body.</p>
+
+<p>The response also includes a <code>X-Total-Count</code> header, which is the total number of
+resources in the collection.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>Sample request with Authorization:</p>
@@ -399,6 +433,18 @@ following:</p>
 <p>This endpoint retrieves all of your clients.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://app.jetbuilt.com/api/clients</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>A specific page of results.</td>
+</tr>
+</tbody></table>
 <h2 id='get-a-client'>Get a client</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;ID&gt;"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
@@ -416,7 +462,7 @@ following:</p>
 <p>This endpoint retrieves a client by ID.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://app.jetbuilt.com/api/clients/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -506,7 +552,7 @@ following:</p>
 </thead><tbody>
 <tr>
 <td>page</td>
-<td>A specific page of results. 50 per page.</td>
+<td>A specific page of results.</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-project'>Get a project</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
@@ -718,7 +764,7 @@ following:</p>
 </tr>
 <tr>
 <td>page</td>
-<td>A specific page of line item results. 50 per page. All factors are always returned.</td>
+<td>A specific page of line item results. All factors are always returned.</td>
 </tr>
 </tbody></table>
 <h1 id='project-options'>Project Options</h1><h2 id='get-all-options-change-orders-in-your-project'>Get all options/change orders in your project</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/options"</span> <span class="se">\</span>
@@ -776,6 +822,10 @@ following:</p>
 <tr>
 <td>PROJECT_ID</td>
 <td>The ID of the project</td>
+</tr>
+<tr>
+<td>page</td>
+<td>A specific page of results.</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
