@@ -32,6 +32,7 @@ This endpoint retrieves all of your product prices for a particular pricing tier
 Parameter | Description
 --------- | -----------
 TIER_ID | The ID of the pricing tier
+page | A specific page of results.
 
 
 ## Create/Update a product price for a pricing tier

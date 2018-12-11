@@ -44,3 +44,33 @@ there is only Version 1.)
 Set the version by specifying `application/vnd.jetbuilt.v1` in the `Accept` header.
 
 Replace <code>v1</code> with the desired version number. e.g v1, v2, v3, etc...
+
+## Pagination
+
+> Sample fetching the 2nd page of clients:
+
+<%= shell_example('/clients?page=2', curl_include: true) %>
+
+> Response header includes 'Link':
+
+```
+<%=
+<<~EOF
+Link: <#{api_url('/clients?page=1')}>; rel="first",
+  <#{api_url('/clients?page=1')}>; rel="prev",
+  <#{api_url('/clients?page=4')}>; rel="last",
+  <#{api_url('/clients?page=3')}>; rel="next"
+EOF
+%>
+```
+
+The collection (i.e 'Get all') endpoints paginate their results, with **25** returned per page.
+
+The Jetbuilt API follows the RFC5988 convention of using the `Link` header to provide URLs for
+the next page. Use these links to retrieve the next page of data.
+
+**Note**: You can use `curl --include` to see your response headers. This is different
+than the response body.
+
+The response also includes a `X-Total-Count` header, which is the total number of
+resources in the collection.

@@ -5,7 +5,9 @@ end
 
 def curl_cmd(endpoint, options = {})
   options.reverse_merge! command: 'GET'
-  curl =  "curl \"#{api_url(endpoint)}\" \\\n"
+  curl = "curl"
+  curl += " --include" if options[:curl_include] == true
+  curl +=  " \"#{api_url(endpoint)}\" \\\n"
   curl += "  -X #{options[:command]} \\\n" unless options[:command] == 'GET'
   curl += "  -H \"#{auth_token}\" \\\n"
   curl += "  -H \"Accept: application/vnd.jetbuilt.v1\" \\\n"

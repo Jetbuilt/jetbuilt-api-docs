@@ -31,6 +31,12 @@ This endpoint retrieves all of your pricing tiers.
 
 `GET <%= api_url('/pricing_tiers') %>`
 
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+page | A specific page of results.
+
 
 ## Create a pricing tier
 <%

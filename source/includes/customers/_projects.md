@@ -71,7 +71,7 @@ It includes any shared projects, and only lists the active version (if multiple 
 
 Parameter | Description
 --------- | -----------
-page | A specific page of results. 50 per page.
+page | A specific page of results.
 
 
 ## Get a project

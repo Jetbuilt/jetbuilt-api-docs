@@ -47,7 +47,7 @@ This endpoint allows querying all products by model.
 Parameter | Description
 --------- | -----------
 query | The model name to search with.
-page | A specific page of results. 50 per page.
+page | A specific page of results.
 
 
 ## Get your products
@@ -68,7 +68,7 @@ This endpoint retrieves all of your products.
 
 Parameter | Description
 --------- | -----------
-page | A specific page of results. 50 per page.
+page | A specific page of results.
 
 
 ## Get a product

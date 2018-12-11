@@ -38,6 +38,12 @@ This endpoint retrieves all of your clients.
 
 `GET <%= api_url('/clients') %>`
 
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+page | A specific page of results.
+
 
 ## Get a client
 

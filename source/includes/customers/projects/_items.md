@@ -85,4 +85,4 @@ Includes line items and factors.
 Parameter | Description
 --------- | -----------
 PROJECT_ID | The ID of the project
-page | A specific page of line item results. 50 per page. All factors are always returned.
+page | A specific page of line item results. All factors are always returned.
