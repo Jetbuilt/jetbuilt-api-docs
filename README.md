@@ -68,6 +68,20 @@ If you'd prefer to use Docker, instructions are available [in the wiki](https://
 
 For those who don't have JavaScript runtime or are experiencing JavaScript runtime issues with ExecJS, it is recommended to add the [rubyracer gem](https://github.com/cowboyd/therubyracer) to your gemfile and run `bundle` again.
 
+Publishing Your Docs to GitHub Pages
+---------------------------------
+
+Publishing your API documentation couldn't be more simple.
+
+1. Make sure you're working on a fork in your own account, not our original repo: git remote show origin.
+2. Commit your changes to the markdown source: git commit -a -m "Update index.md"
+3. Push the markdown source changes to GitHub: git push
+4. Run ./deploy.sh
+
+Done
+
+[Wiki](https://github.com/lord/slate/wiki/Deploying-Slate#publishing-your-docs-to-github-pages)
+
 Companies Using Slate
 ---------------------------------
 
