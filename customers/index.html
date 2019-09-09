@@ -325,9 +325,9 @@ default to form key/value pairs.</p>
 <blockquote>
 <p>Example request header specifying the version</p>
 </blockquote>
-<pre class="highlight shell tab-shell--json"><code>curl -H <span class="s1">'Accept: application/vnd.jetbuilt.v1'</span>
-</code></pre><pre class="highlight shell tab-shell--kv"><code>curl -H <span class="s1">'Accept: application/vnd.jetbuilt.v1'</span>
-</code></pre>
+<div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="nt">-H</span> <span class="s1">'Accept: application/vnd.jetbuilt.v1'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="nt">-H</span> <span class="s1">'Accept: application/vnd.jetbuilt.v1'</span>
+</code></pre></div>
 <p>Since the API could change over time, we recommend specifying the version you&#39;re using
 with each request. This will help keep your integration working should a new
 version be released. Otherwise it will default to the latest version. (Currently
@@ -340,23 +340,23 @@ there is only Version 1.)</p>
 <blockquote>
 <p>Sample fetching the 2nd page of clients:</p>
 </blockquote>
-<pre class="highlight shell tab-shell--json"><code>curl --include <span class="s2">"https://app.jetbuilt.com/api/clients?page=2"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span>
-</code></pre><pre class="highlight shell tab-shell--kv"><code>curl --include <span class="s2">"https://app.jetbuilt.com/api/clients?page=2"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
-</code></pre>
+<div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="nt">--include</span> <span class="s2">"https://app.jetbuilt.com/api/clients?page=2"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="nt">--include</span> <span class="s2">"https://app.jetbuilt.com/api/clients?page=2"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
 <blockquote>
 <p>Response header includes &#39;Link&#39;:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Link: &lt;https://app.jetbuilt.com/api/clients?page=1&gt;; rel="first",
+<div class="highlight"><pre class="highlight plaintext"><code>Link: &lt;https://app.jetbuilt.com/api/clients?page=1&gt;; rel="first",
   &lt;https://app.jetbuilt.com/api/clients?page=1&gt;; rel="prev",
   &lt;https://app.jetbuilt.com/api/clients?page=4&gt;; rel="last",
   &lt;https://app.jetbuilt.com/api/clients?page=3&gt;; rel="next"
 
-</code></pre>
+</code></pre></div>
 <p>The collection (i.e &#39;Get all&#39;) endpoints paginate their results, with <strong>25</strong> returned per page.</p>
 
 <p>The Jetbuilt API follows the RFC5988 convention of using the <code>Link</code> header to provide URLs for
@@ -384,14 +384,14 @@ resources in the collection.</p>
 <blockquote>
 <p>Sample request with Authorization:</p>
 </blockquote>
-<pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span>
-</code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
-</code></pre>
+<div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
 <blockquote>
 <p>Make sure to replace <code>YOURAPIKEY</code> with your API key.</p>
 </blockquote>
@@ -412,39 +412,58 @@ following:</p>
 <aside class="notice">
   Make sure to replace <code>YOURAPIKEY</code> with your API key.
 </aside>
-<h1 id='clients'>Clients</h1><h2 id='get-all-clients'>Get all clients</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span>
-</code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
-</code></pre>
+<h1 id='clients'>Clients</h1><h2 id='get-all-clients'>Get all clients</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
     </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith's AV World"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"payment_schedule"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-08T08:22:16.929-08:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-10T14:20:55.195-07:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"primary_contact_first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bob"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"primary_contact_last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"primary_contact_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"primary_contact_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bobsmith@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"primary_contact_phone_number_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"555-123-4567"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"primary_contact_phone_number_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Cool St"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tallahassee"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32312"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2222</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bob"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bobsmith@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_number_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"555-123-4567"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_number_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"primary"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-09T10:19:57.534-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-09T10:19:57.534-07:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="err">...</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <blockquote>
 <p>Status: 200 OK</p>
 </blockquote>
@@ -464,14 +483,14 @@ following:</p>
 <td>A specific page of results.</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-client'>Get a client</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;ID&gt;"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span>
-</code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;ID&gt;"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
-</code></pre>
+<h2 id='get-a-client'>Get a client</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
 <blockquote>
 <p>Response: Similar to <a href="#get-all-clients">Get all clients</a></p>
 
@@ -493,18 +512,18 @@ following:</p>
 <td>The ID of the client to retrieve</td>
 </tr>
 </tbody></table>
-<h1 id='projects'>Projects</h1><h2 id='get-all-projects'>Get all projects</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span>
-</code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
-</code></pre>
+<h1 id='projects'>Projects</h1><h2 id='get-all-projects'>Get all projects</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59123</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test project"</span><span class="p">,</span><span class="w">
@@ -551,7 +570,7 @@ following:</p>
     </span><span class="err">...</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <blockquote>
 <p>Status: 200 OK</p>
 </blockquote>
@@ -575,18 +594,18 @@ following:</p>
 <td>A specific page of results.</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-project'>Get a project</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span>
-</code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
-</code></pre>
+<h2 id='get-a-project'>Get a project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59123</span><span class="p">,</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test project"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"short_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -668,7 +687,7 @@ following:</p>
       </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <blockquote>
 <p>Status: 200 OK</p>
 </blockquote>
@@ -690,18 +709,18 @@ following:</p>
 <td>The ID of the project to retrieve</td>
 </tr>
 </tbody></table>
-<h1 id='project-items'>Project Items</h1><h2 id='get-all-items-in-your-project'>Get all items in your project</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span>
-</code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
-</code></pre>
+<h1 id='project-items'>Project Items</h1><h2 id='get-all-items-in-your-project'>Get all items in your project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1900102</span><span class="p">,</span><span class="w">
@@ -760,7 +779,7 @@ following:</p>
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <blockquote>
 <p>Status: 200 OK</p>
 </blockquote>
@@ -788,18 +807,18 @@ following:</p>
 <td>A specific page of line item results. All factors are always returned.</td>
 </tr>
 </tbody></table>
-<h1 id='project-options'>Project Options</h1><h2 id='get-all-options-change-orders-in-your-project'>Get all options/change orders in your project</h2><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/options"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span>
-</code></pre><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/options"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
-  -H <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
-</code></pre>
+<h1 id='project-options'>Project Options</h1><h2 id='get-all-options-change-orders-in-your-project'>Get all options/change orders in your project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/options"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/options"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">27409</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"option1"</span><span class="p">,</span><span class="w">
@@ -821,7 +840,7 @@ following:</p>
     </span><span class="err">...</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <blockquote>
 <p>Status: 200 OK</p>
 </blockquote>
