@@ -290,6 +290,25 @@
               </ul>
           </li>
           <li>
+            <a href="#project-purchasing" class="toc-h1 toc-link" data-title="Project Purchasing">Project Purchasing</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-purchasing-info-for-items-in-your-project" class="toc-h2 toc-link" data-title="Get purchasing info for items in your project">Get purchasing info for items in your project</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#purchasing-sources" class="toc-h1 toc-link" data-title="Purchasing Sources">Purchasing Sources</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-purchasing-sources" class="toc-h2 toc-link" data-title="Get all purchasing sources">Get all purchasing sources</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-purchasing-source" class="toc-h2 toc-link" data-title="Get a purchasing source">Get a purchasing source</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -866,6 +885,151 @@ following:</p>
 <tr>
 <td>page</td>
 <td>A specific page of results.</td>
+</tr>
+</tbody></table>
+<h1 id='project-purchasing'>Project Purchasing</h1><h2 id='get-purchasing-info-for-items-in-your-project'>Get purchasing info for items in your project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/purchasing"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/purchasing"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">123</span><span class="p">,</span><span class="w">
+        </span><span class="mi">145</span><span class="p">,</span><span class="w">
+        </span><span class="mi">167</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME 123"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"short_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"super audio enhancer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not_ordered"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total_order_cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project_quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Audio Supplier"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves purchasing info for items in your project.</p>
+
+<p>Line items are consolidated together for purchasing, with a purchase source listed
+when set.</p>
+
+<p>Grouped line items will be listed together in the <code>ids</code> field.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/purchasing</code></p>
+
+<p><code>GET https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/purchasing?page=2</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PROJECT_ID</td>
+<td>The ID of the project</td>
+</tr>
+<tr>
+<td>page</td>
+<td>A specific page of line item results</td>
+</tr>
+</tbody></table>
+<h1 id='purchasing-sources'>Purchasing Sources</h1><h2 id='get-all-purchasing-sources'>Get all purchasing sources</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/purchasing/sources"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/purchasing/sources"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Awesome Audio"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johnaudio@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5551234567"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"default_ship"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project_site"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-08T15:40:38.491-08:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T09:35:48.005-08:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dealer_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all of purchasing sources for your company.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/purchasing/sources</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>A specific page of results.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-purchasing-source'>Get a purchasing source</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/purchasing/sources/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/purchasing/sources/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-purchasing-sources">Get all purchasing sources</a></p>
+
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves a purchasing source by ID.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/purchasing/sources/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the purchasing source to retrieve</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
