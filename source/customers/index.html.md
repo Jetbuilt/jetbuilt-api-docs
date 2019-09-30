@@ -12,6 +12,8 @@ includes:
   - customers/projects
   - customers/projects/items
   - customers/projects/options
+  - customers/projects/purchasing
+  - customers/purchasing/sources
   - errors
 
 toc_footers:
