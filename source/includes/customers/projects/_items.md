@@ -31,6 +31,10 @@
         "id": 196878,
         "name": "System A"
       },
+      "tag": {
+        "id": 30013,
+        "name": "Floor 1"
+      },
       "phase": null,
       "option": null,
       "labor": [

@@ -146,6 +146,12 @@ page | A specific page of results.
         "active": true
       }
   ],
+  "tags": [
+      {
+        "id": 30013,
+        "name": "Floor 1"
+      }
+  ],
   "phases": [],
   "labor": [
       {
