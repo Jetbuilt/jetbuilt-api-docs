@@ -24,3 +24,8 @@ search: true
 # Introduction
 
 Welcome to the Jetbuilt Customer API! As a customer, you can use this API to access your data.
+
+<aside class="notice">
+  The Customer API is currently <strong>Read-only</strong>.
+  This means your Jetbuilt content cannot be modified, only read out.
+</aside>
