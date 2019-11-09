@@ -14,3 +14,10 @@ Error Code | Meaning
 429 | Too Many Requests -- You're making too many requests. Please slow down.
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+
+## Rate Limiting
+
+You can perform up to 50 requests per 10 second period from the same IP address when accessing the
+API. If you exceed this limit, you'll get a
+[429 Too Many Requests](https://tools.ietf.org/html/draft-nottingham-http-new-status-02#section-4)
+response for subsequent requests.
