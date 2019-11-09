@@ -310,6 +310,11 @@
           </li>
           <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#rate-limiting" class="toc-h2 toc-link" data-title="Rate Limiting">Rate Limiting</a>
+                  </li>
+              </ul>
           </li>
       </ul>
     </div>
@@ -1093,6 +1098,11 @@ when set.</p>
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
+<h2 id='rate-limiting'>Rate Limiting</h2>
+<p>You can perform up to 50 requests per 10 second period from the same IP address when accessing the
+API. If you exceed this limit, you&#39;ll get a
+<a href="https://tools.ietf.org/html/draft-nottingham-http-new-status-02#section-4">429 Too Many Requests</a>
+response for subsequent requests.</p>
 
       </div>
       <div class="dark-box">
