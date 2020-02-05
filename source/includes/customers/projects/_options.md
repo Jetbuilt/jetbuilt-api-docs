@@ -20,9 +20,7 @@
     "change_order": false,
     "room": null,
     "line_items": [
-      {
-        "id": 2329476
-      }
+      ...
     ]
   },
   {
