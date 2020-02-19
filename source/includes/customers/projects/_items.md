@@ -23,6 +23,7 @@
       "created_at": "2018-07-19T10:42:21.736-07:00",
       "updated_at": "2018-07-25T13:52:34.062-07:00",
       "notes": null,
+      "external_notes": null
       "room": {
         "id": 242060,
         "name": "Room 1"
