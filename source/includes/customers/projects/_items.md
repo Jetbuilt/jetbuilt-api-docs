@@ -14,6 +14,7 @@
       "manufacturer_name": "Sonos",
       "model": "SUB-GB",
       "part_number": null,
+      "owner_furnished": false,
       "price": "699.0",
       "cost": "433.38",
       "short_description": "Subwoofer Gloss BlackWireless subwoofer",
