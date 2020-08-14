@@ -126,15 +126,15 @@ page | A specific page of results.
     {
       "id": 242060,
       "name": "Room 1",
-      "scope": null,
       "quantity": 1,
+      "scope": null,
       "active": true
     },
     {
       "id": 246767,
       "name": "Room 2",
-      "scope": null,
       "quantity": 1,
+      "scope": null,
       "active": true
     }
   ],
@@ -168,6 +168,14 @@ page | A specific page of results.
         "cost": "70.0",
         "price": "165.0"
       }
+  ],
+  "bundles": [
+      {
+          "id": 52779,
+          "name": "TruAudio GG-8 TruAudio Bundle",
+          "description": "Bundle",
+          "quantity": "1.0"
+      }
   ]
 }
 ```
@@ -176,7 +184,7 @@ page | A specific page of results.
 
 This endpoint retrieves a project by ID.
 
-It contains additional project info like Rooms, Systems, Phases, and Labor.
+It contains additional project info like Rooms, Systems, Phases, Labor, and Bundles.
 
 ### HTTP Request
 
