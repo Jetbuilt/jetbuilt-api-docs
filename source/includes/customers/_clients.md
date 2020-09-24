@@ -25,6 +25,9 @@
     "state": null,
     "zipcode": "32312",
     "country": "US",
+    "external_ids": {
+      "acumatica_id": "5"
+    }
     "contacts": [
       {
         "id": 2222,
