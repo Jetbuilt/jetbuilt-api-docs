@@ -7,7 +7,8 @@
 > Make sure to replace `<%= api_key %>` with your API key.
 
 <aside class="notice">
-  The Customer API is still in beta. Contact us for an API key at <a href="mailto:help@jetbuilt.com">help@jetbuilt.com</a>
+  The Customer API is still in beta. Contact us for an API key and Sandbox access at
+  [help@jetbuilt.com](mailto:help@jetbuilt.com).
 </aside>
 
 The Jetbuilt API uses API keys to allow access.

@@ -5,9 +5,9 @@ HTTP Token authentication.
 
 ## Base URLs
 
-While developing your application, we'd recommend you utilize the **staging** environment at:
+While developing your application, we'd recommend you utilize the **sandbox** environment at:
 
-[https://staging.jetbuilt.com/api](https://staging.jetbuilt.com/api)
+[https://sandbox.jetbuilt.com/api](https://sandbox.jetbuilt.com/api)
 
 When you're ready, switch to **production** at:
 
