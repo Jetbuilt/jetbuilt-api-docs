@@ -86,3 +86,44 @@ This endpoint retrieves a client by ID.
 Parameter | Description
 --------- | -----------
 ID | The ID of the client to retrieve
+
+
+## Create a client
+<%
+  data =
+    {
+      "user_id": 123,
+      "company_name": "Awesome AV",
+      "street_address": "123 Harbor Blvd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zipcode": "92626",
+      "country": "US"
+    }
+%>
+<%= shell_example('/clients', command: 'POST', data: data) %>
+
+> Response: Similar to [Get all clients](#get-all-clients)
+
+> Status: 201 Created
+
+This endpoint creates a new client.
+
+### HTTP Request
+
+`POST <%= api_url('/clients') %>`
+
+### Data Parameters
+
+Parameter | Description
+--------- | -----------
+user_id | The user who is the owner of the client (required)
+company_name | The company name of the client (required)
+street_address | The street address
+city | The city
+state | The state
+zipcode | The ZIP code
+country | The country
+website | A website for the client
+phone | A phone number for the client
+description | A description for the client
