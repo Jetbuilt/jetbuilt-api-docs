@@ -23,3 +23,5 @@ following:
 <aside class="notice">
   Make sure to replace <code><%= api_key %></code> with your API key.
 </aside>
+
+You will need to enable API write acccess if you wish to create/modify data.
