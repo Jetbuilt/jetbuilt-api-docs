@@ -45,6 +45,7 @@
       "name": "Jetbuilt Testing"
     },
     "currency": "USD",
+    "exchange_rates": { "CAD": 1.243825 },
     "image_url": "projects/project-avatar-3.jpg",
     "active": false,
     "shared": false
@@ -121,6 +122,7 @@ page | A specific page of results.
     "name": "Jetbuilt Testing"
   },
   "currency": "USD",
+  "exchange_rates": { "CAD": 1.243825 },
   "image_url": "projects/project-avatar-3.jpg",
   "active": false,
   "shared": false,
