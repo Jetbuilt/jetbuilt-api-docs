@@ -25,6 +25,9 @@
       "updated_at": "2018-07-25T13:52:34.062-07:00",
       "notes": null,
       "external_notes": null,
+      "subcontract_labor_cost": "0.0",
+      "subcontract_labor_price": "0.0",
+      "kind": "physical",
       "quantity": "20.0",
       "quantity_per_room": "10.0",
       "quantity_per_bundle": null,
@@ -100,6 +103,13 @@ The quantity returned for Item A is: 4 x 2 x 3 = 24
 
 An item's `quantity_per_room` and `quantity_per_bundle` further break down how
 many of this item appears it's corresponding room and/or bundle.
+
+An item's `kind` is the type of item: `physical`, `hourly_labor`, or `subcontract_labor`.
+
+`physical` and `subcontract_labor` have separate `price`/`cost` fields.
+
+ - A `physical` items `price`/`cost` fields are `price`/`cost` respectively.
+ - A `subcontract_labor` items `price`/`cost` fields are `subcontract_labor_price`/`subcontract_labor_cost` respectively.
 
 
 ### HTTP Request
