@@ -1480,6 +1480,9 @@ following:</p>
       </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-25T13:52:34.062-07:00"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"external_notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subcontract_labor_cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subcontract_labor_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"physical"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.0"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"quantity_per_room"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"quantity_per_bundle"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -1564,6 +1567,15 @@ it is the total across each.</p>
 
 <p>An item&#39;s <code>quantity_per_room</code> and <code>quantity_per_bundle</code> further break down how
 many of this item appears it&#39;s corresponding room and/or bundle.</p>
+
+<p>An item&#39;s <code>kind</code> is the type of item: <code>physical</code>, <code>hourly_labor</code>, or <code>subcontract_labor</code>.</p>
+
+<p><code>physical</code> and <code>subcontract_labor</code> have separate <code>price</code>/<code>cost</code> fields.</p>
+
+<ul>
+<li>A <code>physical</code> items <code>price</code>/<code>cost</code> fields are <code>price</code>/<code>cost</code> respectively.</li>
+<li>A <code>subcontract_labor</code> items <code>price</code>/<code>cost</code> fields are <code>subcontract_labor_price</code>/<code>subcontract_labor_cost</code> respectively.</li>
+</ul>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items</code></p>
 
