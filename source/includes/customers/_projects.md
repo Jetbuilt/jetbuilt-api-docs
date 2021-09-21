@@ -215,7 +215,15 @@ ID | The ID of the project to retrieve
       "close_date": "2021-01-03",
       "client_id": 689,
       "custom_id": "P - 123",
-      "currency": "USD"
+      "currency": "USD",
+      "short_description": "Project description",
+      "city": "",
+      "state": "",
+      "street_address": "",
+      "zipcode": "",
+      "country": "",
+      "price_valid_until": "2021-10-13",
+      "tax": "0.05",
     }
 %>
 <%= shell_example('/projects', command: 'POST', data: data) %>
@@ -226,7 +234,7 @@ ID | The ID of the project to retrieve
 
 This endpoint creates a new project.
 
-Defaults to the 'Opportunity' stage.
+Defaults to the `opportunity` stage.
 
 ### HTTP Request
 
@@ -246,6 +254,14 @@ client_id | The project's client (required)
 primary_contact_id | The primary contact for the client
 custom_id | Your custom project ID
 currency | The currency (only if different from company and client defaults)
+short_description | The description of the project
+city | The city of the project
+state | The state of the project
+street_address | The street_address of the project
+zipcode | The zipcode of the project
+country | The country of the project
+price_valid_until | The date the price is valid until
+tax | The sales tax of the project
 
 
 ## Update a project
@@ -257,7 +273,16 @@ currency | The currency (only if different from company and client defaults)
       "budget": 100000,
       "probability": 0.8,
       "close_date_": "2021-03-01",
-      "stage": "estimate"
+      "custom_id": "P - 123",
+      "stage": "estimate",
+      "short_description": "Project description",
+      "city": "",
+      "state": "",
+      "street_address": "",
+      "zipcode": "",
+      "country": "",
+      "price_valid_until": "2021-10-13",
+      "tax": "0.05",
     }
 %>
 <%= shell_example('/projects/<ID>', command: 'PUT', data: data) %>
@@ -277,14 +302,22 @@ This endpoint updates a project by ID.
 Parameter | Description
 --------- | -----------
 ID | The ID of the project to update
-user_id | The user who is the project owner (required)
-name | The name of the project (required)
+user_id | The user who is the project owner
+name | The name of the project
 budget | The opening budget
 probability | The estimated probability (a decimal from 0 - 1. e.g. 0.7 = 70%)
 close_date | The close date. (e.g. 2021-02-14)
 primary_contact_id | The primary contact for the client
 custom_id | Your custom project ID
-stage | The project's stage. Must be either an active stage: <br \> **opportunity, estimate, revisions, proposal, contract, install** <br \> or an archived stage: **completed, icebox, lost, template, trash**
+stage | The project's stage. Must be either an active stage: <br \> **opportunity, estimate, revisions, proposal, contract, install, review** <br \> or an archived stage: **completed, icebox, lost, template, trash**
+short_description | The description of the project
+city | The city of the project
+state | The state of the project
+street_address | The street_address of the project
+zipcode | The zipcode of the project
+country | The country of the project
+price_valid_until | The date the price is valid until
+tax | The sales tax of the project
 
 
 ## Create a project revision
