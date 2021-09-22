@@ -1248,7 +1248,15 @@ following:</p>
         "close_date": "2021-01-03",
         "client_id": "689",
         "custom_id": "P - 123",
-        "currency": "USD"
+        "currency": "USD",
+        "short_description": "Project description",
+        "city": "",
+        "state": "",
+        "street_address": "",
+        "zipcode": "",
+        "country": "",
+        "price_valid_until": "2021-10-13",
+        "tax": "0.05"
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
@@ -1262,7 +1270,15 @@ following:</p>
   <span class="nt">-F</span> <span class="s2">"project[close_date]=2021-01-03"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"project[client_id]=689"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"project[custom_id]=P - 123"</span> <span class="se">\</span>
-  <span class="nt">-F</span> <span class="s2">"project[currency]=USD"</span>
+  <span class="nt">-F</span> <span class="s2">"project[currency]=USD"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"project[short_description]=Project description"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"project[city]="</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"project[state]="</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"project[street_address]="</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"project[zipcode]="</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"project[country]="</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"project[price_valid_until]=2021-10-13"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"project[tax]=0.05"</span>
 </code></pre></div>
 <blockquote>
 <p>Response: Similar to <a href="#get-a-project">Get a project</a></p>
@@ -1272,7 +1288,7 @@ following:</p>
 
 <p>This endpoint creates a new project.</p>
 
-<p>Defaults to the &#39;Opportunity&#39; stage.</p>
+<p>Defaults to the <code>opportunity</code> stage.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://app.jetbuilt.com/api/projects</code></p>
 <h3 id='data-parameters'>Data Parameters</h3>
@@ -1322,6 +1338,38 @@ following:</p>
 <td>currency</td>
 <td>The currency (only if different from company and client defaults)</td>
 </tr>
+<tr>
+<td>short_description</td>
+<td>The description of the project</td>
+</tr>
+<tr>
+<td>city</td>
+<td>The city of the project</td>
+</tr>
+<tr>
+<td>state</td>
+<td>The state of the project</td>
+</tr>
+<tr>
+<td>street_address</td>
+<td>The street_address of the project</td>
+</tr>
+<tr>
+<td>zipcode</td>
+<td>The zipcode of the project</td>
+</tr>
+<tr>
+<td>country</td>
+<td>The country of the project</td>
+</tr>
+<tr>
+<td>price_valid_until</td>
+<td>The date the price is valid until</td>
+</tr>
+<tr>
+<td>tax</td>
+<td>The sales tax of the project</td>
+</tr>
 </tbody></table>
 <h2 id='update-a-project'>Update a project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-X</span> PUT <span class="se">\</span>
@@ -1334,7 +1382,16 @@ following:</p>
         "budget": "100000",
         "probability": "0.8",
         "close_date_": "2021-03-01",
-        "stage": "estimate"
+        "custom_id": "P - 123",
+        "stage": "estimate",
+        "short_description": "Project description",
+        "city": "",
+        "state": "",
+        "street_address": "",
+        "zipcode": "",
+        "country": "",
+        "price_valid_until": "2021-10-13",
+        "tax": "0.05"
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-X</span> PUT <span class="se">\</span>
@@ -1345,7 +1402,16 @@ following:</p>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[budget]=100000"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[probability]=0.8"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[close_date_]=2021-03-01"</span> <span class="se">\</span>
-  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[stage]=estimate"</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[custom_id]=P - 123"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[stage]=estimate"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[short_description]=Project description"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[city]="</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[state]="</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[street_address]="</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[zipcode]="</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[country]="</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[price_valid_until]=2021-10-13"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[tax]=0.05"</span>
 </code></pre></div>
 <blockquote>
 <p>Response: Similar to <a href="#get-a-project">Get a project</a></p>
@@ -1369,11 +1435,11 @@ following:</p>
 </tr>
 <tr>
 <td>user_id</td>
-<td>The user who is the project owner (required)</td>
+<td>The user who is the project owner</td>
 </tr>
 <tr>
 <td>name</td>
-<td>The name of the project (required)</td>
+<td>The name of the project</td>
 </tr>
 <tr>
 <td>budget</td>
@@ -1397,7 +1463,39 @@ following:</p>
 </tr>
 <tr>
 <td>stage</td>
-<td>The project&#39;s stage. Must be either an active stage: <br \> <strong>opportunity, estimate, revisions, proposal, contract, install</strong> <br \> or an archived stage: <strong>completed, icebox, lost, template, trash</strong></td>
+<td>The project&#39;s stage. Must be either an active stage: <br \> <strong>opportunity, estimate, revisions, proposal, contract, install, review</strong> <br \> or an archived stage: <strong>completed, icebox, lost, template, trash</strong></td>
+</tr>
+<tr>
+<td>short_description</td>
+<td>The description of the project</td>
+</tr>
+<tr>
+<td>city</td>
+<td>The city of the project</td>
+</tr>
+<tr>
+<td>state</td>
+<td>The state of the project</td>
+</tr>
+<tr>
+<td>street_address</td>
+<td>The street_address of the project</td>
+</tr>
+<tr>
+<td>zipcode</td>
+<td>The zipcode of the project</td>
+</tr>
+<tr>
+<td>country</td>
+<td>The country of the project</td>
+</tr>
+<tr>
+<td>price_valid_until</td>
+<td>The date the price is valid until</td>
+</tr>
+<tr>
+<td>tax</td>
+<td>The sales tax of the project</td>
 </tr>
 </tbody></table>
 <h2 id='create-a-project-revision'>Create a project revision</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/revisions"</span> <span class="se">\</span>
