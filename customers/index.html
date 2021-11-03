@@ -823,43 +823,43 @@ following:</p>
 </thead><tbody>
 <tr>
 <td>user_id</td>
-<td>The user who is the owner of the client (required)</td>
+<td>The user who is the owner of the client <small>required integer</small></td>
 </tr>
 <tr>
 <td>company_name</td>
-<td>The company name of the client (required)</td>
+<td>The company name of the client <small>required string</small></td>
 </tr>
 <tr>
 <td>street_address</td>
-<td>The street address</td>
+<td>The street address <small>string</small></td>
 </tr>
 <tr>
 <td>city</td>
-<td>The city</td>
+<td>The city <small>string</small></td>
 </tr>
 <tr>
 <td>state</td>
-<td>The state</td>
+<td>The state <small>string</small></td>
 </tr>
 <tr>
 <td>zipcode</td>
-<td>The ZIP code</td>
+<td>The ZIP code <small>string</small></td>
 </tr>
 <tr>
 <td>country</td>
-<td>The country</td>
+<td>The country <small>string</small></td>
 </tr>
 <tr>
 <td>website</td>
-<td>A website for the client</td>
+<td>A website for the client <small>string</small></td>
 </tr>
 <tr>
 <td>phone</td>
-<td>A phone number for the client</td>
+<td>A phone number for the client <small>string</small></td>
 </tr>
 <tr>
 <td>description</td>
-<td>A description for the client</td>
+<td>A description for the client <small>string</small></td>
 </tr>
 </tbody></table>
 <h1 id='client-contacts'>Client Contacts</h1><h2 id='get-all-contacts-for-a-client'>Get all contacts for a client</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;CLIENT_ID&gt;/contacts"</span> <span class="se">\</span>
@@ -986,35 +986,35 @@ following:</p>
 </thead><tbody>
 <tr>
 <td>first_name</td>
-<td>The first name of the contact (required)</td>
+<td>The first name of the contact <small>required string</small></td>
 </tr>
 <tr>
 <td>last_name</td>
-<td>The last name of the contact (required)</td>
+<td>The last name of the contact <small>required string</small></td>
 </tr>
 <tr>
 <td>title</td>
-<td>The title of the contact</td>
+<td>The title of the contact <small>string</small></td>
 </tr>
 <tr>
 <td>email_address</td>
-<td>The email address of the contact</td>
+<td>The email address of the contact <small>string</small></td>
 </tr>
 <tr>
 <td>phone_number_1</td>
-<td>The first phone number for the contact</td>
+<td>The first phone number for the contact <small>string</small></td>
 </tr>
 <tr>
 <td>phone_number_2</td>
-<td>A second phone number for the contact</td>
+<td>A second phone number for the contact <small>string</small></td>
 </tr>
 <tr>
 <td>description</td>
-<td>A description for the contact</td>
+<td>A description for the contact <small>string</small></td>
 </tr>
 <tr>
 <td>primary</td>
-<td>If this is the primary contact for the client (true/false)</td>
+<td>If this is the primary contact for the client (true/false) <small>boolean</small></td>
 </tr>
 </tbody></table>
 <h1 id='projects'>Projects</h1><h2 id='get-all-projects'>Get all projects</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects"</span> <span class="se">\</span>
@@ -1300,75 +1300,79 @@ following:</p>
 </thead><tbody>
 <tr>
 <td>location_id</td>
-<td>The company location (required)</td>
+<td>The company location <small>required integer</small></td>
 </tr>
 <tr>
 <td>user_id</td>
-<td>The user who is the project owner (required)</td>
-</tr>
-<tr>
-<td>name</td>
-<td>The name of the project (required)</td>
-</tr>
-<tr>
-<td>budget</td>
-<td>The opening budget</td>
-</tr>
-<tr>
-<td>probability</td>
-<td>The estimated probability (a decimal from 0 - 1. e.g. 0.7 = 70%)</td>
-</tr>
-<tr>
-<td>close_date</td>
-<td>The close date. (e.g. 2021-02-14)</td>
+<td>The user who is the project owner <small>required integer</small></td>
 </tr>
 <tr>
 <td>client_id</td>
-<td>The project&#39;s client (required)</td>
+<td>The project&#39;s client <small>required integer</small></td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the project <small>required string</small></td>
+</tr>
+<tr>
+<td>budget</td>
+<td>The opening budget <small>decimal</small></td>
+</tr>
+<tr>
+<td>probability</td>
+<td>The estimated probability (a decimal from 0 - 1. e.g. 0.7 = 70%) <small>decimal</small></td>
+</tr>
+<tr>
+<td>close_date</td>
+<td>The close date. (e.g. 2021-02-14) <small>string</small></td>
 </tr>
 <tr>
 <td>primary_contact_id</td>
-<td>The primary contact for the client</td>
+<td>The primary contact for the client <small>integer</small></td>
 </tr>
 <tr>
 <td>custom_id</td>
-<td>Your custom project ID</td>
+<td>Your custom project ID <small>string</small></td>
 </tr>
 <tr>
 <td>currency</td>
-<td>The currency (only if different from company and client defaults)</td>
+<td>The currency (only if different from company and client defaults) <small>string</small></td>
 </tr>
 <tr>
 <td>short_description</td>
-<td>The description of the project</td>
+<td>The description of the project <small>string</small></td>
 </tr>
 <tr>
 <td>city</td>
-<td>The city of the project</td>
+<td>The city of the project <small>string</small></td>
 </tr>
 <tr>
 <td>state</td>
-<td>The state of the project</td>
+<td>The state of the project <small>string</small></td>
 </tr>
 <tr>
 <td>street_address</td>
-<td>The street_address of the project</td>
+<td>The street_address of the project <small>string</small></td>
 </tr>
 <tr>
 <td>zipcode</td>
-<td>The zipcode of the project</td>
+<td>The zipcode of the project <small>string</small></td>
 </tr>
 <tr>
 <td>country</td>
-<td>The country of the project</td>
+<td>The country of the project <small>string</small></td>
 </tr>
 <tr>
 <td>price_valid_until</td>
-<td>The date the price is valid until</td>
+<td>The date the price is valid until (e.g. 2021-02-14) <small>string</small></td>
 </tr>
 <tr>
 <td>tax</td>
-<td>The sales tax of the project</td>
+<td>The sales tax of the project <small>decimal</small></td>
+</tr>
+<tr>
+<td>contract_number</td>
+<td>The contract number of the project <small>string</small></td>
 </tr>
 </tbody></table>
 <h2 id='update-a-project'>Update a project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
@@ -1435,67 +1439,71 @@ following:</p>
 </tr>
 <tr>
 <td>user_id</td>
-<td>The user who is the project owner</td>
+<td>The user who is the project owner <small>integer</small></td>
 </tr>
 <tr>
 <td>name</td>
-<td>The name of the project</td>
+<td>The name of the project <small>string</small></td>
 </tr>
 <tr>
 <td>budget</td>
-<td>The opening budget</td>
+<td>The opening budget <small>decimal</small></td>
 </tr>
 <tr>
 <td>probability</td>
-<td>The estimated probability (a decimal from 0 - 1. e.g. 0.7 = 70%)</td>
+<td>The estimated probability (a decimal from 0 - 1. e.g. 0.7 = 70%) <small>decimal</small></td>
 </tr>
 <tr>
 <td>close_date</td>
-<td>The close date. (e.g. 2021-02-14)</td>
+<td>The close date. (e.g. 2021-02-14) <small>string</small></td>
 </tr>
 <tr>
 <td>primary_contact_id</td>
-<td>The primary contact for the client</td>
+<td>The primary contact for the client <small>integer</small></td>
 </tr>
 <tr>
 <td>custom_id</td>
-<td>Your custom project ID</td>
+<td>Your custom project ID <small>string</small></td>
 </tr>
 <tr>
 <td>stage</td>
-<td>The project&#39;s stage. Must be either an active stage: <br \> <strong>opportunity, estimate, revisions, proposal, contract, install, review</strong> <br \> or an archived stage: <strong>completed, icebox, lost, template, trash</strong></td>
+<td>The project&#39;s stage <small>enum</small><br \> Possible values: <br \> <strong>opportunity, estimate, revisions, proposal, contract, install, review, completed, icebox, lost, template, trash</strong></td>
 </tr>
 <tr>
 <td>short_description</td>
-<td>The description of the project</td>
+<td>The description of the project <small>string</small></td>
 </tr>
 <tr>
 <td>city</td>
-<td>The city of the project</td>
+<td>The city of the project <small>string</small></td>
 </tr>
 <tr>
 <td>state</td>
-<td>The state of the project</td>
+<td>The state of the project <small>string</small></td>
 </tr>
 <tr>
 <td>street_address</td>
-<td>The street_address of the project</td>
+<td>The street_address of the project <small>string</small></td>
 </tr>
 <tr>
 <td>zipcode</td>
-<td>The zipcode of the project</td>
+<td>The zipcode of the project <small>string</small></td>
 </tr>
 <tr>
 <td>country</td>
-<td>The country of the project</td>
+<td>The country of the project <small>string</small></td>
 </tr>
 <tr>
 <td>price_valid_until</td>
-<td>The date the price is valid until</td>
+<td>The date the price is valid until (e.g. 2021-02-14) <small>string</small></td>
 </tr>
 <tr>
 <td>tax</td>
-<td>The sales tax of the project</td>
+<td>The sales tax of the project <small>decimal</small></td>
+</tr>
+<tr>
+<td>contract_number</td>
+<td>The contract number of the project <small>string</small></td>
 </tr>
 </tbody></table>
 <h2 id='create-a-project-revision'>Create a project revision</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/revisions"</span> <span class="se">\</span>
@@ -1542,11 +1550,11 @@ following:</p>
 </tr>
 <tr>
 <td>name</td>
-<td>The version name</td>
+<td>The version name <small>string</small></td>
 </tr>
 <tr>
 <td>description</td>
-<td>The version description</td>
+<td>The version description <small>string</small></td>
 </tr>
 </tbody></table>
 <h1 id='project-items'>Project Items</h1><h2 id='get-all-items-in-your-project'>Get all items in your project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items"</span> <span class="se">\</span>
