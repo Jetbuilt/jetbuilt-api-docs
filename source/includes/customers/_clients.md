@@ -117,13 +117,13 @@ This endpoint creates a new client.
 
 Parameter | Description
 --------- | -----------
-user_id | The user who is the owner of the client (required)
-company_name | The company name of the client (required)
-street_address | The street address
-city | The city
-state | The state
-zipcode | The ZIP code
-country | The country
-website | A website for the client
-phone | A phone number for the client
-description | A description for the client
+user_id | The user who is the owner of the client <small>required integer</small>
+company_name | The company name of the client <small>required string</small>
+street_address | The street address <small>string</small>
+city | The city <small>string</small>
+state | The state <small>string</small>
+zipcode | The ZIP code <small>string</small>
+country | The country <small>string</small>
+website | A website for the client <small>string</small>
+phone | A phone number for the client <small>string</small>
+description | A description for the client <small>string</small>

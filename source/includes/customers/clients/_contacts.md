@@ -92,11 +92,11 @@ This endpoint creates a new contact for a client.
 
 Parameter | Description
 --------- | -----------
-first_name | The first name of the contact (required)
-last_name | The last name of the contact (required)
-title | The title of the contact
-email_address | The email address of the contact
-phone_number_1 | The first phone number for the contact
-phone_number_2 | A second phone number for the contact
-description | A description for the contact
-primary | If this is the primary contact for the client (true/false)
+first_name | The first name of the contact <small>required string</small>
+last_name | The last name of the contact <small>required string</small>
+title | The title of the contact <small>string</small>
+email_address | The email address of the contact <small>string</small>
+phone_number_1 | The first phone number for the contact <small>string</small>
+phone_number_2 | A second phone number for the contact <small>string</small>
+description | A description for the contact <small>string</small>
+primary | If this is the primary contact for the client (true/false) <small>boolean</small>

@@ -244,24 +244,24 @@ Defaults to the `opportunity` stage.
 
 Parameter | Description
 --------- | -----------
-location_id | The company location (required)
-user_id | The user who is the project owner (required)
-name | The name of the project (required)
-budget | The opening budget
-probability | The estimated probability (a decimal from 0 - 1. e.g. 0.7 = 70%)
-close_date | The close date. (e.g. 2021-02-14)
-client_id | The project's client (required)
-primary_contact_id | The primary contact for the client
-custom_id | Your custom project ID
-currency | The currency (only if different from company and client defaults)
-short_description | The description of the project
-city | The city of the project
-state | The state of the project
-street_address | The street_address of the project
-zipcode | The zipcode of the project
-country | The country of the project
-price_valid_until | The date the price is valid until
-tax | The sales tax of the project
+location_id | The company location <small>required integer</small>
+user_id | The user who is the project owner <small>required integer</small>
+client_id | The project's client <small>required integer</small>
+name | The name of the project <small>required string</small>
+budget | The opening budget <small>decimal</small>
+probability | The estimated probability (a decimal from 0 - 1. e.g. 0.7 = 70%) <small>decimal</small>
+close_date | The close date. (e.g. 2021-02-14) <small>string</small>
+primary_contact_id | The primary contact for the client <small>integer</small>
+custom_id | Your custom project ID <small>string</small>
+currency | The currency (only if different from company and client defaults) <small>string</small>
+short_description | The description of the project <small>string</small>
+city | The city of the project <small>string</small>
+state | The state of the project <small>string</small>
+street_address | The street_address of the project <small>string</small>
+zipcode | The zipcode of the project <small>string</small>
+country | The country of the project <small>string</small>
+price_valid_until | The date the price is valid until (e.g. 2021-02-14) <small>string</small>
+tax | The sales tax of the project <small>decimal</small>
 
 
 ## Update a project
@@ -302,22 +302,22 @@ This endpoint updates a project by ID.
 Parameter | Description
 --------- | -----------
 ID | The ID of the project to update
-user_id | The user who is the project owner
-name | The name of the project
-budget | The opening budget
-probability | The estimated probability (a decimal from 0 - 1. e.g. 0.7 = 70%)
-close_date | The close date. (e.g. 2021-02-14)
-primary_contact_id | The primary contact for the client
-custom_id | Your custom project ID
-stage | The project's stage. Must be either an active stage: <br \> **opportunity, estimate, revisions, proposal, contract, install, review** <br \> or an archived stage: **completed, icebox, lost, template, trash**
-short_description | The description of the project
-city | The city of the project
-state | The state of the project
-street_address | The street_address of the project
-zipcode | The zipcode of the project
-country | The country of the project
-price_valid_until | The date the price is valid until
-tax | The sales tax of the project
+user_id | The user who is the project owner <small>integer</small>
+name | The name of the project <small>string</small>
+budget | The opening budget <small>decimal</small>
+probability | The estimated probability (a decimal from 0 - 1. e.g. 0.7 = 70%) <small>decimal</small>
+close_date | The close date. (e.g. 2021-02-14) <small>string</small>
+primary_contact_id | The primary contact for the client <small>integer</small>
+custom_id | Your custom project ID <small>string</small>
+stage | The project's stage <small>enum</small><br \> Possible values: <br \> **opportunity, estimate, revisions, proposal, contract, install, review, completed, icebox, lost, template, trash**
+short_description | The description of the project <small>string</small>
+city | The city of the project <small>string</small>
+state | The state of the project <small>string</small>
+street_address | The street_address of the project <small>string</small>
+zipcode | The zipcode of the project <small>string</small>
+country | The country of the project <small>string</small>
+price_valid_until | The date the price is valid until (e.g. 2021-02-14) <small>string</small>
+tax | The sales tax of the project <small>decimal</small>
 
 
 ## Create a project revision
@@ -351,5 +351,5 @@ Creating a new project version may take a few moments.
 Parameter | Description
 --------- | -----------
 PROJECT_ID | The ID of the project
-name | The version name
-description | The version description
+name | The version name <small>string</small>
+description | The version description <small>string</small>
