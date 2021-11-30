@@ -4,10 +4,11 @@ def api_url(endpoint)
 end
 
 def curl_cmd(endpoint, options = {})
-  options.reverse_merge! command: 'GET'
-  curl = "curl"
-  curl += " --include" if options[:curl_include] == true
-  curl +=  " \"#{api_url(endpoint)}\" \\\n"
+  options = { command: 'GET' }.merge!(options)
+
+  curl = 'curl'
+  curl += ' --include' if options[:curl_include] == true
+  curl += " \"#{api_url(endpoint)}\" \\\n"
   curl += "  -X #{options[:command]} \\\n" unless options[:command] == 'GET'
   curl += "  -H \"#{auth_token}\" \\\n"
   curl += "  -H \"Accept: application/vnd.jetbuilt.v1\" \\\n"
@@ -25,15 +26,15 @@ def curl_request(endpoint, format, options = {})
 end
 
 def curl_form_request(endpoint, options = {})
-  options.reverse_merge! name: endpoint.split('/').last.chomp('s')
+  options = { name: endpoint.split('/').last.chomp('s') }.merge(options)
   curl = curl_cmd(endpoint, options)
   if options[:data]
     options[:data].each do |k, v|
-      if k == :image
-        curl += "  -F \"#{options[:name]}[#{k}]=@#{v}\" \\\n"
-      else
-        curl += "  -F \"#{options[:name]}[#{k}]=#{v}\" \\\n"
-      end
+      curl += if k == :image
+                "  -F \"#{options[:name]}[#{k}]=@#{v}\" \\\n"
+              else
+                "  -F \"#{options[:name]}[#{k}]=#{v}\" \\\n"
+              end
     end
   end
   curl
@@ -65,12 +66,12 @@ end
 
 def shell_example(endpoint, options = {})
   <<~EOF
-  ```shell--json
-  #{curl_request(endpoint, 'json', options)}
-  ```
+    ```shell--json
+    #{curl_request(endpoint, 'json', options)}
+    ```
 
-  ```shell--kv
-  #{curl_request(endpoint, 'form', options)}
-  ```
+    ```shell--kv
+    #{curl_request(endpoint, 'form', options)}
+    ```
   EOF
 end

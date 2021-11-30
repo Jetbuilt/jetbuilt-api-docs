@@ -4,6 +4,11 @@ title: API Documentation
 toc_footers:
 
 search: false
+code_clipboard: true
+
+meta:
+  - name: description
+    content: Documentation for the Jetbuilt API
 ---
 
 # Introduction
