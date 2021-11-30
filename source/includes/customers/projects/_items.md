@@ -15,8 +15,12 @@
       "model": "SUB-GB",
       "part_number": null,
       "owner_furnished": false,
+      "msrp": "699.0",
+      "mapp": "699.0",
       "price": "699.0",
       "cost": "433.38",
+      "currency_iso": "USD",
+      "custom?": false,
       "short_description": "Subwoofer Gloss BlackWireless subwoofer",
       "shipping_price": "0.0",
       "subtotal_equipment_price": "6990.0",
@@ -88,6 +92,8 @@ This endpoint retrieves the items in your project.
 
 Includes line items and factors.
 
+### Quantities
+
 An item's `quantity` is the *total* quantity of the item in the project.
 
 i.e. If an item exists in a bundle or room which themselves have multiple quantities,
@@ -104,6 +110,8 @@ The quantity returned for Item A is: 4 x 2 x 3 = 24
 An item's `quantity_per_room` and `quantity_per_bundle` further break down how
 many of this item appears it's corresponding room and/or bundle.
 
+### Item Kinds
+
 An item's `kind` is the type of item: `physical`, `hourly_labor`, or `subcontract_labor`.
 
 `physical` and `subcontract_labor` have separate `price`/`cost` fields.
@@ -111,6 +119,15 @@ An item's `kind` is the type of item: `physical`, `hourly_labor`, or `subcontrac
  - A `physical` items `price`/`cost` fields are `price`/`cost` respectively.
  - A `subcontract_labor` items `price`/`cost` fields are `subcontract_labor_price`/`subcontract_labor_cost` respectively.
 
+### Currencies
+
+The price of an item is always in the currency of the project.
+
+The `msrp`, `mapp`, and `cost` of the item are in the currency indicated by `currency_iso`
+
+In a future version of the API all money values will contain the currency directly:
+
+`"cost": { "cents": 20000, "currency_iso": "USD" }`
 
 ### HTTP Request
 
