@@ -284,7 +284,7 @@
     </style>
     <link href="../stylesheets/screen-012cc9b1.css" rel="stylesheet" media="screen" />
     <link href="../stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
-      <script src="../javascripts/all-a9fde460.js"></script>
+      <script src="../javascripts/all-b12a2749.js"></script>
 
   </head>
 
@@ -1576,8 +1576,12 @@ following:</p>
       </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUB-GB"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"part_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"owner_furnished"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"msrp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"699.0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"mapp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"699.0"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"699.0"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"433.38"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"custom?"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nl">"short_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subwoofer Gloss BlackWireless subwoofer"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"shipping_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"subtotal_equipment_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6990.0"</span><span class="p">,</span><span class="w">
@@ -1649,7 +1653,7 @@ following:</p>
 <p>This endpoint retrieves the items in your project.</p>
 
 <p>Includes line items and factors.</p>
-
+<h3 id='quantities'>Quantities</h3>
 <p>An item&#39;s <code>quantity</code> is the <em>total</em> quantity of the item in the project.</p>
 
 <p>i.e. If an item exists in a bundle or room which themselves have multiple quantities,
@@ -1673,7 +1677,7 @@ it is the total across each.</p>
 
 <p>An item&#39;s <code>quantity_per_room</code> and <code>quantity_per_bundle</code> further break down how
 many of this item appears it&#39;s corresponding room and/or bundle.</p>
-
+<h3 id='item-kinds'>Item Kinds</h3>
 <p>An item&#39;s <code>kind</code> is the type of item: <code>physical</code>, <code>hourly_labor</code>, or <code>subcontract_labor</code>.</p>
 
 <p><code>physical</code> and <code>subcontract_labor</code> have separate <code>price</code>/<code>cost</code> fields.</p>
@@ -1682,6 +1686,14 @@ many of this item appears it&#39;s corresponding room and/or bundle.</p>
 <li>A <code>physical</code> items <code>price</code>/<code>cost</code> fields are <code>price</code>/<code>cost</code> respectively.</li>
 <li>A <code>subcontract_labor</code> items <code>price</code>/<code>cost</code> fields are <code>subcontract_labor_price</code>/<code>subcontract_labor_cost</code> respectively.</li>
 </ul>
+<h3 id='currencies'>Currencies</h3>
+<p>The price of an item is always in the currency of the project.</p>
+
+<p>The <code>msrp</code>, <code>mapp</code>, and <code>cost</code> of the item are in the currency indicated by <code>currency_iso</code></p>
+
+<p>In a future version of the API all money values will contain the currency directly:</p>
+
+<p><code>&quot;cost&quot;: { &quot;cents&quot;: 20000, &quot;currency_iso&quot;: &quot;USD&quot; }</code></p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items</code></p>
 
