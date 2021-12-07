@@ -127,3 +127,43 @@ country | The country <small>string</small>
 website | A website for the client <small>string</small>
 phone | A phone number for the client <small>string</small>
 description | A description for the client <small>string</small>
+
+## Update a client
+<%
+  data =
+    {
+      "user_id": 123,
+      "company_name": "Awesome AV",
+      "street_address": "123 Harbor Blvd",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "zipcode": "92626",
+      "country": "US"
+    }
+%>
+<%= shell_example('/clients/<ID>', command: 'PUT', data: data) %>
+
+> Response: Similar to [Get all clients](#get-all-clients)
+
+> Status: 200 OK
+
+This endpoint updates a client by ID.
+
+### HTTP Request
+
+`PUT <%= api_url('/clients/<ID>') %>`
+
+### Data Parameters
+
+Parameter | Description
+--------- | -----------
+user_id | The user who is the owner of the client <small>integer</small>
+company_name | The company name of the client <small>string</small>
+street_address | The street address <small>string</small>
+city | The city <small>string</small>
+state | The state <small>string</small>
+zipcode | The ZIP code <small>string</small>
+country | The country <small>string</small>
+website | A website for the client <small>string</small>
+phone | A phone number for the client <small>string</small>
+description | A description for the client <small>string</small>
