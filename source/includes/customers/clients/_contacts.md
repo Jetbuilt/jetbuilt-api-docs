@@ -100,3 +100,40 @@ phone_number_1 | The first phone number for the contact <small>string</small>
 phone_number_2 | A second phone number for the contact <small>string</small>
 description | A description for the contact <small>string</small>
 primary | If this is the primary contact for the client (true/false) <small>boolean</small>
+
+## Update a client contact
+<%
+  data =
+    {
+      "first_name": "Bob",
+      "last_name": "Jones",
+      "title": "Owner",
+      "email_address": "bobjones2@example.com",
+      "phone_number_1": "(555) 123-1234",
+      "primary": true
+    }
+%>
+<%= shell_example('/clients/<CLIENT_ID>/contacts/<ID>', command: 'PUT', data: data) %>
+
+> Response: Similar to [Get all client contacts](#get-all-contacts-for-a-client)
+
+> Status: 200 OK
+
+This endpoint updates a contact for a client.
+
+### HTTP Request
+
+`PUT <%= api_url('/clients/<CLIENT_ID>/contacts/<ID>') %>`
+
+### Data Parameters
+
+Parameter | Description
+--------- | -----------
+first_name | The first name of the contact <small>string</small>
+last_name | The last name of the contact <small>string</small>
+title | The title of the contact <small>string</small>
+email_address | The email address of the contact <small>string</small>
+phone_number_1 | The first phone number for the contact <small>string</small>
+phone_number_2 | A second phone number for the contact <small>string</small>
+description | A description for the contact <small>string</small>
+primary | If this is the primary contact for the client (true/false) <small>boolean</small>
