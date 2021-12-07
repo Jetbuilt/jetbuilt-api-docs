@@ -358,6 +358,9 @@
                   <li>
                     <a href="#create-a-client" class="toc-h2 toc-link" data-title="Create a client">Create a client</a>
                   </li>
+                  <li>
+                    <a href="#update-a-client" class="toc-h2 toc-link" data-title="Update a client">Update a client</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -371,6 +374,9 @@
                   </li>
                   <li>
                     <a href="#create-a-client-contact" class="toc-h2 toc-link" data-title="Create a client contact">Create a client contact</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-client-contact" class="toc-h2 toc-link" data-title="Update a client contact">Update a client contact</a>
                   </li>
               </ul>
           </li>
@@ -862,6 +868,89 @@ following:</p>
 <td>A description for the client <small>string</small></td>
 </tr>
 </tbody></table>
+<h2 id='update-a-client'>Update a client</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "user_id": "123",
+        "company_name": "Awesome AV",
+        "street_address": "123 Harbor Blvd",
+        "city": "Costa Mesa",
+        "state": "CA",
+        "zipcode": "92626",
+        "country": "US"
+      }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[user_id]=123"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[company_name]=Awesome AV"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[street_address]=123 Harbor Blvd"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[city]=Costa Mesa"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[state]=CA"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[zipcode]=92626"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[country]=US"</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-clients">Get all clients</a></p>
+
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint updates a client by ID.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT https://app.jetbuilt.com/api/clients/&lt;ID&gt;</code></p>
+<h3 id='data-parameters-2'>Data Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>The user who is the owner of the client <small>integer</small></td>
+</tr>
+<tr>
+<td>company_name</td>
+<td>The company name of the client <small>string</small></td>
+</tr>
+<tr>
+<td>street_address</td>
+<td>The street address <small>string</small></td>
+</tr>
+<tr>
+<td>city</td>
+<td>The city <small>string</small></td>
+</tr>
+<tr>
+<td>state</td>
+<td>The state <small>string</small></td>
+</tr>
+<tr>
+<td>zipcode</td>
+<td>The ZIP code <small>string</small></td>
+</tr>
+<tr>
+<td>country</td>
+<td>The country <small>string</small></td>
+</tr>
+<tr>
+<td>website</td>
+<td>A website for the client <small>string</small></td>
+</tr>
+<tr>
+<td>phone</td>
+<td>A phone number for the client <small>string</small></td>
+</tr>
+<tr>
+<td>description</td>
+<td>A description for the client <small>string</small></td>
+</tr>
+</tbody></table>
 <h1 id='client-contacts'>Client Contacts</h1><h2 id='get-all-contacts-for-a-client'>Get all contacts for a client</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;CLIENT_ID&gt;/contacts"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
@@ -991,6 +1080,79 @@ following:</p>
 <tr>
 <td>last_name</td>
 <td>The last name of the contact <small>required string</small></td>
+</tr>
+<tr>
+<td>title</td>
+<td>The title of the contact <small>string</small></td>
+</tr>
+<tr>
+<td>email_address</td>
+<td>The email address of the contact <small>string</small></td>
+</tr>
+<tr>
+<td>phone_number_1</td>
+<td>The first phone number for the contact <small>string</small></td>
+</tr>
+<tr>
+<td>phone_number_2</td>
+<td>A second phone number for the contact <small>string</small></td>
+</tr>
+<tr>
+<td>description</td>
+<td>A description for the contact <small>string</small></td>
+</tr>
+<tr>
+<td>primary</td>
+<td>If this is the primary contact for the client (true/false) <small>boolean</small></td>
+</tr>
+</tbody></table>
+<h2 id='update-a-client-contact'>Update a client contact</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;CLIENT_ID&gt;/contacts/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "first_name": "Bob",
+        "last_name": "Jones",
+        "title": "Owner",
+        "email_address": "bobjones2@example.com",
+        "phone_number_1": "(555) 123-1234",
+        "primary": "true"
+      }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;CLIENT_ID&gt;/contacts/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[first_name]=Bob"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[last_name]=Jones"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[title]=Owner"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[email_address]=bobjones2@example.com"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[phone_number_1]=(555) 123-1234"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[primary]=true"</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-contacts-for-a-client">Get all client contacts</a></p>
+
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint updates a contact for a client.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT https://app.jetbuilt.com/api/clients/&lt;CLIENT_ID&gt;/contacts/&lt;ID&gt;</code></p>
+<h3 id='data-parameters-2'>Data Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>first_name</td>
+<td>The first name of the contact <small>string</small></td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>The last name of the contact <small>string</small></td>
 </tr>
 <tr>
 <td>title</td>
