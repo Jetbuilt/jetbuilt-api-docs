@@ -123,7 +123,7 @@ street_address | The street address <small>string</small>
 city | The city <small>string</small>
 state | The state <small>string</small>
 zipcode | The ZIP code <small>string</small>
-country | The country <small>string</small>
+country | The country (alpha-2 code) <small>string</small>
 website | A website for the client <small>string</small>
 phone | A phone number for the client <small>string</small>
 description | A description for the client <small>string</small>
@@ -163,7 +163,7 @@ street_address | The street address <small>string</small>
 city | The city <small>string</small>
 state | The state <small>string</small>
 zipcode | The ZIP code <small>string</small>
-country | The country <small>string</small>
+country | The country (alpha-2 code) <small>string</small>
 website | A website for the client <small>string</small>
 phone | A phone number for the client <small>string</small>
 description | A description for the client <small>string</small>
