@@ -259,7 +259,7 @@ city | The city of the project <small>string</small>
 state | The state of the project <small>string</small>
 street_address | The street_address of the project <small>string</small>
 zipcode | The zipcode of the project <small>string</small>
-country | The country of the project <small>string</small>
+country | The country of the project (alpha-2 code) <small>string</small>
 price_valid_until | The date the price is valid until (e.g. 2021-02-14) <small>string</small>
 tax | The sales tax of the project <small>decimal</small>
 contract_number | The contract number of the project <small>string</small>
@@ -316,7 +316,7 @@ city | The city of the project <small>string</small>
 state | The state of the project <small>string</small>
 street_address | The street_address of the project <small>string</small>
 zipcode | The zipcode of the project <small>string</small>
-country | The country of the project <small>string</small>
+country | The country of the project (alpha-2 code) <small>string</small>
 price_valid_until | The date the price is valid until (e.g. 2021-02-14) <small>string</small>
 tax | The sales tax of the project <small>decimal</small>
 contract_number | The contract number of the project <small>string</small>
