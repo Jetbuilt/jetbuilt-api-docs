@@ -14,17 +14,20 @@
       "manufacturer_name": "Sonos",
       "model": "SUB-GB",
       "part_number": null,
+      "msrp": "749.00",
+      "mapp": "0.0",
       "owner_furnished": false,
       "msrp": "699.0",
       "mapp": "699.0",
       "price": "699.0",
       "cost": "433.38",
       "currency_iso": "USD",
-      "custom?": false,
       "short_description": "Subwoofer Gloss BlackWireless subwoofer",
       "shipping_price": "0.0",
       "subtotal_equipment_price": "6990.0",
       "total_equipment_price": "13980.0",
+      "tax_equipment": true,
+      "tax_shipping": false,
       "created_at": "2018-07-19T10:42:21.736-07:00",
       "updated_at": "2018-07-25T13:52:34.062-07:00",
       "notes": null,
@@ -32,6 +35,9 @@
       "subcontract_labor_cost": "0.0",
       "subcontract_labor_price": "0.0",
       "kind": "physical",
+      "custom": false,
+      "product_id": 1251085,
+      "custom_product_id": null,
       "quantity": "20.0",
       "quantity_per_room": "10.0",
       "quantity_per_bundle": null,
@@ -91,6 +97,12 @@
 This endpoint retrieves the items in your project.
 
 Includes line items and factors.
+
+### Product IDs
+
+If the item is using one of your custom products (`custom: true`), then it will
+return a `custom_product_id`. Otherwise it will have a `product_id` from the
+Jetbuilt product database.
 
 ### Quantities
 
