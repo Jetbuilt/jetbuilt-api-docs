@@ -14,8 +14,6 @@
       "manufacturer_name": "Sonos",
       "model": "SUB-GB",
       "part_number": null,
-      "msrp": "749.00",
-      "mapp": "0.0",
       "owner_furnished": false,
       "msrp": "699.0",
       "mapp": "699.0",
