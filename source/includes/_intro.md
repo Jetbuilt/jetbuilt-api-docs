@@ -45,6 +45,14 @@ Set the version by specifying `application/vnd.jetbuilt.v1` in the `Accept` head
 
 Replace <code>v1</code> with the desired version number. e.g v1, v2, v3, etc...
 
+## Rate Limits
+
+Jetbuilt limits the number of API requests made within a period of time.
+
+When the limit is reached, further requests return status code `429` (Rate Limit Exceeded)
+
+The API limit is set at 50 requests within a 10 second window.
+
 ## Pagination
 
 > Sample fetching the 2nd page of clients:
