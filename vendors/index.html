@@ -325,6 +325,9 @@
                     <a href="#versioning" class="toc-h2 toc-link" data-title="Versioning">Versioning</a>
                   </li>
                   <li>
+                    <a href="#rate-limits" class="toc-h2 toc-link" data-title="Rate Limits">Rate Limits</a>
+                  </li>
+                  <li>
                     <a href="#pagination" class="toc-h2 toc-link" data-title="Pagination">Pagination</a>
                   </li>
                   <li>
@@ -440,6 +443,12 @@ there is only Version 1.)</p>
 <p>Set the version by specifying <code>application/vnd.jetbuilt.v1</code> in the <code>Accept</code> header.</p>
 
 <p>Replace <code>v1</code> with the desired version number. e.g v1, v2, v3, etc...</p>
+<h2 id='rate-limits'>Rate Limits</h2>
+<p>Jetbuilt limits the number of API requests made within a period of time.</p>
+
+<p>When the limit is reached, further requests return status code <code>429</code> (Rate Limit Exceeded)</p>
+
+<p>The API limit is set at 50 requests within a 10 second window.</p>
 <h2 id='pagination'>Pagination</h2>
 <blockquote>
 <p>Sample fetching the 2nd page of clients:</p>
