@@ -132,7 +132,7 @@ DEPENDENCIES
   middleman-autoprefixer (~> 3.0)
   middleman-sprockets (~> 4.1)
   middleman-syntax (~> 3.2)
-  nokogiri (~> 1.12.1)
+  nokogiri (~> 1.12.5)
   redcarpet (~> 3.5.0)
   rouge (~> 3.21)
   sass
@@ -142,4 +142,4 @@ RUBY VERSION
    ruby 2.7.2p137
 
 BUNDLED WITH
-   2.2.22
+   2.2.33
