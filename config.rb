@@ -27,6 +27,9 @@ ready do
   require './lib/multilang'
 end
 
+# Sprockets needs this, don't wait until syntax is ready
+require './lib/monokai_sublime_slate'
+
 activate :sprockets
 
 activate :autoprefixer do |config|
