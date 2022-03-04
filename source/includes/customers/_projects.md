@@ -22,6 +22,8 @@
     "budget": null,
     "stage": "lost",
     "labor_tax": "0.1",
+    "requires_engineering?": true,
+    "project_type": "project",
     "sales_tax": "0.1",
     "equipment_total": "22257.98",
     "labor_total": "33000.0",
@@ -36,6 +38,14 @@
     "owner": {
       "id": 2914,
       "full_name": "John Smith"
+    },
+    "project_manager": {
+      "id": 2914,
+      "full_name": "John Smith"
+    },
+    "engineer": {
+      "id": 2914,
+      "full_name": "Jill Smith"
     },
     "client": {
       "id": 63117
@@ -97,6 +107,8 @@ page | A specific page of results.
   "budget": null,
   "stage": "lost",
   "labor_tax": "0.1",
+  "requires_engineering?": true,
+  "project_type": "project",
   "sales_tax": "0.1",
   "total_margin": "42.0",
   "equipment_margin": "27.5",
@@ -113,6 +125,14 @@ page | A specific page of results.
   "owner": {
     "id": 2914,
     "full_name": "John Smith"
+  },
+  "project_manager": {
+    "id": 2914,
+    "full_name": "John Smith"
+  },
+  "engineer": {
+    "id": 2914,
+    "full_name": "Jill Smith"
   },
   "client": {
     "id": 63117
@@ -264,6 +284,13 @@ price_valid_until | The date the price is valid until (e.g. 2021-02-14) <small>s
 tax | The sales tax of the project <small>decimal</small>
 contract_number | The contract number of the project <small>string</small>
 
+### Additional Data Parameters for Enterprise Companies
+
+Parameter | Description
+--------- | -----------
+project_type | The project type <small>enum</small><br \>All possible values: **project, box_sale, design, service, rental** <br \><small>Possible values are dependent upon your company settings.</small>
+project_manager_id | The user who is the project manager <small>integer</small>
+engineer_id | The user who is the engineer <small>integer</small>
 
 ## Update a project
 <%
@@ -321,6 +348,13 @@ price_valid_until | The date the price is valid until (e.g. 2021-02-14) <small>s
 tax | The sales tax of the project <small>decimal</small>
 contract_number | The contract number of the project <small>string</small>
 
+### Additional Data Parameters for Enterprise Companies
+
+Parameter | Description
+--------- | -----------
+project_type | The project type <small>enum</small><br \>All possible values: **project, box_sale, design, service, rental** <br \><small>Possible values are dependent upon your company settings.</small>
+project_manager_id | The user who is the project manager <small>integer</small>
+engineer_id | The user who is the engineer <small>integer</small>
 
 ## Create a project revision
 <%
