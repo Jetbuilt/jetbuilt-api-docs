@@ -940,6 +940,8 @@ following:</p>
     </span><span class="nl">"budget"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="nl">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lost"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"labor_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"requires_engineering?"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"project_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"sales_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"equipment_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22257.98"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"labor_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33000.0"</span><span class="p">,</span><span class="w">
@@ -954,6 +956,14 @@ following:</p>
     </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2914</span><span class="p">,</span><span class="w">
       </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"project_manager"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2914</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"engineer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2914</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jill Smith"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"client"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">63117</span><span class="w">
@@ -1022,6 +1032,8 @@ following:</p>
   </span><span class="nl">"budget"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
   </span><span class="nl">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lost"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"labor_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requires_engineering?"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"project_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"sales_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"total_margin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42.0"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"equipment_margin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"27.5"</span><span class="p">,</span><span class="w">
@@ -1038,6 +1050,14 @@ following:</p>
   </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2914</span><span class="p">,</span><span class="w">
     </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"project_manager"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2914</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"engineer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2914</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jill Smith"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"client"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">63117</span><span class="w">
@@ -1272,6 +1292,26 @@ following:</p>
 <td>The contract number of the project <small>string</small></td>
 </tr>
 </tbody></table>
+<h3 id='additional-data-parameters-for-enterprise-companies'>Additional Data Parameters for Enterprise Companies</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project_type</td>
+<td>The project type <small>enum</small><br \>All possible values: <strong>project, box_sale, design, service, rental</strong> <br \><small>Possible values are dependent upon your company settings.</small></td>
+</tr>
+<tr>
+<td>project_manager_id</td>
+<td>The user who is the project manager <small>integer</small></td>
+</tr>
+<tr>
+<td>engineer_id</td>
+<td>The user who is the engineer <small>integer</small></td>
+</tr>
+</tbody></table>
 <h2 id='update-a-project'>Update a project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-X</span> PUT <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
@@ -1401,6 +1441,26 @@ following:</p>
 <tr>
 <td>contract_number</td>
 <td>The contract number of the project <small>string</small></td>
+</tr>
+</tbody></table>
+<h3 id='additional-data-parameters-for-enterprise-companies-2'>Additional Data Parameters for Enterprise Companies</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project_type</td>
+<td>The project type <small>enum</small><br \>All possible values: <strong>project, box_sale, design, service, rental</strong> <br \><small>Possible values are dependent upon your company settings.</small></td>
+</tr>
+<tr>
+<td>project_manager_id</td>
+<td>The user who is the project manager <small>integer</small></td>
+</tr>
+<tr>
+<td>engineer_id</td>
+<td>The user who is the engineer <small>integer</small></td>
 </tr>
 </tbody></table>
 <h2 id='create-a-project-revision'>Create a project revision</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/revisions"</span> <span class="se">\</span>
