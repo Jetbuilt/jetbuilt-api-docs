@@ -47,6 +47,10 @@
       "id": 2914,
       "full_name": "Jill Smith"
     },
+    "second_engineer": {
+      "id": 2914,
+      "full_name": "Jill Smith"
+    },
     "client": {
       "id": 63117
     },
@@ -131,6 +135,10 @@ page | A specific page of results.
     "full_name": "John Smith"
   },
   "engineer": {
+    "id": 2914,
+    "full_name": "Jill Smith"
+  },
+  "second_engineer": {
     "id": 2914,
     "full_name": "Jill Smith"
   },
@@ -291,6 +299,7 @@ Parameter | Description
 project_type | The project type <small>enum</small><br \>All possible values: **project, box_sale, design, service, rental** <br \><small>Possible values are dependent upon your company settings.</small>
 project_manager_id | The user who is the project manager <small>integer</small>
 engineer_id | The user who is the engineer <small>integer</small>
+second_engineer_id | The user who is the engineer <small>integer</small>
 
 ## Update a project
 <%
@@ -355,6 +364,7 @@ Parameter | Description
 project_type | The project type <small>enum</small><br \>All possible values: **project, box_sale, design, service, rental** <br \><small>Possible values are dependent upon your company settings.</small>
 project_manager_id | The user who is the project manager <small>integer</small>
 engineer_id | The user who is the engineer <small>integer</small>
+second_engineer_id | The user who is the engineer <small>integer</small>
 
 ## Create a project revision
 <%
