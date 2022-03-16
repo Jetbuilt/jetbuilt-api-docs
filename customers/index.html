@@ -965,6 +965,10 @@ following:</p>
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2914</span><span class="p">,</span><span class="w">
       </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jill Smith"</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"second_engineer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2914</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jill Smith"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"client"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">63117</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -1056,6 +1060,10 @@ following:</p>
     </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"engineer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2914</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jill Smith"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"second_engineer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2914</span><span class="p">,</span><span class="w">
     </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jill Smith"</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -1311,6 +1319,10 @@ following:</p>
 <td>engineer_id</td>
 <td>The user who is the engineer <small>integer</small></td>
 </tr>
+<tr>
+<td>second_engineer_id</td>
+<td>The user who is the engineer <small>integer</small></td>
+</tr>
 </tbody></table>
 <h2 id='update-a-project'>Update a project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-X</span> PUT <span class="se">\</span>
@@ -1460,6 +1472,10 @@ following:</p>
 </tr>
 <tr>
 <td>engineer_id</td>
+<td>The user who is the engineer <small>integer</small></td>
+</tr>
+<tr>
+<td>second_engineer_id</td>
 <td>The user who is the engineer <small>integer</small></td>
 </tr>
 </tbody></table>
