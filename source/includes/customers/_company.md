@@ -17,6 +17,7 @@
       "id": 1,
       "name": "Topish US",
       "time_zone": "Pacific Time (US & Canada)",
+      "product_database_id": 3,
       "created_at": "2017-05-16T15:20:38.477-07:00",
       "updated_at": "2020-07-20T15:14:49.269-07:00",
       "address": "123 Main St",
@@ -29,6 +30,7 @@
         "id": 2,
         "name": "Topish UK",
         "time_zone": "London",
+        "product_database_id": 4,
         "created_at": "2017-10-04T10:14:12.606-07:00",
         "updated_at": "2019-09-25T11:42:49.193-07:00",
         "address": "123 First Ave",
@@ -43,7 +45,10 @@
 
 > Status: 200 OK
 
-This endpoint retrieves your basic company info and locations.
+This endpoint retrieves your basic company info, office locations, along with
+the product database used for each location.
+
+By default a company shares a single product database across office locations.
 
 ### HTTP Request
 

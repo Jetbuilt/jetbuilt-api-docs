@@ -19,6 +19,8 @@ includes:
   - customers/purchasing/sources
   - customers/time_sessions
   - customers/users
+  - customers/vendors
+  - customers/vendors/products
   - errors
 
 toc_footers:
