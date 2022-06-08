@@ -210,6 +210,28 @@
               </ul>
           </li>
           <li>
+            <a href="#vendors" class="toc-h1 toc-link" data-title="Vendors">Vendors</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-vendors" class="toc-h2 toc-link" data-title="Get all vendors">Get all vendors</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-vendor" class="toc-h2 toc-link" data-title="Get a vendor">Get a vendor</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#vendor-products" class="toc-h1 toc-link" data-title="Vendor Products">Vendor Products</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-products-for-a-vendor" class="toc-h2 toc-link" data-title="Get all products for a vendor">Get all products for a vendor</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-product-for-a-vendor" class="toc-h2 toc-link" data-title="Get a product for a vendor">Get a product for a vendor</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
               <ul class="toc-list-h2">
                   <li>
@@ -379,6 +401,7 @@ following:</p>
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Topish US"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pacific Time (US &amp; Canada)"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"product_database_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-16T15:20:38.477-07:00"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-20T15:14:49.269-07:00"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Main St"</span><span class="p">,</span><span class="w">
@@ -391,6 +414,7 @@ following:</p>
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Topish UK"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product_database_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-04T10:14:12.606-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-25T11:42:49.193-07:00"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 First Ave"</span><span class="p">,</span><span class="w">
@@ -406,7 +430,10 @@ following:</p>
 <p>Status: 200 OK</p>
 </blockquote>
 
-<p>This endpoint retrieves your basic company info and locations.</p>
+<p>This endpoint retrieves your basic company info, office locations, along with
+the product database used for each location.</p>
+
+<p>By default a company shares a single product database across office locations.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://app.jetbuilt.com/api/company</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
@@ -2465,6 +2492,230 @@ when set.</p>
 <tr>
 <td>ID</td>
 <td>The ID of the user to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='vendors'>Vendors</h1><h2 id='get-all-vendors'>Get all vendors</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/vendors"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/vendors"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"low"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"preferred"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"purchasing_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AV R Us"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price_list_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jan 2022"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"discount_percentage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dealer_pricing_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"approved"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"distributor"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">456</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Distributor"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="nl">"distributor"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"distributed_manufacturers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all of your connected vendors.</p>
+
+<p>A list of manufacturers (Manufacturers that you have pricing connections with
+through the distributor) is present in the response when the vendor is a distributor.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/vendors</code></p>
+
+<p>The product database ID is prefixed since it&#39;s possible for products and pricing
+to vary across office locations. (Most companies share a single product
+database across all office locations.)</p>
+
+<p>This <code>DB_ID</code> can be retrieved from the <a href="#company">Company</a> endpoint.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DB_ID</td>
+<td>The ID of the the product database (see the <a href="#company">Company</a> endpoint)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>A specific page of results.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-vendor'>Get a vendor</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/vendors/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/vendors/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-vendors">Get all vendors</a></p>
+
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves a vendor by ID.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/vendors/&lt;ID&gt;</code></p>
+
+<p><strong>Note:</strong> The dealer pricing integration status must be <code>approved</code> in order to
+retrieve additional information for the vendor.</p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DB_ID</td>
+<td>The ID of the the product database (see the <a href="#company">Company</a> endpoint)</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>The ID of the vendor to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='vendor-products'>Vendor Products</h1><h2 id='get-all-products-for-a-vendor'>Get all products for a vendor</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/vendors/&lt;VENDOR_ID&gt;/products"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/vendors/&lt;VENDOR_ID&gt;/products"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">392342</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME-123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"part_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"short_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A great speaker"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"long_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A really great speaker"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msrp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"175.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mapp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"discontinued"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-30T14:58:46.398-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-04-27T16:01:44.767-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dealer_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120.0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sheet_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-17"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-17T08:02:43.485-07:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"purchasing_source"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">441</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dealer_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"favorite"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all products with your connected pricing for a vendor.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/vendors/&lt;VENDOR_ID&gt;/products</code></p>
+
+<p>The product database ID is prefixed since it&#39;s possible for products and pricing
+to vary across office locations. (Most companies share a single product
+database across all office locations.)</p>
+
+<p>This <code>DB_ID</code> can be retrieved from the <a href="#company">Company</a> endpoint.</p>
+
+<p><strong>Note:</strong> The dealer pricing integration status must be <code>approved</code> in order to
+retrieve product information for the vendor.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DB_ID</td>
+<td>The ID of the the product database (see the <a href="#company">Company</a> endpoint)</td>
+</tr>
+<tr>
+<td>VENDOR_ID</td>
+<td>The ID of the vendor (An approved Manufacturer or Distributor)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>A specific page of results.</td>
+</tr>
+<tr>
+<td>manufacturer_id</td>
+<td>Filter products by manufacturer</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-product-for-a-vendor'>Get a product for a vendor</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/vendors/&lt;VENDOR_ID&gt;/products/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/vendors/&lt;VENDOR_ID&gt;/products/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-products-for-a-vendor">Get all products for a vendor</a></p>
+
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves a product for a vendor by ID.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/vendors/&lt;VENDOR_ID&gt;/products/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DB_ID</td>
+<td>The ID of the the product database (see the <a href="#company">Company</a> endpoint)</td>
+</tr>
+<tr>
+<td>VENDOR_ID</td>
+<td>The ID of the vendor (An approved Manufacturer or Distributor)</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>The ID of the product to retrieve</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
