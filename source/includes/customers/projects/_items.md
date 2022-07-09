@@ -33,6 +33,8 @@
       "subcontract_labor_cost": "0.0",
       "subcontract_labor_price": "0.0",
       "kind": "physical",
+      "hidden": false,
+      "discount": "0.0",
       "custom": false,
       "product_id": 1251085,
       "custom_product_id": null,
