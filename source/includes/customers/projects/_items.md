@@ -34,6 +34,8 @@
       "subcontract_labor_price": "0.0",
       "kind": "physical",
       "hidden": false,
+      "purchasing_released": false,
+      "engineering_released": false,
       "discount": "0.0",
       "custom": false,
       "product_id": 1251085,
@@ -153,3 +155,52 @@ Parameter | Description
 --------- | -----------
 PROJECT_ID | The ID of the project
 page | A specific page of line item results. All factors are always returned.
+
+
+## Update a project item
+<%
+  data =
+    {
+      "room_id": 1234,
+      "system_id": 1234,
+      "tag_id": 1234,
+      "phase_id": 1234,
+      "short_description": "description",
+      "external_notes": "note",
+      "quantity_per_room": 86
+    }
+%>
+<%= shell_example('/projects/<PROJECT_ID>/items/<ID>', command: 'PUT', data: data) %>>
+
+> Response: Similar to [Get all project items](#get-all-items-in-your-project)
+
+> Status: 200 OK
+
+This endpoint updates an item for a project.
+
+An item cannot be updated when the project is locked.
+
+An items room, system, and tag id cannot be updated if the item belongs to a bundle.
+
+### HTTP Request
+
+`PUT <%= api_url('/projects/<PROJECT_ID>/items/<ID>') %>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+PROJECT_ID | The project ID of the item
+ID | The ID of the item to update
+
+### Data Parameters
+
+Parameter | Description
+--------- | -----------
+room_id | The room of the item <small>integer</small>
+system_id | The system of the item <small>integer</small>
+tag_id | The tag of the item <small>integer</small>
+phase_id | The phase of the item <small>integer</small>
+short_description | Description of the item <small>string</small>
+external_notes | Notes for the item <small>string</small>
+quantity_per_room | The quantity for the item <small>decimal</small>

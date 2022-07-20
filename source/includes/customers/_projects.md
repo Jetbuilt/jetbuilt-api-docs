@@ -62,7 +62,8 @@
     "exchange_rates": { "CAD": 1.243825 },
     "image_url": "projects/project-avatar-3.jpg",
     "active": false,
-    "shared": false
+    "shared": false,
+    "original_version_id": 97752
 }
 ,
   {
@@ -154,6 +155,7 @@ page | A specific page of results.
   "image_url": "projects/project-avatar-3.jpg",
   "active": false,
   "shared": false,
+  "original_version_id": 97752,
   "rooms": [
     {
       "id": 242060,
