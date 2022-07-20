@@ -11,10 +11,13 @@ includes:
   - customers/company
   - customers/clients
   - customers/clients/contacts
+  - customers/phases
   - customers/projects
   - customers/projects/items
   - customers/projects/options
   - customers/projects/rooms
+  - customers/projects/systems
+  - customers/projects/tags
   - customers/projects/purchasing
   - customers/purchasing/sources
   - customers/time_sessions
