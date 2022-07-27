@@ -110,6 +110,14 @@
               </ul>
           </li>
           <li>
+            <a href="#phases" class="toc-h1 toc-link" data-title="Phases">Phases</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-phases" class="toc-h2 toc-link" data-title="Get all phases">Get all phases</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#projects" class="toc-h1 toc-link" data-title="Projects">Projects</a>
               <ul class="toc-list-h2">
                   <li>
@@ -134,6 +142,9 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#get-all-items-in-your-project" class="toc-h2 toc-link" data-title="Get all items in your project">Get all items in your project</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-project-item" class="toc-h2 toc-link" data-title="Update a project item">Update a project item</a>
                   </li>
               </ul>
           </li>
@@ -165,6 +176,22 @@
                   </li>
                   <li>
                     <a href="#get-a-room-in-your-project" class="toc-h2 toc-link" data-title="Get a room in your project">Get a room in your project</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#project-systems" class="toc-h1 toc-link" data-title="Project Systems">Project Systems</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-systems-in-your-project" class="toc-h2 toc-link" data-title="Get all systems in your project">Get all systems in your project</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#project-tags" class="toc-h1 toc-link" data-title="Project Tags">Project Tags</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-tags-in-your-project" class="toc-h2 toc-link" data-title="Get all tags in your project">Get all tags in your project</a>
                   </li>
               </ul>
           </li>
@@ -941,6 +968,48 @@ the product database used for each location.</p>
 <td>If this is the primary contact for the client (true/false) <small>boolean</small></td>
 </tr>
 </tbody></table>
+<h1 id='phases'>Phases</h1><h2 id='get-all-phases'>Get all phases</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/phases"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/phases"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">717</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prewire"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-08T14:22:01.127-08:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-10T06:58:35.554-08:00"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all of your phases.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/phases</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>A specific page of results.</td>
+</tr>
+</tbody></table>
 <h1 id='projects'>Projects</h1><h2 id='get-all-projects'>Get all projects</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
@@ -1007,7 +1076,8 @@ the product database used for each location.</p>
     </span><span class="nl">"exchange_rates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"CAD"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.243825</span><span class="w"> </span><span class="p">},</span><span class="w">
     </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/project-avatar-3.jpg"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"shared"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="nl">"shared"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_version_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">97752</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span><span class="p">,</span><span class="w">
   </span><span class="p">{</span><span class="w">
@@ -1106,6 +1176,7 @@ the product database used for each location.</p>
   </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/project-avatar-3.jpg"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="nl">"shared"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"original_version_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">97752</span><span class="p">,</span><span class="w">
   </span><span class="nl">"rooms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">242060</span><span class="p">,</span><span class="w">
@@ -1595,6 +1666,8 @@ the product database used for each location.</p>
       </span><span class="nl">"subcontract_labor_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"physical"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"purchasing_released"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"engineering_released"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nl">"discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"custom"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1251085</span><span class="p">,</span><span class="w">
@@ -1722,6 +1795,97 @@ many of this item appears it&#39;s corresponding room and/or bundle.</p>
 <tr>
 <td>page</td>
 <td>A specific page of line item results. All factors are always returned.</td>
+</tr>
+</tbody></table>
+<h2 id='update-a-project-item'>Update a project item</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "room_id": "1234",
+        "system_id": "1234",
+        "tag_id": "1234",
+        "phase_id": "1234",
+        "short_description": "description",
+        "external_notes": "note",
+        "quantity_per_room": "86"
+      }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[room_id]=1234"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[system_id]=1234"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[tag_id]=1234"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[phase_id]=1234"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[short_description]=description"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[external_notes]=note"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[quantity_per_room]=86"</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-items-in-your-project">Get all project items</a></p>
+
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint updates an item for a project.</p>
+
+<p>An item cannot be updated when the project is locked.</p>
+
+<p>An items room, system, and tag id cannot be updated if the item belongs to a bundle.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>PUT https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PROJECT_ID</td>
+<td>The project ID of the item</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>The ID of the item to update</td>
+</tr>
+</tbody></table>
+<h3 id='data-parameters'>Data Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>room_id</td>
+<td>The room of the item <small>integer</small></td>
+</tr>
+<tr>
+<td>system_id</td>
+<td>The system of the item <small>integer</small></td>
+</tr>
+<tr>
+<td>tag_id</td>
+<td>The tag of the item <small>integer</small></td>
+</tr>
+<tr>
+<td>phase_id</td>
+<td>The phase of the item <small>integer</small></td>
+</tr>
+<tr>
+<td>short_description</td>
+<td>Description of the item <small>string</small></td>
+</tr>
+<tr>
+<td>external_notes</td>
+<td>Notes for the item <small>string</small></td>
+</tr>
+<tr>
+<td>quantity_per_room</td>
+<td>The quantity for the item <small>decimal</small></td>
 </tr>
 </tbody></table>
 <h1 id='project-options'>Project Options</h1><h2 id='get-all-options-change-orders-in-your-project'>Get all options/change orders in your project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/options"</span> <span class="se">\</span>
@@ -2134,6 +2298,98 @@ project, so displaying them for an individual room causes fractional amounts.</p
 <tr>
 <td>page</td>
 <td>A specific page of line item results</td>
+</tr>
+</tbody></table>
+<h1 id='project-systems'>Project Systems</h1><h2 id='get-all-systems-in-your-project'>Get all systems in your project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/systems"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/systems"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3234</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Audio system"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-01T11:03:05.572-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-06T15:35:41.664-08:00"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves the systems in your project.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/systems</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PROJECT_ID</td>
+<td>The ID of the project</td>
+</tr>
+<tr>
+<td>page</td>
+<td>A specific page of results</td>
+</tr>
+</tbody></table>
+<h1 id='project-tags'>Project Tags</h1><h2 id='get-all-tags-in-your-project'>Get all tags in your project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/tags"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/tags"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3234</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tag"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-01T11:03:05.572-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-06T15:35:41.664-08:00"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves the tags in your project.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/tags</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PROJECT_ID</td>
+<td>The ID of the project</td>
+</tr>
+<tr>
+<td>page</td>
+<td>A specific page of results</td>
 </tr>
 </tbody></table>
 <h1 id='project-purchasing'>Project Purchasing</h1><h2 id='get-purchasing-info-for-items-in-your-project'>Get purchasing info for items in your project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/purchasing"</span> <span class="se">\</span>
