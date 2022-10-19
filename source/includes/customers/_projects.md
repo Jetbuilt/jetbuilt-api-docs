@@ -9,12 +9,12 @@
 ```json
 [
   {
-    "id": 59123,
+    "id": 97739,
     "name": "test project",
     "short_description": null,
     "payment_schedule": "",
     "custom_id": "P - 182",
-    "version": "1.0",
+    "version": "1.3",
     "price_valid_until": "2018-08-15",
     "created_at": "2018-07-16T08:17:33.273-07:00",
     "updated_at": "2018-10-31T14:19:14.241-07:00",
@@ -63,7 +63,7 @@
     "image_url": "projects/project-avatar-3.jpg",
     "active": false,
     "shared": false,
-    "original_version_id": 97752
+    "original_version_id": 97737
 }
 ,
   {
@@ -99,12 +99,12 @@ page | A specific page of results.
 
 ```json
 {
-  "id": 59123,
+  "id": 97739,
   "name": "test project",
   "short_description": null,
   "payment_schedule": "",
   "custom_id": "P - 182",
-  "version": "1.0",
+  "version": "1.3",
   "price_valid_until": "2018-08-15",
   "created_at": "2018-07-16T08:17:33.273-07:00",
   "updated_at": "2018-10-31T14:19:14.241-07:00",
@@ -155,7 +155,7 @@ page | A specific page of results.
   "image_url": "projects/project-avatar-3.jpg",
   "active": false,
   "shared": false,
-  "original_version_id": 97752,
+  "original_version_id": 97737,
   "rooms": [
     {
       "id": 242060,
@@ -210,6 +210,20 @@ page | A specific page of results.
           "description": "Bundle",
           "quantity": "1.0"
       }
+  ],
+  "versions": [
+    {
+      "id": 97737,
+      "name": "1.0",
+      "description": null,
+      "locked": false
+    },
+    {
+      "id": 97738,
+      "name": "1.2",
+      "description": null,
+      "locked": false
+    }
   ]
 }
 ```
