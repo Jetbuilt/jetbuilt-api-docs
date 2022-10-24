@@ -54,6 +54,9 @@
     "client": {
       "id": 63117
     },
+    "primary_contact": {
+      "id": 2914
+    },
     "company_location": {
       "id": 3,
       "name": "Jetbuilt Testing"
