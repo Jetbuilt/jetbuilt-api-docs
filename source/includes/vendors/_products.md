@@ -176,6 +176,8 @@ ID | The ID of the product to update
 
 Same as [Create a product](#create-a-product).
 
+Note: `currency` cannot be changed after product creation.
+
 
 ## Discontinue a product
 
