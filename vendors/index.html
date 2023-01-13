@@ -507,6 +507,8 @@ rather than as JSON.</aside>
 </tbody></table>
 <h3 id='data-parameters-2'>Data Parameters</h3>
 <p>Same as <a href="#create-a-product">Create a product</a>.</p>
+
+<p>Note: <code>currency</code> cannot be changed after product creation.</p>
 <h2 id='discontinue-a-product'>Discontinue a product</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-X</span> DELETE <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
