@@ -11,6 +11,7 @@ includes:
   - vendors/products
   - vendors/pricing_tiers
   - vendors/prices
+  - vendors/distributor_details
   - errors
 
 toc_footers:
