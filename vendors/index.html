@@ -8,8 +8,8 @@
     <meta http-equiv='Content-Security-Policy'
           content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self';">
     <title>Jetbuilt Vendor API</title>
-    <link href="../stylesheets/screen-012cc9b1.css" rel="stylesheet" media="screen" /><link href="../stylesheets/rouge-eb1ca1e3.css" rel="stylesheet" media="screen" />
-    <link href="../stylesheets/print-953e3353.css" rel="stylesheet" media="print" /><link href="../stylesheets/rouge_print-d4e3898f.css" rel="stylesheet" media="print" />
+    <link href="../stylesheets/screen-9ef844c2.css" rel="stylesheet" media="screen" /><link href="../stylesheets/rouge-eb1ca1e3.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-966d6edc.css" rel="stylesheet" media="print" /><link href="../stylesheets/rouge_print-d4e3898f.css" rel="stylesheet" media="print" />
       <script src="../javascripts/all-b12a2749.js"></script>
 
   </head>
@@ -116,6 +116,14 @@
               </ul>
           </li>
           <li>
+            <a href="#distributor-product-details" class="toc-h1 toc-link" data-title="Distributor Product Details">Distributor Product Details</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#update-product-distributor-details" class="toc-h2 toc-link" data-title="Update product distributor details">Update product distributor details</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
               <ul class="toc-list-h2">
                   <li>
@@ -218,6 +226,7 @@ resources in the collection.</p>
 <li><a href="#search-all-products">Find the Product you distribute</a></li>
 <li><a href="#create-a-pricing-tier">Create a Pricing Tier</a></li>
 <li><a href="#create-update-a-product-price-for-a-pricing-tier">Add the Price for that Product/PricingTier</a></li>
+<li><a href="#distributor-product-details">Add details for the Product</a> (Optional)</li>
 </ol>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
@@ -770,7 +779,74 @@ Otherwise the existing price is updated.</p>
 <td>The ID of the product price to delete</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
+<h1 id='distributor-product-details'>Distributor Product Details</h1><h2 id='update-product-distributor-details'>Update product distributor details</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;PRODUCT_ID&gt;/details"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "part_number": "ACME-123-D",
+        "lead_time": "1"
+      }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;PRODUCT_ID&gt;/details"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"detail[part_number]=ACME-123-D"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"detail[lead_time]=1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"part_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME-123-D"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lead_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 201 Created / 200 OK</p>
+</blockquote>
+
+<p>This endpoint allows you to create or update distributor details for a particular product.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>PATCH https://app.jetbuilt.com/api/products/&lt;PRODUCT_ID&gt;/details</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PRODUCT_ID</td>
+<td>The ID of the product</td>
+</tr>
+</tbody></table>
+<h3 id='data-parameters'>Data Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>part_number</td>
+<td>An optional vendor-specific part number for this product. Will be included on POs</td>
+</tr>
+<tr>
+<td>lead_time</td>
+<td>An integer number of weeks of lead time needed to ship this product</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;PRODUCT_ID&gt;/details"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;PRODUCT_ID&gt;/details"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div><h1 id='errors'>Errors</h1>
 <p>The Jetbuilt API uses the following error codes:</p>
 
 <table><thead>
