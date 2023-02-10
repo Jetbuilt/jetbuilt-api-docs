@@ -36,7 +36,7 @@
 
 > Status: 200 OK
 
-This endpoint allows querying all products by model.
+This endpoint allows querying all products (active and discontinued) by model.
 
 ### HTTP Request
 
@@ -58,7 +58,7 @@ page | A specific page of results.
 
 > Status: 200 OK
 
-This endpoint retrieves all of your products.
+This endpoint retrieves all of your products (active and discontinued).
 
 ### HTTP Request
 
