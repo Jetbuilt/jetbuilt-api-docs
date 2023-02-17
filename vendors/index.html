@@ -279,7 +279,8 @@ following:</p>
     </span><span class="nl">"msrp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123.0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"mapp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45.0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://static.jetbuilt.com/productimages/images/abc.jpg"</span><span class="w">
+    </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://static.jetbuilt.com/productimages/images/abc.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lead_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="err">...</span><span class="w">
@@ -362,7 +363,8 @@ following:</p>
     </span><span class="nl">"msrp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123.0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"mapp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45.0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://static.jetbuilt.com/productimages/images/abc.jpg"</span><span class="w">
+    </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://static.jetbuilt.com/productimages/images/abc.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lead_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
@@ -400,7 +402,8 @@ following:</p>
         "part_number": "ABC123",
         "msrp": "10.0",
         "mapp": "15.99",
-        "currency": "EUR"
+        "currency": "EUR",
+        "lead_time": "0"
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
@@ -412,7 +415,8 @@ following:</p>
   <span class="nt">-F</span> <span class="s2">"product[msrp]=10.0"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"product[mapp]=15.99"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"product[currency]=EUR"</span> <span class="se">\</span>
-  <span class="nt">-F</span> <span class="s2">"product[image]=@/path/to/file/test.jpg"</span>
+  <span class="nt">-F</span> <span class="s2">"product[image]=@/path/to/file/test.jpg"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"product[lead_time]=0"</span>
 </code></pre></div>
 <blockquote>
 <p>Response: Similar to <a href="#get-a-product">Get a product</a></p>
@@ -470,6 +474,10 @@ following:</p>
 <td>image</td>
 <td>A product image</td>
 </tr>
+<tr>
+<td>lead_time</td>
+<td>lead time in weeks a customer should expect</td>
+</tr>
 </tbody></table>
 
 <aside class="notice">The <code>image</code> should be a file on your system.
@@ -483,7 +491,8 @@ rather than as JSON.</aside>
   <span class="nt">-d</span> <span class="s1">'{
         "model": "JBTEST-2",
         "short_description": "JB Test product 2",
-        "msrp": "12.99"
+        "msrp": "12.99",
+        "lead_time": "1"
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-X</span> PUT <span class="se">\</span>
@@ -491,7 +500,8 @@ rather than as JSON.</aside>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"product[model]=JBTEST-2"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"product[short_description]=JB Test product 2"</span> <span class="se">\</span>
-  <span class="nt">-F</span> <span class="s2">"product[msrp]=12.99"</span>
+  <span class="nt">-F</span> <span class="s2">"product[msrp]=12.99"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"product[lead_time]=1"</span>
 </code></pre></div>
 <blockquote>
 <p>Response: Similar to <a href="#get-a-product">Get a product</a></p>
