@@ -21,7 +21,8 @@
         "msrp": "123.0",
         "mapp": "45.0",
         "currency": "USD",
-        "image_url": "https://static.jetbuilt.com/productimages/images/abc.jpg"
+        "image_url": "https://static.jetbuilt.com/productimages/images/abc.jpg",
+        "lead_time": 0
       }
       EOF
 %>
@@ -110,7 +111,8 @@ ID | The ID of the product to retrieve
       "msrp": 10.0,
       "mapp": 15.99,
       "currency": "EUR",
-      "image": "/path/to/file/test.jpg"
+      "image": "/path/to/file/test.jpg",
+      "lead_time": 0
     }
 %>
 <%= shell_example('/products', command: 'POST', data: data) %>
@@ -139,6 +141,7 @@ msrp | Suggested retail price
 mapp | Minimum advertised price
 currency | A 3 letter ISO code (e.g. USD, EUR, JPY). Default is `USD`.
 image | A product image
+lead_time | lead time in weeks a customer should expect
 
 <aside class="notice">The <code>image</code> should be a file on your system.
 In the cURL example, give the file path as form data (<a href="?shell--kv#create-a-product">Key/Value</a>),
@@ -151,7 +154,8 @@ rather than as JSON.</aside>
     {
       "model": "JBTEST-2",
       "short_description": "JB Test product 2",
-      "msrp": 12.99
+      "msrp": 12.99,
+      "lead_time": 1
     }
 %>
 <%= shell_example('/products/<ID>', command: 'PUT', name: 'product', data: data) %>
