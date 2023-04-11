@@ -156,6 +156,57 @@ Parameter | Description
 PROJECT_ID | The ID of the project
 page | A specific page of line item results. All factors are always returned.
 
+## Create a Project Item
+<%
+  data =
+    {
+      "room_id": 1234,
+      "system_id": 1234,
+      "tag_id": 1234,
+      "phase_id": 1234,
+      "short_description": "description",
+      "external_notes": "note",
+      "quantity_per_room": 86
+    }
+%>
+<%= shell_example('/projects/<PROJECT_ID>/items/<ID>', command: 'POST', data: data) %>>
+
+> Response: Similar to [Get all project items](#get-all-items-in-your-project)
+
+> Status: 201 Created
+
+This endpoint creates an item for a project.
+
+An item cannot be created when the project is locked.
+
+### HTTP Request
+
+`POST <%= api_url('/projects/<PROJECT_ID>/items') %>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+PROJECT_ID | The project ID of the item
+
+### Data Parameters
+
+Parameter | Description | Default
+--------- | ----------- | -----------
+manufacturer_name <small>required</small> | The name of the manufacturer <small>string</small> |
+model <small>required</small> | The model of the item <small>string</small> |
+currency_code | The three letter ISO currency code, e.g. `USD`. <small>string</small> | The Project currency
+price | The item price <small>decimal</small> | 0.0
+short_description | Description of the item <small>string</small>
+room_name | Name of the room in which to place the the item <small>string</small> | The first Room in the Project
+system_name | Name of the system in which to place the the item <small>string</small> | The first System in the Project
+quantity_per_room | The quantity for the item <small>decimal</small> | 1
+shipping_price | The shipping price <small>decimal</small> | 0.0
+shipping_cost | The shipping cost <small>decimal</small> | 0.0
+notes | Internal notes <small>string</small>
+external_notes | Customer visible notes for the item <small>string</small>
+tax_equipment | Apply tax to the equipment price <small>boolean</small>
+tax_shipping | Apply tax to the shipping price <small>boolean</small>
 
 ## Update a project item
 <%
@@ -180,7 +231,7 @@ This endpoint updates an item for a project.
 
 An item cannot be updated when the project is locked.
 
-An items room, system, and tag id cannot be updated if the item belongs to a bundle.
+An item's room, system, and tag id cannot be updated if the item belongs to a bundle.
 
 ### HTTP Request
 
@@ -202,5 +253,5 @@ system_id | The system of the item <small>integer</small>
 tag_id | The tag of the item <small>integer</small>
 phase_id | The phase of the item <small>integer</small>
 short_description | Description of the item <small>string</small>
-external_notes | Notes for the item <small>string</small>
+external_notes | Customer visible notes for the item <small>string</small>
 quantity_per_room | The quantity for the item <small>decimal</small>
