@@ -144,6 +144,9 @@
                     <a href="#get-all-items-in-your-project" class="toc-h2 toc-link" data-title="Get all items in your project">Get all items in your project</a>
                   </li>
                   <li>
+                    <a href="#create-a-project-item" class="toc-h2 toc-link" data-title="Create a Project Item">Create a Project Item</a>
+                  </li>
+                  <li>
                     <a href="#update-a-project-item" class="toc-h2 toc-link" data-title="Update a project item">Update a project item</a>
                   </li>
               </ul>
@@ -1818,6 +1821,134 @@ many of this item appears it&#39;s corresponding room and/or bundle.</p>
 <td>A specific page of line item results. All factors are always returned.</td>
 </tr>
 </tbody></table>
+<h2 id='create-a-project-item'>Create a Project Item</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "room_id": "1234",
+        "system_id": "1234",
+        "tag_id": "1234",
+        "phase_id": "1234",
+        "short_description": "description",
+        "external_notes": "note",
+        "quantity_per_room": "86"
+      }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[room_id]=1234"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[system_id]=1234"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[tag_id]=1234"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[phase_id]=1234"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[short_description]=description"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[external_notes]=note"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[quantity_per_room]=86"</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-items-in-your-project">Get all project items</a></p>
+
+<p>Status: 201 Created</p>
+</blockquote>
+
+<p>This endpoint creates an item for a project.</p>
+
+<p>An item cannot be created when the project is locked.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PROJECT_ID</td>
+<td>The project ID of the item</td>
+</tr>
+</tbody></table>
+<h3 id='data-parameters'>Data Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>manufacturer_name <small>required</small></td>
+<td>The name of the manufacturer <small>string</small></td>
+<td></td>
+</tr>
+<tr>
+<td>model <small>required</small></td>
+<td>The model of the item <small>string</small></td>
+<td></td>
+</tr>
+<tr>
+<td>currency_code</td>
+<td>The three letter ISO currency code, e.g. <code>USD</code>. <small>string</small></td>
+<td>The Project currency</td>
+</tr>
+<tr>
+<td>price</td>
+<td>The item price <small>decimal</small></td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>short_description</td>
+<td>Description of the item <small>string</small></td>
+<td></td>
+</tr>
+<tr>
+<td>room_name</td>
+<td>Name of the room in which to place the the item <small>string</small></td>
+<td>The first Room in the Project</td>
+</tr>
+<tr>
+<td>system_name</td>
+<td>Name of the system in which to place the the item <small>string</small></td>
+<td>The first System in the Project</td>
+</tr>
+<tr>
+<td>quantity_per_room</td>
+<td>The quantity for the item <small>decimal</small></td>
+<td>1</td>
+</tr>
+<tr>
+<td>shipping_price</td>
+<td>The shipping price <small>decimal</small></td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>shipping_cost</td>
+<td>The shipping cost <small>decimal</small></td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>Internal notes <small>string</small></td>
+<td></td>
+</tr>
+<tr>
+<td>external_notes</td>
+<td>Customer visible notes for the item <small>string</small></td>
+<td></td>
+</tr>
+<tr>
+<td>tax_equipment</td>
+<td>Apply tax to the equipment price <small>boolean</small></td>
+<td></td>
+</tr>
+<tr>
+<td>tax_shipping</td>
+<td>Apply tax to the shipping price <small>boolean</small></td>
+<td></td>
+</tr>
+</tbody></table>
 <h2 id='update-a-project-item'>Update a project item</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-X</span> PUT <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
@@ -1854,10 +1985,10 @@ many of this item appears it&#39;s corresponding room and/or bundle.</p>
 
 <p>An item cannot be updated when the project is locked.</p>
 
-<p>An items room, system, and tag id cannot be updated if the item belongs to a bundle.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+<p>An item&#39;s room, system, and tag id cannot be updated if the item belongs to a bundle.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>PUT https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1873,7 +2004,7 @@ many of this item appears it&#39;s corresponding room and/or bundle.</p>
 <td>The ID of the item to update</td>
 </tr>
 </tbody></table>
-<h3 id='data-parameters'>Data Parameters</h3>
+<h3 id='data-parameters-2'>Data Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1902,7 +2033,7 @@ many of this item appears it&#39;s corresponding room and/or bundle.</p>
 </tr>
 <tr>
 <td>external_notes</td>
-<td>Notes for the item <small>string</small></td>
+<td>Customer visible notes for the item <small>string</small></td>
 </tr>
 <tr>
 <td>quantity_per_room</td>
