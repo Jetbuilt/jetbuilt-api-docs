@@ -22,6 +22,7 @@ includes:
   - customers/projects/tags
   - customers/projects/discussions
   - customers/projects/purchasing
+  - customers/projects/service_packages
   - customers/purchasing/sources
   - customers/purchase_orders
   - customers/tasks
