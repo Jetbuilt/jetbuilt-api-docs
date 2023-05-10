@@ -20,6 +20,7 @@ includes:
   - customers/projects/tags
   - customers/projects/purchasing
   - customers/purchasing/sources
+  - customers/purchase_orders
   - customers/time_sessions
   - customers/users
   - customers/vendors
