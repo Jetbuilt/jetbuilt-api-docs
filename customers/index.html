@@ -218,6 +218,17 @@
               </ul>
           </li>
           <li>
+            <a href="#purchase-orders" class="toc-h1 toc-link" data-title="Purchase Orders">Purchase Orders</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-purchase-orders" class="toc-h2 toc-link" data-title="Get all Purchase Orders">Get all Purchase Orders</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-purchase-order" class="toc-h2 toc-link" data-title="Get a purchase order">Get a purchase order</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#time-sessions" class="toc-h1 toc-link" data-title="Time Sessions">Time Sessions</a>
               <ul class="toc-list-h2">
                   <li>
@@ -2673,6 +2684,135 @@ when set.</p>
 <blockquote>
 <p>Response: Similar to <a href="#get-all-purchasing-sources">Get all purchasing sources</a></p>
 
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves a purchasing source by ID.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/purchasing/sources/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the purchasing source to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='purchase-orders'>Purchase Orders</h1><h2 id='get-all-purchase-orders'>Get all Purchase Orders</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/purchase_orders"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/purchase_orders"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">95636</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"purchasing_source_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1146</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"custom_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JB226"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ordered"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"shipping_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ground Shipping"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-23T12:54:59.719-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-11T18:35:27.894-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ship_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jetbuilt Testing"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ship_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120 Newport Center Drive"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Newport Beach"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92660"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all of your purchase orders.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/phases</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>A specific page of results.</td>
+</tr>
+<tr>
+<td>project_id</td>
+<td>an optional project id to filter by</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-purchase-order'>Get a purchase order</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/purchase_orders/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/purchase_orders/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">95636</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"purchasing_source_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1146</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"custom_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JB226"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ordered"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"shipping_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ground Shipping"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-23T12:54:59.719-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-11T18:35:27.894-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ship_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jetbuilt Testing"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ship_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120 Newport Center Drive"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Newport Beach"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92660"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mi">123</span><span class="p">,</span><span class="w">
+          </span><span class="mi">145</span><span class="p">,</span><span class="w">
+          </span><span class="mi">167</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME 123"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"short_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"super audio enhancer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"order_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not_ordered"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"order_notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total_order_cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"project_quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"order_quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Audio Supplier"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
 <p>Status: 200 OK</p>
 </blockquote>
 
