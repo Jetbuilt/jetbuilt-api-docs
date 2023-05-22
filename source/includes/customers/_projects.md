@@ -21,6 +21,10 @@
     "updated_at": "2018-10-31T14:19:14.241-07:00",
     "close_date": "2018-09-04",
     "budget": null,
+    "paid_to_date": {
+      "cents": 500,
+      "currency_iso": "USD"
+    },
     "stage": "lost",
     "labor_tax": "0.1",
     "requires_engineering?": true,
@@ -115,6 +119,10 @@ page | A specific page of results.
   "updated_at": "2018-10-31T14:19:14.241-07:00",
   "close_date": "2018-09-04",
   "budget": null,
+  "paid_to_date": {
+    "cents": 500,
+    "currency_iso": "USD"
+  },
   "stage": "lost",
   "labor_tax": "0.1",
   "requires_engineering?": true,
@@ -263,6 +271,7 @@ ID | The ID of the project to retrieve
       "user_id": 12,
       "name": "Big Project",
       "budget": 150000,
+      "paid_to_date": 5.00,
       "probability": 0.5,
       "close_date": "2021-01-03",
       "client_id": 689,
@@ -301,6 +310,7 @@ user_id | The user who is the project owner <small>required integer</small>
 client_id | The project's client <small>required integer</small>
 name | The name of the project <small>required string</small>
 budget | The opening budget <small>decimal</small>
+paid_to_date | The amount paid to date <small>decimal</small>
 probability | The estimated probability (a decimal from 0 - 1. e.g. 0.7 = 70%) <small>decimal</small>
 close_date | The close date. (e.g. 2021-02-14) <small>string</small>
 primary_contact_id | The primary contact for the client <small>integer</small>
@@ -332,6 +342,7 @@ second_engineer_id | The user who is the engineer <small>integer</small>
       "user_id": 5,
       "name": "Big Project",
       "budget": 100000,
+      "paid_to_date": 5.00,
       "probability": 0.8,
       "close_date_": "2021-03-01",
       "custom_id": "P - 123",
@@ -366,6 +377,7 @@ ID | The ID of the project to update
 user_id | The user who is the project owner <small>integer</small>
 name | The name of the project <small>string</small>
 budget | The opening budget <small>decimal</small>
+paid_to_date | The amount paid to date <small>decimal</small>
 probability | The estimated probability (a decimal from 0 - 1. e.g. 0.7 = 70%) <small>decimal</small>
 close_date | The close date. (e.g. 2021-02-14) <small>string</small>
 primary_contact_id | The primary contact for the client <small>integer</small>
