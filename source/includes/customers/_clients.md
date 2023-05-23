@@ -11,6 +11,7 @@
   {
     "id": 12345,
     "company_name": "Smith's AV World",
+    "delinquent": false,
     "payment_schedule": null,
     "created_at": "2017-03-08T08:22:16.929-08:00",
     "updated_at": "2017-04-10T14:20:55.195-07:00",
@@ -134,6 +135,7 @@ description | A description for the client <small>string</small>
     {
       "user_id": 123,
       "company_name": "Awesome AV",
+      "delinquent": false,
       "street_address": "123 Harbor Blvd",
       "city": "Costa Mesa",
       "state": "CA",
@@ -159,6 +161,7 @@ Parameter | Description
 --------- | -----------
 user_id | The user who is the owner of the client <small>integer</small>
 company_name | The company name of the client <small>string</small>
+delinquent | Indicates wether the account is delinquent <small>boolean</small>
 street_address | The street address <small>string</small>
 city | The city <small>string</small>
 state | The state <small>string</small>
