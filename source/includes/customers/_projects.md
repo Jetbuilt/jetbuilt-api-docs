@@ -28,6 +28,8 @@
     "stage": "lost",
     "labor_tax": "0.1",
     "requires_engineering?": true,
+    "avso": true,
+    "avso_region": "Atlantic",
     "project_type": "project",
     "sales_tax": "0.1",
     "equipment_total": "22257.98",
@@ -126,6 +128,8 @@ page | A specific page of results.
   "stage": "lost",
   "labor_tax": "0.1",
   "requires_engineering?": true,
+  "avso": true,
+  "avso_region": "Atlantic",
   "project_type": "project",
   "sales_tax": "0.1",
   "total_margin": "42.0",
@@ -334,6 +338,8 @@ project_type | The project type <small>enum</small><br \>All possible values: **
 project_manager_id | The user who is the project manager <small>integer</small>
 engineer_id | The user who is the engineer <small>integer</small>
 second_engineer_id | The user who is the engineer <small>integer</small>
+avso | Indicates if the project is an AVSO project <small>boolean</small>
+avso_region | The Projects AVSO Region <small>string</small> <br />All possible values: **Atlantic, National Capital, Ontario, Pacific, Québec, Western** <small>Sending an invalid value will unset the field</small>
 
 ## Update a project
 <%
@@ -401,6 +407,8 @@ project_type | The project type <small>enum</small><br \>All possible values: **
 project_manager_id | The user who is the project manager <small>integer</small>
 engineer_id | The user who is the engineer <small>integer</small>
 second_engineer_id | The user who is the engineer <small>integer</small>
+avso | Indicates if the project is an AVSO project <small>boolean</small>
+avso_region | The Projects AVSO Region <small>string</small> <br />All possible values: **Atlantic, National Capital, Ontario, Pacific, Québec, Western** <small>Sending an invalid value will unset the field</small>
 
 ## Create a project revision
 <%
