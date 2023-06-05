@@ -36,6 +36,13 @@
       "hidden": false,
       "purchasing_released": false,
       "engineering_released": false,
+      "avso_ranking": "10",
+      "avso_discount": "0.0",
+      "avso_msrp": {
+        "cents": 59900,
+        "currency_iso": "CAD"
+      },
+      "avso_item_name": "Subwoofer",
       "discount": "0.0",
       "custom": false,
       "product_id": 1251085,
