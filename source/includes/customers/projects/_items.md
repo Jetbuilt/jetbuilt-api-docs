@@ -262,3 +262,4 @@ phase_id | The phase of the item <small>integer</small>
 short_description | Description of the item <small>string</small>
 external_notes | Customer visible notes for the item <small>string</small>
 quantity_per_room | The quantity for the item <small>decimal</small>
+cost | The item cost <small>decimal</small>
