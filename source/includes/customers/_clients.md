@@ -28,7 +28,8 @@
     "country": "US",
     "external_ids": {
       "acumatica_id": "5"
-    }
+    },
+    "parent_id": 2345,
     "contacts": [
       {
         "id": 2222,
@@ -45,7 +46,32 @@
       {
         ...
       }
-    ]
+    ],
+    "subclients": [
+      {
+        "id": 4444,
+        "company_name": "Smith's AV Regional Branch"
+        "delinquent": false,
+        "payment_schedule": null,
+        "created_at": "2017-03-08T08:22:16.929-08:00",
+        "updated_at": "2017-04-10T14:20:55.195-07:00",
+        "primary_contact_first_name": "Jane",
+        "primary_contact_last_name": "Smith",
+        "primary_contact_title": "",
+        "primary_contact_email": "janesmith@example.com",
+        "primary_contact_phone_number_1": "555-123-4567",
+        "primary_contact_phone_number_2": "",
+        "address": "123 1st St",
+        "city": "Tallahassee",
+        "state": null,
+        "zipcode": "32312",
+        "country": "US",
+        "external_ids": null,
+      },
+      {
+        ...
+      }
+    ],
   },
   {
     ...
@@ -99,7 +125,8 @@ ID | The ID of the client to retrieve
       "city": "Costa Mesa",
       "state": "CA",
       "zipcode": "92626",
-      "country": "US"
+      "country": "US",
+      "parent_id": 456
     }
 %>
 <%= shell_example('/clients', command: 'POST', data: data) %>
@@ -128,6 +155,7 @@ country | The country (alpha-2 code) <small>string</small>
 website | A website for the client <small>string</small>
 phone | A phone number for the client <small>string</small>
 description | A description for the client <small>string</small>
+parent_id | The parent of the client <small>string</small>
 
 ## Update a client
 <%
@@ -140,7 +168,8 @@ description | A description for the client <small>string</small>
       "city": "Costa Mesa",
       "state": "CA",
       "zipcode": "92626",
-      "country": "US"
+      "country": "US",
+      "parent_id": 456
     }
 %>
 <%= shell_example('/clients/<ID>', command: 'PUT', data: data) %>
@@ -161,7 +190,7 @@ Parameter | Description
 --------- | -----------
 user_id | The user who is the owner of the client <small>integer</small>
 company_name | The company name of the client <small>string</small>
-delinquent | Indicates wether the account is delinquent <small>boolean</small>
+delinquent | Indicates whether the account is delinquent <small>boolean</small>
 street_address | The street address <small>string</small>
 city | The city <small>string</small>
 state | The state <small>string</small>
@@ -170,3 +199,4 @@ country | The country (alpha-2 code) <small>string</small>
 website | A website for the client <small>string</small>
 phone | A phone number for the client <small>string</small>
 description | A description for the client <small>string</small>
+parent_id | The parent of the client <small>string</small>
