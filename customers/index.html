@@ -518,7 +518,8 @@ the product database used for each location.</p>
     </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"external_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"acumatica_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2345</span><span class="p">,</span><span class="w">
     </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2222</span><span class="p">,</span><span class="w">
@@ -535,7 +536,32 @@ the product database used for each location.</p>
       </span><span class="p">{</span><span class="w">
         </span><span class="err">...</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"subclients"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4444</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith's AV Regional Branch"</span><span class="w">
+        </span><span class="nl">"delinquent"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_schedule"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-08T08:22:16.929-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-10T14:20:55.195-07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"primary_contact_first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"primary_contact_last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"primary_contact_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"primary_contact_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"janesmith@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"primary_contact_phone_number_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"555-123-4567"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"primary_contact_phone_number_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 1st St"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tallahassee"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32312"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"external_ids"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="err">...</span><span class="w">
@@ -602,7 +628,8 @@ the product database used for each location.</p>
         "city": "Costa Mesa",
         "state": "CA",
         "zipcode": "92626",
-        "country": "US"
+        "country": "US",
+        "parent_id": "456"
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
@@ -614,7 +641,8 @@ the product database used for each location.</p>
   <span class="nt">-F</span> <span class="s2">"client[city]=Costa Mesa"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"client[state]=CA"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"client[zipcode]=92626"</span> <span class="se">\</span>
-  <span class="nt">-F</span> <span class="s2">"client[country]=US"</span>
+  <span class="nt">-F</span> <span class="s2">"client[country]=US"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"client[parent_id]=456"</span>
 </code></pre></div>
 <blockquote>
 <p>Response: Similar to <a href="#get-all-clients">Get all clients</a></p>
@@ -672,6 +700,10 @@ the product database used for each location.</p>
 <td>description</td>
 <td>A description for the client <small>string</small></td>
 </tr>
+<tr>
+<td>parent_id</td>
+<td>The parent of the client <small>string</small></td>
+</tr>
 </tbody></table>
 <h2 id='update-a-client'>Update a client</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-X</span> PUT <span class="se">\</span>
@@ -686,7 +718,8 @@ the product database used for each location.</p>
         "city": "Costa Mesa",
         "state": "CA",
         "zipcode": "92626",
-        "country": "US"
+        "country": "US",
+        "parent_id": "456"
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-X</span> PUT <span class="se">\</span>
@@ -699,7 +732,8 @@ the product database used for each location.</p>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[city]=Costa Mesa"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[state]=CA"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[zipcode]=92626"</span> <span class="se">\</span>
-  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[country]=US"</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[country]=US"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[parent_id]=456"</span>
 </code></pre></div>
 <blockquote>
 <p>Response: Similar to <a href="#get-all-clients">Get all clients</a></p>
@@ -727,7 +761,7 @@ the product database used for each location.</p>
 </tr>
 <tr>
 <td>delinquent</td>
-<td>Indicates wether the account is delinquent <small>boolean</small></td>
+<td>Indicates whether the account is delinquent <small>boolean</small></td>
 </tr>
 <tr>
 <td>street_address</td>
@@ -760,6 +794,10 @@ the product database used for each location.</p>
 <tr>
 <td>description</td>
 <td>A description for the client <small>string</small></td>
+</tr>
+<tr>
+<td>parent_id</td>
+<td>The parent of the client <small>string</small></td>
 </tr>
 </tbody></table>
 <h1 id='client-contacts'>Client Contacts</h1><h2 id='get-all-contacts-for-a-client'>Get all contacts for a client</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;CLIENT_ID&gt;/contacts"</span> <span class="se">\</span>
