@@ -12,6 +12,7 @@ includes:
   - customers/clients
   - customers/clients/contacts
   - customers/phases
+  - customers/products
   - customers/projects
   - customers/projects/items
   - customers/projects/options
