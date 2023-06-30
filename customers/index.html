@@ -118,6 +118,23 @@
               </ul>
           </li>
           <li>
+            <a href="#products" class="toc-h1 toc-link" data-title="Products">Products</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-products" class="toc-h2 toc-link" data-title="Get all products">Get all products</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-product" class="toc-h2 toc-link" data-title="Get a product">Get a product</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-product" class="toc-h2 toc-link" data-title="Create a product">Create a product</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-product" class="toc-h2 toc-link" data-title="Update a product">Update a product</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#projects" class="toc-h1 toc-link" data-title="Projects">Projects</a>
               <ul class="toc-list-h2">
                   <li>
@@ -1070,6 +1087,424 @@ the product database used for each location.</p>
 <td>A specific page of results.</td>
 </tr>
 </tbody></table>
+<h1 id='products'>Products</h1><h2 id='get-all-products'>Get all products</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">351</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xyz"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4590</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594.15"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"690.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"short_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xyz example product"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msrp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"699.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mapp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://static.jetbuilt.com/productimages/images/xyz.jpg"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"phase_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"shipping_cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"shipping_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"55.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"discontinued"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"warranty_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"warranty_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mo"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rack_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rack_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RU"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"power_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"power_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"poe_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"poe_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"heat_load_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"heat_load_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTU"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"weight_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"weight_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kg"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"height_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"height_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"width_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.5"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"width_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"depth_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"depth_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">458</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"custom"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"direct_pricing"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tax_equipment"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tax_labor"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tax_shipping"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"favorite"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all products that are in your company database</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products</code></p>
+
+<p>The product database ID is prefixed since it&#39;s possible for products and pricing
+to vary across office locations. (Most companies share a single product
+database across all office locations.)</p>
+
+<p>This <code>DB_ID</code> can be retrieved from the <a href="#company">Company</a> endpoint.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DB_ID</td>
+<td>The ID of the the product database (see the <a href="#company">Company</a> endpoint)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>A specific page of results.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-product'>Get a product</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">351</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xyz"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4590</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"594.15"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"690.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"short_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xyz example product"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msrp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"699.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mapp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://static.jetbuilt.com/productimages/images/xyz.jpg"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"phase_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"shipping_cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"shipping_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"55.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"discontinued"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"warranty_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"warranty_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mo"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rack_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rack_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RU"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"power_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"power_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"poe_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"poe_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"heat_load_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"heat_load_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTU"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"weight_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"weight_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kg"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"height_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"height_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"width_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.5"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"width_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"depth_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"depth_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">458</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACME"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"custom"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"direct_pricing"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tax_equipment"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tax_labor"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tax_shipping"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"favorite"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves a product from your company database.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DB_ID</td>
+<td>The ID of the the product database (see the <a href="#company">Company</a> endpoint)</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>The ID of the product to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-product'>Create a product</h2>
+<blockquote>
+<p>If setting a product image, use cURL&#39;s (<a href="?shell--kv#create-a-product">Key/Value</a>) format</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "short_description": "JB Test product 1",
+        "cost": "10.0",
+        "price": "15.99"
+      }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"product[short_description]=JB Test product 1"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"product[cost]=10.0"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"product[price]=15.99"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"product[image]=@/path/to/file/test.jpg"</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-a-product">Get a product</a></p>
+
+<p>Status: 201 Created</p>
+</blockquote>
+
+<p>This endpoint creates a new product in your company database.</p>
+
+<p><strong>Note:</strong> When creating a product in your company database, we will use the provided parameters (required parameters) to find the manufacturer&#39;s product in our database in order to connect you to any approved direct pricing and other data we have for the product. If we cannot find a product, it will be a custom product.</p>
+
+<p>The <code>product_id</code> (products with approved direct pricing) can be found using the <a href="customers#vendor-products">vendor products endpoint</a></p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DB_ID</td>
+<td>The ID of the the product database (see the <a href="#company">Company</a> endpoint)</td>
+</tr>
+</tbody></table>
+<h3 id='data-parameters'>Data Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>manufacturer_name</td>
+<td>The name of the manufacturer (required<sup><a href='#required'>1</a></sup>) <small>string</small></td>
+</tr>
+<tr>
+<td>model</td>
+<td>The model name (required<sup><a href='#required'>1</a></sup>) <small>string</small></td>
+</tr>
+<tr>
+<td>currency_code</td>
+<td>A 3 letter ISO code (e.g. USD, EUR, JPY) Defaults to USD <small>string</small></td>
+</tr>
+<tr>
+<td>product_id</td>
+<td>The id of a manufacturer&#39;s product (required<sup><a href='#required'>1</a></sup>) <small>integer</small></td>
+</tr>
+<tr>
+<td>cost</td>
+<td>The cost of the product<sup><a href='#cost'>2</a></sup> <small>decimal</small></td>
+</tr>
+<tr>
+<td>price</td>
+<td>The price of the product <small>decimal</small></td>
+</tr>
+<tr>
+<td>short_description</td>
+<td>A short product description <small>string</small></td>
+</tr>
+<tr>
+<td>image</td>
+<td>A product image</td>
+</tr>
+<tr>
+<td>phase_id</td>
+<td>The phase id <small>integer</small></td>
+</tr>
+<tr>
+<td>shipping_cost</td>
+<td>The shipping_cost of the product <small>decimal</small></td>
+</tr>
+<tr>
+<td>shipping_price</td>
+<td>The shipping_price of the product <small>decimal</small></td>
+</tr>
+<tr>
+<td>notes</td>
+<td>A products notes <small>string</small></td>
+</tr>
+<tr>
+<td>favorite</td>
+<td>Whether or not the product is favorited <small>boolean</small></td>
+</tr>
+<tr>
+<td>tax_equipment</td>
+<td>Whether or not the products equipment is taxed <small>boolean</small></td>
+</tr>
+<tr>
+<td>tax_labor</td>
+<td>Whether or not the products labor is taxed <small>boolean</small></td>
+</tr>
+<tr>
+<td>tax_shipping</td>
+<td>Whether or not the products shipping is taxed <small>boolean</small></td>
+</tr>
+<tr>
+<td>warranty_value</td>
+<td>The warranty value in days months or years<small>decimal</small></td>
+</tr>
+<tr>
+<td>warranty_unit</td>
+<td>The warranty unit <small>enum</small> <br \>Possible values: <strong>d, mo, yr</strong></td>
+</tr>
+<tr>
+<td>rack_value</td>
+<td>The rack value <small>decimal</small></td>
+</tr>
+<tr>
+<td>rack_unit</td>
+<td>The rack unit <small>enum</small> <br \>Possible values: <strong>RU</strong></td>
+</tr>
+<tr>
+<td>power_value</td>
+<td>The power value <small>decimal</small></td>
+</tr>
+<tr>
+<td>power_unit</td>
+<td>The power unit <small>enum</small> <br \>Possible values: <strong>W</strong></td>
+</tr>
+<tr>
+<td>poe_value</td>
+<td>The poe value <small>decimal</small></td>
+</tr>
+<tr>
+<td>poe_unit</td>
+<td>The poe unit <small>enum</small> <br \>Possible values: <strong>W</strong></td>
+</tr>
+<tr>
+<td>heat_load_value</td>
+<td>The heat_load value <small>decimal</small></td>
+</tr>
+<tr>
+<td>heat_load_unit</td>
+<td>The heat_load unit <small>enum</small> <br \>Possible values: <strong>BTU</strong></td>
+</tr>
+<tr>
+<td>weight_value</td>
+<td>The weight value <small>decimal</small></td>
+</tr>
+<tr>
+<td>weight_unit</td>
+<td>The weight unit <small>enum</small> <br \>Possible values: <strong>lb, oz, kg, g</strong></td>
+</tr>
+<tr>
+<td>height_value</td>
+<td>The height value <small>decimal</small></td>
+</tr>
+<tr>
+<td>height_unit</td>
+<td>The height unit <small>enum</small> <br \>Possible values: <strong>in, ft, cm, mm</strong></td>
+</tr>
+<tr>
+<td>width_value</td>
+<td>The width value <small>decimal</small></td>
+</tr>
+<tr>
+<td>width_unit</td>
+<td>The width unit <small>enum</small> <br \>Possible values: <strong>in, ft, cm, mm</strong></td>
+</tr>
+<tr>
+<td>depth_value</td>
+<td>The depth value <small>decimal</small></td>
+</tr>
+<tr>
+<td>depth_unit</td>
+<td>The depth unit <small>enum</small> <br \>Possible values: <strong>in, ft, cm, mm</strong></td>
+</tr>
+</tbody></table>
+
+<aside id='required'><sup>1</sup>The required parameters are the <code>manufacturer_name</code>, and <code>model</code> or the <code>product_id</code>. When the <code>product_id</code> is provided then the <code>manufacturer</code>, and <code>model</code> are ignored and are not required.</aside>
+
+<aside id='cost'><sup>2</sup>The cost field will be ignored when this product is connected to a product with direct manufacturer pricing. This is to ensure dealer pricing accuracy. The <code>direct_pricing</code> field will be set to true when the product has direct pricing.</aside>
+
+<aside class="notice">The <code>image</code> should be a file on your system.
+In the cURL example, give the file path as form data (<a href="?shell--kv#create-a-product">Key/Value</a>),
+rather than as JSON.</aside>
+<h2 id='update-a-product'>Update a product</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "short_description": "JB Test product 2",
+        "price": "12.99"
+      }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"product[short_description]=JB Test product 2"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"product[price]=12.99"</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-a-product">Get a product</a></p>
+
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint updates one of your products.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DB_ID</td>
+<td>The ID of the the product database (see the <a href="#company">Company</a> endpoint)</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>The ID of the product to update</td>
+</tr>
+</tbody></table>
+<h3 id='data-parameters-2'>Data Parameters</h3>
+<p>Same as <a href="#create-a-product">Create a product</a>.</p>
+
+<p>Note: <code>product_id</code>, <code>manufacturer</code>, <code>model</code>, and <code>currency</code> cannot be changed after product creation.</p>
 <h1 id='projects'>Projects</h1><h2 id='get-all-projects'>Get all projects</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
