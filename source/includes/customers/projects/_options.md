@@ -11,6 +11,7 @@
   {
     "id": 27409,
     "name": "option1",
+    "sold": true,
     "scope": "",
     "total": "550.0",
     "upgrade_total": "870.70",
@@ -60,6 +61,7 @@ page | A specific page of results.
 {
   "id": 27409,
   "name": "option 1",
+  "sold": true,
   "created_at": "2020-06-12T12:27:16.184-07:00",
   "updated_at": "2020-06-12T12:27:31.535-07:00",
   "total": "550.0",
