@@ -55,6 +55,11 @@ This `DB_ID` can be retrieved from the [Company](#company) endpoint.
 **Note:** The dealer pricing integration status must be `approved` in order to
 retrieve product information for the vendor.
 
+**Note for vendors that are both a manufacturer and a distributor:**<br />
+Manufactured products will be returned by default.<br />
+Specifying `distributed_products=true` will return their distributed products.<br />
+Filtering by a `manufacturer_id` will also return their distributed products.
+
 ### URL Parameters
 
 Parameter | Description
@@ -62,7 +67,8 @@ Parameter | Description
 DB_ID | The ID of the the product database (see the [Company](#company) endpoint)
 VENDOR_ID | The ID of the vendor (An approved Manufacturer or Distributor)
 page | A specific page of results.
-manufacturer_id | Filter products by manufacturer
+manufacturer_id | Filter distributed products by manufacturer
+distributed_products | Whether or not to return the distributed_products. Defaults to `false`. <small>boolean (true/false)</small>
 
 ## Get a product for a vendor
 
