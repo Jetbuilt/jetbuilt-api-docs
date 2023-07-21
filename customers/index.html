@@ -3742,6 +3742,11 @@ database across all office locations.)</p>
 
 <p><strong>Note:</strong> The dealer pricing integration status must be <code>approved</code> in order to
 retrieve product information for the vendor.</p>
+
+<p><strong>Note for vendors that are both a manufacturer and a distributor:</strong><br />
+Manufactured products will be returned by default.<br />
+Specifying <code>distributed_products=true</code> will return their distributed products.<br />
+Filtering by a <code>manufacturer_id</code> will also return their distributed products.</p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -3763,7 +3768,11 @@ retrieve product information for the vendor.</p>
 </tr>
 <tr>
 <td>manufacturer_id</td>
-<td>Filter products by manufacturer</td>
+<td>Filter distributed products by manufacturer</td>
+</tr>
+<tr>
+<td>distributed_products</td>
+<td>Whether or not to return the distributed_products. Defaults to <code>false</code>. <small>boolean (true/false)</small></td>
 </tr>
 </tbody></table>
 <h2 id='get-a-product-for-a-vendor'>Get a product for a vendor</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/vendors/&lt;VENDOR_ID&gt;/products/&lt;ID&gt;"</span> <span class="se">\</span>
