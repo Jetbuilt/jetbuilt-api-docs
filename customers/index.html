@@ -1158,6 +1158,8 @@ the product database used for each location.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products</code></p>
 
+<p><code>GET https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products?manufactuer_name=Shure</code></p>
+
 <p>The product database ID is prefixed since it&#39;s possible for products and pricing
 to vary across office locations. (Most companies share a single product
 database across all office locations.)</p>
@@ -1175,10 +1177,32 @@ database across all office locations.)</p>
 <td>The ID of the the product database (see the <a href="#company">Company</a> endpoint)</td>
 </tr>
 <tr>
+<td>manufacturer_name</td>
+<td>Filter results by manufacturer name <small>must be an exact match</small></td>
+</tr>
+<tr>
+<td>model</td>
+<td>Filter results by model name <small> must be an exact match</small></td>
+</tr>
+<tr>
+<td>currency_code</td>
+<td>Filter results by currency code. <em>e.g CAD</em>. <small>defaults to USD</small></td>
+</tr>
+<tr>
+<td>query</td>
+<td>Filter results by matching across manufacturer and model names <small>does not need to match exactly</small> <br/> <em>e.g. Shure SM57</em></td>
+</tr>
+<tr>
 <td>page</td>
 <td>A specific page of results.</td>
 </tr>
 </tbody></table>
+
+<p>If filtering with the <code>query</code> param, then it takes precedence, and the other filtering params are ignored. Can be used when unsure about the exact manufacturer or model name.</p>
+
+<p>The <code>manufactuer_name</code>, <code>model</code>, and <code>currency_code</code> filters can be used together, for more refined filtering, or used separately.</p>
+
+<p>When all 3 are used together, it should return a single result if found (or none if not found). Only a single product should exist in the company&#39;s database for a specific manufacturer, model, and currency combination. <em>e.g. Shure, SM57-LC, USD</em></p>
 <h2 id='get-a-product'>Get a product</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
