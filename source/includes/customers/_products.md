@@ -75,6 +75,8 @@ This endpoint retrieves all products that are in your company database
 
 `GET <%= api_url('/product_databases/<DB_ID>/products') %>`
 
+`GET <%= api_url('/product_databases/<DB_ID>/products?manufactuer_name=Shure') %>`
+
 The product database ID is prefixed since it's possible for products and pricing
 to vary across office locations. (Most companies share a single product
 database across all office locations.)
@@ -86,7 +88,18 @@ This `DB_ID` can be retrieved from the [Company](#company) endpoint.
 Parameter | Description
 --------- | -----------
 DB_ID | The ID of the the product database (see the [Company](#company) endpoint)
+manufacturer_name | Filter results by manufacturer name <small>must be an exact match</small>
+model | Filter results by model name <small> must be an exact match</small>
+currency_code | Filter results by currency code. _e.g CAD_. <small>defaults to USD</small>
+query | Filter results by matching across manufacturer and model names <small>does not need to match exactly</small> <br/> _e.g. Shure SM57_
 page | A specific page of results.
+
+If filtering with the `query` param, then it takes precedence, and the other filtering params are ignored. Can be used when unsure about the exact manufacturer or model name.
+
+The `manufactuer_name`, `model`, and `currency_code` filters can be used together, for more refined filtering, or used separately.
+
+When all 3 are used together, it should return a single result if found (or none if not found). Only a single product should exist in the company's database for a specific manufacturer, model, and currency combination. _e.g. Shure, SM57-LC, USD_
+
 
 ## Get a product
 
