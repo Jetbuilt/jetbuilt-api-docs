@@ -1612,7 +1612,27 @@ rather than as JSON.</aside>
 <td>page</td>
 <td>A specific page of results.</td>
 </tr>
+<tr>
+<td>min_created_at</td>
+<td>Query projects created after the specified date time.</td>
+</tr>
+<tr>
+<td>max_created_at</td>
+<td>Query projects created before the specified date time.</td>
+</tr>
+<tr>
+<td>min_updated_at</td>
+<td>Query projects updated after the specified date time.</td>
+</tr>
+<tr>
+<td>max_updated_at</td>
+<td>Query projects updated before the specified date time.</td>
+</tr>
 </tbody></table>
+
+<p><strong>Note</strong>: You can pass a date or a date time to the timestamp queries. For example:
+<code>2023-7-28</code> or <code>2023-7-28 15:33:33 -700</code> or <code>2023-7-28T15:33:33-700</code>. The time defaults to
+<code>00:00:00</code> when not included, and the timezone defaults to UTC.</p>
 <h2 id='get-a-project'>Get a project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
