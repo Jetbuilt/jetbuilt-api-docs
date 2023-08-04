@@ -19,6 +19,7 @@ includes:
   - customers/projects/rooms
   - customers/projects/systems
   - customers/projects/tags
+  - customers/projects/discussions
   - customers/projects/purchasing
   - customers/purchasing/sources
   - customers/purchase_orders
