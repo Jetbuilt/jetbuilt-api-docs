@@ -23,6 +23,9 @@ includes:
   - customers/purchasing/sources
   - customers/purchase_orders
   - customers/time_sessions
+  - customers/stock/items
+  - customers/stock/locations
+  - customers/stock/products
   - customers/users
   - customers/vendors
   - customers/vendors/products
