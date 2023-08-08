@@ -257,6 +257,60 @@
               </ul>
           </li>
           <li>
+            <a href="#stock-items" class="toc-h1 toc-link" data-title="Stock Items">Stock Items</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-stock-items" class="toc-h2 toc-link" data-title="Get all stock items">Get all stock items</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-stock-item" class="toc-h2 toc-link" data-title="Get a stock item">Get a stock item</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-stock-item" class="toc-h2 toc-link" data-title="Create a stock item">Create a stock item</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-stock-item" class="toc-h2 toc-link" data-title="Update a stock item">Update a stock item</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-stock-item" class="toc-h2 toc-link" data-title="Delete a stock item">Delete a stock item</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#stock-locations" class="toc-h1 toc-link" data-title="Stock Locations">Stock Locations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-stock-locations" class="toc-h2 toc-link" data-title="Get all stock locations">Get all stock locations</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-stock-location" class="toc-h2 toc-link" data-title="Get a stock location">Get a stock location</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-stock-location" class="toc-h2 toc-link" data-title="Create a stock location">Create a stock location</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-stock-location" class="toc-h2 toc-link" data-title="Update a stock location">Update a stock location</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-stock-location" class="toc-h2 toc-link" data-title="Delete a stock location">Delete a stock location</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#stock-products" class="toc-h1 toc-link" data-title="Stock Products">Stock Products</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-stock-products" class="toc-h2 toc-link" data-title="Get all stock products">Get all stock products</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-stock-product" class="toc-h2 toc-link" data-title="Get a stock product">Get a stock product</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-stock-product-items" class="toc-h2 toc-link" data-title="Get a stock product items">Get a stock product items</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
               <ul class="toc-list-h2">
                   <li>
@@ -3555,6 +3609,550 @@ when set.</p>
 <td>The ID of the time session to retrieve</td>
 </tr>
 </tbody></table>
+<h1 id='stock-items'>Stock Items</h1><h2 id='get-all-stock-items'>Get all stock items</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/items"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/items"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12978</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"stock_location_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">382</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"serial_num"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"received"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-08-30T22:10:13.965-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-08-31T16:27:14.917-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"company_product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1599279</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tannoy DI 5 DC BLACK"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all of your stock items.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/stock/items</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>A specific page of results.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-stock-item'>Get a stock item</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/items/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/items/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-stock-items">Get all stock items</a></p>
+
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves a stock item by ID.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/stock/items/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the stock item to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-stock-item'>Create a stock item</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/items"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "company_product_id": "1599279",
+        "stock_location_id": "382",
+        "quantity": "5"
+      }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/items"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"item[company_product_id]=1599279"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"item[stock_location_id]=382"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"item[quantity]=5"</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-stock-items">Get all stock items</a></p>
+
+<p>Status: 201 Created</p>
+</blockquote>
+
+<p>This endpoint creates a new stock item.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://app.jetbuilt.com/api/stock/items</code></p>
+<h3 id='data-parameters'>Data Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_product_id</td>
+<td>The company product to create the item for <small>required integer</small></td>
+</tr>
+<tr>
+<td>stock_location_id</td>
+<td>The stock location to create the item in <small>required integer</small></td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>The quantity in stock <small>required integer</small></td>
+</tr>
+<tr>
+<td>serial_num</td>
+<td>The serial number <small>string</small></td>
+</tr>
+</tbody></table>
+
+<p>The <code>company_product_id</code> can be found using the <a href="#get-all-products">Products</a> endpoint.</p>
+
+<p>If a company product doesn&#39;t yet exist, create one first, and then create the stock item.</p>
+
+<p>The <code>stock_location_id</code> can be found using the <a href="#get-all-stock-locations">Stock Locations</a> endpoint.</p>
+
+<p>A <code>serial_num</code> is optional, and only applies to items with a quanity of 1. When a serial number is passed in, the <code>quantity</code> param will be ignored and set to 1. Otherwise it&#39;s considered a bulk item and the quantity can be freely set.</p>
+<h2 id='update-a-stock-item'>Update a stock item</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/items/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "quantity": "10"
+      }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/items/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[quantity]=10"</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-stock-items">Get all stock items</a></p>
+
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint updates a stock item by ID.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT https://app.jetbuilt.com/api/stock/items/&lt;ID&gt;</code></p>
+<h3 id='data-parameters-2'>Data Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>quantity</td>
+<td>The quantity in stock <small>required integer</small></td>
+</tr>
+</tbody></table>
+
+<p>For now only the quantity of the item can be updated.</p>
+
+<p>The quantity must be greater than 0. If there are no items left in stock, then delete the item.</p>
+<h2 id='delete-a-stock-item'>Delete a stock item</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/items/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/items/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The item has been deleted"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint deletes a stock item by ID.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE https://app.jetbuilt.com/api/stock/items/&lt;ID&gt;</code></p>
+<h1 id='stock-locations'>Stock Locations</h1><h2 id='get-all-stock-locations'>Get all stock locations</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/locations"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/locations"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Warehouse"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rack 2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The rack in the back"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"office_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"company"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-08-31T13:01:17.641-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-08-31T13:01:17.641-07:00"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all of your stock locations.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/stock/locations</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>A specific page of results.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-stock-location'>Get a stock location</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/locations/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/locations/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-stock-locations">Get all stock locations</a></p>
+
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves a stock location by ID.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/stock/locations/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the stock location to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-stock-location'>Create a stock location</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/locations"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "kind": "company",
+        "office_id": "3",
+        "name": "East Warehouse",
+        "position": "Shelf 20",
+        "description": ""
+      }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/locations"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"location[kind]=company"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"location[office_id]=3"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"location[name]=East Warehouse"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"location[position]=Shelf 20"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"location[description]="</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-stock-locations">Get all stock locations</a></p>
+
+<p>Status: 201 Created</p>
+</blockquote>
+
+<p>This endpoint creates a new stock location.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://app.jetbuilt.com/api/stock/locations</code></p>
+<h3 id='data-parameters'>Data Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>kind</td>
+<td>The kind of location, either <code>company</code> or <code>project</code> <small>required string</small></td>
+</tr>
+<tr>
+<td>office_id</td>
+<td>The company office location <small>only required if location is &#39;company&#39; kind; integer</small></td>
+</tr>
+<tr>
+<td>project_id</td>
+<td>The project this stock location is at <small>only required if location is a &#39;project&#39; kind; integer</small></td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the location. e.g. Warehouse <small>required string</small></td>
+</tr>
+<tr>
+<td>position</td>
+<td>Detail of the location. e.g. Rack 1 <small>only required if is a &#39;project&#39; kind; string</small></td>
+</tr>
+<tr>
+<td>description</td>
+<td>Optional description e.g. The new rack <small>string</small></td>
+</tr>
+</tbody></table>
+
+<p>The stock location&#39;s <code>kind</code> must be either <code>company</code> or <code>project</code>.</p>
+
+<p>If the <code>kind</code> is a <code>company</code> stock location, then it&#39;s a normal company location. An <code>office_id</code> and <code>position</code> are required.</p>
+
+<p>The <code>office_id</code> can be found using the <a href="#company">Company</a> endpoint, under the company&#39;s <code>locations</code>. (We now refer company locations as offices within the app.)</p>
+
+<p>If it&#39;s a <code>project</code> stock location, then a <code>project_id</code> must also be supplied. (The project takes the place of the <code>position</code>, so <code>position</code> is not required.) The <code>project_id</code> can be found using the <a href="#projects">Projects</a> endpoint.</p>
+<h2 id='update-a-stock-location'>Update a stock location</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/locations/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "name": "Warehouse",
+        "position": "Shelf 20A",
+        "description": ""
+      }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/locations/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[name]=Warehouse"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[position]=Shelf 20A"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[description]="</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-stock-locations">Get all stock locations</a></p>
+
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint updates a stock location by ID.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT https://app.jetbuilt.com/api/stock/locations/&lt;ID&gt;</code></p>
+<h3 id='data-parameters-2'>Data Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>The name of the location. e.g. Warehouse <small>required string</small></td>
+</tr>
+<tr>
+<td>position</td>
+<td>Detail of the location. e.g. Rack 1 <small>required string</small></td>
+</tr>
+<tr>
+<td>description</td>
+<td>Optional description e.g. The new rack</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-stock-location'>Delete a stock location</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/locations/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/locations/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The location has been deleted"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint deletes a stock location by ID.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE https://app.jetbuilt.com/api/stock/locations/&lt;ID&gt;</code></p>
+
+<aside><strong>Note:</strong> Any stock items associated with the stock location must be deleted (or moved) before the location can be deleted.</aside>
+<h1 id='stock-products'>Stock Products</h1><h2 id='get-all-stock-products'>Get all stock products</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/products"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/products"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tannoy DI 5 DC BLACK"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"company_product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22328</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quantity_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all of your stock products.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/stock/products</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>A specific page of results.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-stock-product'>Get a stock product</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/products/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/products/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tannoy DI 5 DC BLACK"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"company_product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22328</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"quantity_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"offices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1977</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quantity_avaliable"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quantity_avaliable"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves a stock product by ID.</p>
+
+<p>The <code>quantity_avaliable</code> is the sum of all the individual stock items for that product.</p>
+
+<p>The available quantities are also broken out by office location.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/stock/products/&lt;COMPANY_PRODUCT_ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>COMPANY_PRODUCT_ID</td>
+<td>The ID of the company product to retrieve stock levels for</td>
+</tr>
+</tbody></table>
+
+<p>The <code>company_product_id</code> can be found using the <a href="#get-all-stock-products">Stock Products</a> endpoint, or the <a href="#get-all-products">Company Products</a> endpoint.</p>
+
+<p>The <code>quantity_avaliable</code> is the sum of all the individual stock items for that product.</p>
+<h2 id='get-a-stock-product-items'>Get a stock product items</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/products/&lt;COMPANY_PRODUCT_ID&gt;/items"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/products/&lt;COMPANY_PRODUCT_ID&gt;/items"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-stock-items">Get all stock items</a></p>
+
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all stock items for a given stock product.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/stock/products/&lt;COMPANY_PRODUCT_ID&gt;/items</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>COMPANY_PRODUCT_ID</td>
+<td>The ID of the stock product to retrieve</td>
+</tr>
+</tbody></table>
+
+<p>The <code>company_product_id</code> can be found using the <a href="#get-all-stock-products">Stock Products</a> endpoint, or the <a href="#get-all-products">Company Products</a> endpoint.</p>
 <h1 id='users'>Users</h1><h2 id='get-all-active-users'>Get all active users</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/users"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
