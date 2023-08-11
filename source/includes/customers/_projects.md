@@ -220,14 +220,16 @@ max_updated_at | Query projects updated before the specified date time.
         "name": "Senior Engineer",
         "category": "engineering",
         "cost": "76.0",
-        "price": "100.0"
+        "price": "100.0",
+        "total_hours": "1.5"
       },
       {
         "id": 329892,
         "name": "Pre-Wire",
         "category": "install",
         "cost": "70.0",
-        "price": "165.0"
+        "price": "165.0",
+        "total_hours": "0"
       }
   ],
   "bundles": [
