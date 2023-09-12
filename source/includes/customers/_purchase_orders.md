@@ -10,6 +10,7 @@
 [
   {
     "id": 123,
+    "user_id": 456,
     "project_id": 95636,
     "purchasing_source_id": 1146,
     "custom_id": "JB226",
@@ -55,6 +56,7 @@ project_id | an optional project id to filter by
 ```json
   {
     "id": 123,
+    "user_id": 456,
     "project_id": 95636,
     "purchasing_source_id": 1146,
     "custom_id": "JB226",
