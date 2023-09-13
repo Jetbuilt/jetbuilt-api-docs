@@ -572,12 +572,14 @@ rather than as JSON.</aside>
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3495</span><span class="p">,</span><span class="w">
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-17T17:14:45.430-07:00"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-17T17:14:45.430-07:00"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3496</span><span class="p">,</span><span class="w">
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tier 2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-17T17:14:45.430-07:00"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-17T17:14:45.430-07:00"</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -608,13 +610,15 @@ rather than as JSON.</aside>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s1">'{
-        "name": "Gold"
+        "name": "Gold",
+        "currency_code": "USD"
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/pricing_tiers"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
-  <span class="nt">-F</span> <span class="s2">"pricing_tier[name]=Gold"</span>
+  <span class="nt">-F</span> <span class="s2">"pricing_tier[name]=Gold"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"pricing_tier[currency_code]=USD"</span>
 </code></pre></div>
 <blockquote>
 <p>Response:</p>
@@ -622,6 +626,7 @@ rather than as JSON.</aside>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">17487</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Gold"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2018-10-02T18:36:59.949-07:00"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2018-10-02T18:36:59.949-07:00"</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -643,6 +648,10 @@ rather than as JSON.</aside>
 <tr>
 <td>name</td>
 <td>The name of the tier (required)</td>
+</tr>
+<tr>
+<td>currency_code</td>
+<td>A 3 letter ISO code (e.g. USD, EUR, JPY) (required)</td>
 </tr>
 </tbody></table>
 <h1 id='prices'>Prices</h1><h2 id='get-all-product-prices-in-your-pricing-tier'>Get all product prices in your pricing tier</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/pricing_tiers/&lt;TIER_ID&gt;/prices"</span> <span class="se">\</span>
