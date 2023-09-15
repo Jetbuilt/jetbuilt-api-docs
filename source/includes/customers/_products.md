@@ -215,7 +215,7 @@ rather than as JSON.</aside>
       "price": 12.99
     }
 %>
-<%= shell_example('/product_databases/<DB_ID>/products', command: 'PUT', data: data) %>
+<%= shell_example('/product_databases/<DB_ID>/products', command: 'PATCH', data: data) %>
 
 > Response: Similar to [Get a product](#get-a-product)
 

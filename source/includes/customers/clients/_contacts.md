@@ -113,7 +113,7 @@ primary | If this is the primary contact for the client (true/false) <small>bool
       "primary": true
     }
 %>
-<%= shell_example('/clients/<CLIENT_ID>/contacts/<ID>', command: 'PUT', data: data) %>
+<%= shell_example('/clients/<CLIENT_ID>/contacts/<ID>', command: 'PATCH', data: data) %>
 
 > Response: Similar to [Get all client contacts](#get-all-contacts-for-a-client)
 

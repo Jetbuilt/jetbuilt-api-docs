@@ -113,7 +113,7 @@ If it's a `project` stock location, then a `project_id` must also be supplied. (
       "description": ""
     }
 %>
-<%= shell_example('/stock/locations/<ID>', command: 'PUT', data: data) %>
+<%= shell_example('/stock/locations/<ID>', command: 'PATCH', data: data) %>
 
 > Response: Similar to [Get all stock locations](#get-all-stock-locations)
 

@@ -158,7 +158,7 @@ rather than as JSON.</aside>
       "lead_time": 1
     }
 %>
-<%= shell_example('/products/<ID>', command: 'PUT', name: 'product', data: data) %>
+<%= shell_example('/products/<ID>', command: 'PATCH', name: 'product', data: data) %>
 
 > Response: Similar to [Get a product](#get-a-product)
 

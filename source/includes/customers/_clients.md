@@ -172,7 +172,7 @@ parent_id | The parent of the client <small>string</small>
       "parent_id": 456
     }
 %>
-<%= shell_example('/clients/<ID>', command: 'PUT', data: data) %>
+<%= shell_example('/clients/<ID>', command: 'PATCH', data: data) %>
 
 > Response: Similar to [Get all clients](#get-all-clients)
 

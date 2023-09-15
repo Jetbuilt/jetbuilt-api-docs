@@ -372,7 +372,7 @@ avso_region | The Projects AVSO Region <small>string</small> <br />All possible 
       "tax": "0.05",
     }
 %>
-<%= shell_example('/projects/<ID>', command: 'PUT', data: data) %>
+<%= shell_example('/projects/<ID>', command: 'PATCH', data: data) %>
 
 > Response: Similar to [Get a project](#get-a-project)
 

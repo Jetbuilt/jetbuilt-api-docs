@@ -235,7 +235,7 @@ metadata | Arbitrary JSON that you can attach to this object <small>JSON Object<
       }
     }
 %>
-<%= shell_example('/projects/<PROJECT_ID>/items/<ID>', command: 'PUT', data: data) %>>
+<%= shell_example('/projects/<PROJECT_ID>/items/<ID>', command: 'PATCH', data: data) %>>
 
 > Response: Similar to [Get all project items](#get-all-items-in-your-project)
 

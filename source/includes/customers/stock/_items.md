@@ -107,7 +107,7 @@ A `serial_num` is optional, and only applies to items with a quanity of 1. When 
       "quantity": 10
     }
 %>
-<%= shell_example('/stock/items/<ID>', command: 'PUT', data: data) %>
+<%= shell_example('/stock/items/<ID>', command: 'PATCH', data: data) %>
 
 > Response: Similar to [Get all stock items](#get-all-stock-items)
 
