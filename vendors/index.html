@@ -484,7 +484,7 @@ following:</p>
 In the cURL example, give the file path as form data (<a href="?shell--kv#create-a-product">Key/Value</a>),
 rather than as JSON.</aside>
 <h2 id='update-a-product'>Update a product</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -495,7 +495,7 @@ rather than as JSON.</aside>
         "lead_time": "1"
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/products/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"product[model]=JBTEST-2"</span> <span class="se">\</span>

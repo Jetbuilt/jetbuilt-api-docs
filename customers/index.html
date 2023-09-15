@@ -785,7 +785,7 @@ the product database used for each location.</p>
 </tr>
 </tbody></table>
 <h2 id='update-a-client'>Update a client</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -801,7 +801,7 @@ the product database used for each location.</p>
         "parent_id": "456"
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[user_id]=123"</span> <span class="se">\</span>
@@ -1035,7 +1035,7 @@ the product database used for each location.</p>
 </tr>
 </tbody></table>
 <h2 id='update-a-client-contact'>Update a client contact</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;CLIENT_ID&gt;/contacts/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -1048,7 +1048,7 @@ the product database used for each location.</p>
         "primary": "true"
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;CLIENT_ID&gt;/contacts/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[first_name]=Bob"</span> <span class="se">\</span>
@@ -1547,7 +1547,7 @@ database across all office locations.)</p>
 In the cURL example, give the file path as form data (<a href="?shell--kv#create-a-product">Key/Value</a>),
 rather than as JSON.</aside>
 <h2 id='update-a-product'>Update a product</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -1556,7 +1556,7 @@ rather than as JSON.</aside>
         "price": "12.99"
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"product[short_description]=JB Test product 2"</span> <span class="se">\</span>
@@ -2074,7 +2074,7 @@ rather than as JSON.</aside>
 </tr>
 </tbody></table>
 <h2 id='update-a-project'>Update a project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -2097,7 +2097,7 @@ rather than as JSON.</aside>
         "tax": "0.05"
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[user_id]=5"</span> <span class="se">\</span>
@@ -2375,7 +2375,10 @@ rather than as JSON.</aside>
             </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Wire"</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"my_integration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"my"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"data"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="err">...</span><span class="w">
@@ -2596,9 +2599,14 @@ many of this item appears it&#39;s corresponding room and/or bundle.</p>
 <td>Apply tax to the shipping price <small>boolean</small></td>
 <td></td>
 </tr>
+<tr>
+<td>metadata</td>
+<td>Arbitrary JSON that you can attach to this object <small>JSON Object</small></td>
+<td></td>
+</tr>
 </tbody></table>
 <h2 id='update-a-project-item'>Update a project item</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -2609,10 +2617,11 @@ many of this item appears it&#39;s corresponding room and/or bundle.</p>
         "phase_id": "1234",
         "short_description": "description",
         "external_notes": "note",
-        "quantity_per_room": "86"
+        "quantity_per_room": "86",
+        "metadata": "{:my_integration=&gt;{:my=&gt;["data"]}}"
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[room_id]=1234"</span> <span class="se">\</span>
@@ -2621,7 +2630,8 @@ many of this item appears it&#39;s corresponding room and/or bundle.</p>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[phase_id]=1234"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[short_description]=description"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[external_notes]=note"</span> <span class="se">\</span>
-  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[quantity_per_room]=86"</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[quantity_per_room]=86"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[metadata]={:my_integration=&gt;{:my=&gt;["</span>data<span class="s2">"]}}"</span>
 </code></pre></div>
 <blockquote>
 <p>Response: Similar to <a href="#get-all-items-in-your-project">Get all project items</a></p>
@@ -2690,6 +2700,10 @@ many of this item appears it&#39;s corresponding room and/or bundle.</p>
 <tr>
 <td>cost</td>
 <td>The item cost <small>decimal</small></td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>Arbitrary JSON that you can attach to this object <small>JSON Object</small></td>
 </tr>
 </tbody></table>
 <h1 id='project-options'>Project Options</h1><h2 id='get-all-options-change-orders-in-your-project'>Get all options/change orders in your project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/options"</span> <span class="se">\</span>
@@ -3814,7 +3828,7 @@ when set.</p>
 
 <p>A <code>serial_num</code> is optional, and only applies to items with a quanity of 1. When a serial number is passed in, the <code>quantity</code> param will be ignored and set to 1. Otherwise it&#39;s considered a bulk item and the quantity can be freely set.</p>
 <h2 id='update-a-stock-item'>Update a stock item</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/items/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -3822,7 +3836,7 @@ when set.</p>
         "quantity": "10"
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/items/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[quantity]=10"</span>
@@ -4024,7 +4038,7 @@ when set.</p>
 
 <p>If it&#39;s a <code>project</code> stock location, then a <code>project_id</code> must also be supplied. (The project takes the place of the <code>position</code>, so <code>position</code> is not required.) The <code>project_id</code> can be found using the <a href="#projects">Projects</a> endpoint.</p>
 <h2 id='update-a-stock-location'>Update a stock location</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/locations/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -4034,7 +4048,7 @@ when set.</p>
         "description": ""
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/stock/locations/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[name]=Warehouse"</span> <span class="se">\</span>
