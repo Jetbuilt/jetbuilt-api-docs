@@ -78,7 +78,10 @@
             "name": "Pre-Wire"
             }
         }
-      ]
+      ],
+      "metadata": {
+        "my_integration": { "my": ["data"] }
+      }
     },
     {
       ...
@@ -214,6 +217,7 @@ notes | Internal notes <small>string</small>
 external_notes | Customer visible notes for the item <small>string</small>
 tax_equipment | Apply tax to the equipment price <small>boolean</small>
 tax_shipping | Apply tax to the shipping price <small>boolean</small>
+metadata | Arbitrary JSON that you can attach to this object <small>JSON Object</small>
 
 ## Update a project item
 <%
@@ -225,7 +229,10 @@ tax_shipping | Apply tax to the shipping price <small>boolean</small>
       "phase_id": 1234,
       "short_description": "description",
       "external_notes": "note",
-      "quantity_per_room": 86
+      "quantity_per_room": 86,
+      "metadata": {
+        "my_integration": { "my": ["data"] }
+      }
     }
 %>
 <%= shell_example('/projects/<PROJECT_ID>/items/<ID>', command: 'PUT', data: data) %>>
@@ -263,3 +270,4 @@ short_description | Description of the item <small>string</small>
 external_notes | Customer visible notes for the item <small>string</small>
 quantity_per_room | The quantity for the item <small>decimal</small>
 cost | The item cost <small>decimal</small>
+metadata | Arbitrary JSON that you can attach to this object <small>JSON Object</small>
