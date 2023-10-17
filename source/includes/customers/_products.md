@@ -24,7 +24,6 @@
       "shipping_cost": "0.0",
       "shipping_price": "55.0",
       "discontinued": false,
-      "deleted_at": null,
       "notes": "",
       "warranty_value": "24.0",
       "warranty_unit": "mo",
