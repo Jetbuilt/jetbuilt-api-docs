@@ -99,6 +99,43 @@
       "hidden": false,
       "created_at": "2018-07-30T11:31:59.120-07:00",
       "updated_at": "2018-07-30T11:33:18.807-07:00"
+    },
+    {
+      "id": 62411,
+      "name": "Trip Factor",
+      "description": "Trips",
+      "factor_method": "trip_calc",
+      "total_cost": "700.0",
+      "total_price": "1225.0",
+      "taxed": false,
+      "hidden": false,
+      "created_at": "2023-10-17T19:57:06.592-07:00",
+      "updated_at": "2023-10-17T21:58:01.567-07:00",
+      "trips": [
+        {
+          "description": "Install",
+          "days": 7
+        },
+        {
+          ...
+        }
+      ],
+      "expenses": [
+        {
+          "expense_name": "Lodging",
+          "calculation_method": "trip_flat_rate_per_day",
+          "per_crew_member": true,
+          "plus_supervisor": false,
+          "cost": "100.0",
+          "price": "175.0"
+        },
+        {
+          ...
+        }
+      ]
+    }
+    {
+      ...
     }
   ]
 }
@@ -109,6 +146,9 @@
 This endpoint retrieves the items in your project.
 
 Includes line items and factors.
+
+### Factors
+Trip Calculator (`trip_calc`) factors have an itemized list of trips and expenses.
 
 ### Product IDs
 
