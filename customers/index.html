@@ -254,6 +254,17 @@
               </ul>
           </li>
           <li>
+            <a href="#tasks" class="toc-h1 toc-link" data-title="Tasks">Tasks</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-tasks" class="toc-h2 toc-link" data-title="Get All Tasks">Get All Tasks</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-task" class="toc-h2 toc-link" data-title="Get a task">Get a task</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#time-sessions" class="toc-h1 toc-link" data-title="Time Sessions">Time Sessions</a>
               <ul class="toc-list-h2">
                   <li>
@@ -3580,6 +3591,146 @@ when set.</p>
 <tr>
 <td>ID</td>
 <td>The ID of the purchasing source to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='tasks'>Tasks</h1><h2 id='get-all-tasks'>Get All Tasks</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/tasks"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/tasks"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">318</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Install the thing"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"client_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">97676</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_by_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"completed_by_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-19T22:42:08.348-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lineitem_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phase_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"labor_type_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-18T23:39:13.544-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-19T02:35:09.534-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"assigned_to_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"due_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-30"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10/30/2023"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8:30 AM"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eastern Time (US &amp; Canada)"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"all_day"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all tasks.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/tasks</code></p>
+
+<p><code>GET https://app.jetbuilt.com/api/tasks?project_id=1234&amp;type=install&amp;page=2</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project_id</td>
+<td>Filter results by the project id</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Filter results by <code>install</code> or <code>sales</code> tasks</td>
+</tr>
+<tr>
+<td>page</td>
+<td>A specific page of results.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-task'>Get a task</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/task/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/task/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">318</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Install the thing"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"client_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">97676</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_by_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"completed_by_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-19T22:42:08.348-07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lineitem_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"phase_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"labor_type_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-18T23:39:13.544-07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-19T02:35:09.534-07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"assigned_to_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"due_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-30"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10/30/2023"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8:30 AM"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eastern Time (US &amp; Canada)"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"all_day"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"steps"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Step 1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"photo_required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">486</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\n</span><span class="s2">  Just completed the step </span><span class="se">\"</span><span class="s2">Step 1</span><span class="se">\"</span><span class="s2"> to the task </span><span class="se">\"</span><span class="s2">Step 1</span><span class="se">\"</span><span class="s2">. Enjoy this photo of the work:</span><span class="se">\n</span><span class="s2">[Screenshot 2023-10-19 at 7.36.34 PM.png]"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves a task by ID.</p>
+
+<p>It contains additional task info like all steps and notes/comments</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/tasks/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the task to retrieve</td>
 </tr>
 </tbody></table>
 <h1 id='time-sessions'>Time Sessions</h1>
