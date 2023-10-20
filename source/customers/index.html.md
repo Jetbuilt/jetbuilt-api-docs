@@ -23,6 +23,7 @@ includes:
   - customers/projects/purchasing
   - customers/purchasing/sources
   - customers/purchase_orders
+  - customers/tasks
   - customers/time_sessions
   - customers/stock/items
   - customers/stock/locations
