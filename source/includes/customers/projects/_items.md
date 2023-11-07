@@ -11,6 +11,7 @@
   "line_items": [
     {
       "id": 1900102,
+      "manufacturer_id: '252',
       "manufacturer_name": "Sonos",
       "model": "SUB-GB",
       "part_number": null,
