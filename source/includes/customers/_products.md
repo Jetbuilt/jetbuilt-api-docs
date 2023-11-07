@@ -52,7 +52,9 @@
       "tax_equipment": true,
       "tax_labor": true,
       "tax_shipping": false,
-      "favorite": true
+      "favorite": true,
+      "created_at": "2023-05-04T13:08:27.718-07:00",
+      "updated_at": "2023-05-04T13:08:27.718-07:00"
     }
     EOF
 %>
@@ -92,6 +94,10 @@ model | Filter results by model name <small> must be an exact match</small>
 currency_code | Filter results by currency code. _e.g CAD_. <small>defaults to USD</small>
 query | Filter results by matching across manufacturer and model names <small>does not need to match exactly</small> <br/> _e.g. Shure SM57_
 page | A specific page of results.
+min_created_at | Query products created after the specified date time.
+max_created_at | Query products created before the specified date time.
+min_updated_at | Query products updated after the specified date time.
+max_updated_at | Query products updated before the specified date time.
 
 If filtering with the `query` param, then it takes precedence, and the other filtering params are ignored. Can be used when unsure about the exact manufacturer or model name.
 
