@@ -68,6 +68,9 @@
       "id": 3,
       "name": "Jetbuilt Testing"
     },
+    "market_segment": {
+      "id": 98
+    },
     "currency": "USD",
     "exchange_rates": { "CAD": 1.243825 },
     "image_url": "projects/project-avatar-3.jpg",
@@ -323,6 +326,7 @@ user_id | The user who is the project owner <small>required integer</small>
 client_id | The project's client <small>required integer</small>
 name | The name of the project <small>required string</small>
 budget | The opening budget <small>decimal</small>
+market_segment_id | The project's market segment <small>integer</small>
 paid_to_date | The amount paid to date <small>decimal</small>
 probability | The estimated probability (a decimal from 0 - 1. e.g. 0.7 = 70%) <small>decimal</small>
 close_date | The close date. (e.g. 2021-02-14) <small>string</small>
@@ -392,6 +396,7 @@ ID | The ID of the project to update
 user_id | The user who is the project owner <small>integer</small>
 name | The name of the project <small>string</small>
 budget | The opening budget <small>decimal</small>
+market_segment_id | The project's market segment <small>integer</small>
 paid_to_date | The amount paid to date <small>decimal</small>
 probability | The estimated probability (a decimal from 0 - 1. e.g. 0.7 = 70%) <small>decimal</small>
 close_date | The close date. (e.g. 2021-02-14) <small>string</small>
