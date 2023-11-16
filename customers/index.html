@@ -110,6 +110,14 @@
               </ul>
           </li>
           <li>
+            <a href="#market-segments" class="toc-h1 toc-link" data-title="Market Segments">Market Segments</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-market-segments" class="toc-h2 toc-link" data-title="Get all market segments">Get all market segments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#phases" class="toc-h1 toc-link" data-title="Phases">Phases</a>
               <ul class="toc-list-h2">
                   <li>
@@ -1118,6 +1126,54 @@ the product database used for each location.</p>
 <td>If this is the primary contact for the client (true/false) <small>boolean</small></td>
 </tr>
 </tbody></table>
+<h1 id='market-segments'>Market Segments</h1><h2 id='get-all-market-segments'>Get all market segments</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/market_segments"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/market_segments"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"office_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1744</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Healthcare"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vertical_segment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Healthcare"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-08T17:29:36.201-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-08T17:29:36.201-07:00"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all of your market segments.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/market_segments</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>A specific page of results.</td>
+</tr>
+<tr>
+<td>office_id</td>
+<td>Filter market segments by office</td>
+</tr>
+</tbody></table>
 <h1 id='phases'>Phases</h1><h2 id='get-all-phases'>Get all phases</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/phases"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
@@ -1692,6 +1748,9 @@ rather than as JSON.</aside>
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jetbuilt Testing"</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"market_segment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">98</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"exchange_rates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"CAD"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.243825</span><span class="w"> </span><span class="p">},</span><span class="w">
     </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/project-avatar-3.jpg"</span><span class="p">,</span><span class="w">
@@ -2010,6 +2069,10 @@ rather than as JSON.</aside>
 <td>The opening budget <small>decimal</small></td>
 </tr>
 <tr>
+<td>market_segment_id</td>
+<td>The project&#39;s market segment <small>integer</small></td>
+</tr>
+<tr>
 <td>paid_to_date</td>
 <td>The amount paid to date <small>decimal</small></td>
 </tr>
@@ -2177,6 +2240,10 @@ rather than as JSON.</aside>
 <tr>
 <td>budget</td>
 <td>The opening budget <small>decimal</small></td>
+</tr>
+<tr>
+<td>market_segment_id</td>
+<td>The project&#39;s market segment <small>integer</small></td>
 </tr>
 <tr>
 <td>paid_to_date</td>
