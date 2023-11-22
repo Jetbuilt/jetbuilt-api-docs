@@ -240,6 +240,20 @@
               </ul>
           </li>
           <li>
+            <a href="#project-service-packages" class="toc-h1 toc-link" data-title="Project Service Packages">Project Service Packages</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-service-packages-in-your-project" class="toc-h2 toc-link" data-title="Get all service packages in your project">Get all service packages in your project</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-service-package" class="toc-h2 toc-link" data-title="Get a service package">Get a service package</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-project-service-package" class="toc-h2 toc-link" data-title="Update a Project Service Package">Update a Project Service Package</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#purchasing-sources" class="toc-h1 toc-link" data-title="Purchasing Sources">Purchasing Sources</a>
               <ul class="toc-list-h2">
                   <li>
@@ -3471,6 +3485,164 @@ when set.</p>
 <tr>
 <td>page</td>
 <td>A specific page of line item results</td>
+</tr>
+</tbody></table>
+<h1 id='project-service-packages'>Project Service Packages</h1><h2 id='get-all-service-packages-in-your-project'>Get all service packages in your project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/service_packages"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/service_packages"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"service_packages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3395</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Annual Maintenance"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"purchase_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"included"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pricing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flat_price"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"program_term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"annually"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sold"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"taxed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"taxable_amount_percent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves the service_packages in your project.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PROJECT_ID</td>
+<td>The ID of the project</td>
+</tr>
+<tr>
+<td>page</td>
+<td>A specific page of service package results.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-service-package'>Get a service package</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/service_packages/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/service_packages/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3395</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Annual Maintenance"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"purchase_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"included"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pricing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flat_price"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"program_term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"annually"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sold"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"taxed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"taxable_amount_percent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves a service package by ID.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/service_packages/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PROJECT_ID</td>
+<td>The project ID of the service package</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>The ID of the service package to update</td>
+</tr>
+</tbody></table>
+<h2 id='update-a-project-service-package'>Update a Project Service Package</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/service_packages/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "price": "10",
+        "cost": "5"
+      }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/service_packages/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[price]=10"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[cost]=5"</span>
+</code></pre></div>
+<blockquote>
+<p>Response: Similar to <a href="#get-all-items-in-your-project">Get all project items</a></p>
+
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint updates a service package for a project.</p>
+
+<p>A service package cannot be updated when the project is locked.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>PUT https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/service_packages/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PROJECT_ID</td>
+<td>The project ID of the service package</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>The ID of the service package to update</td>
+</tr>
+</tbody></table>
+<h3 id='data-parameters'>Data Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>price</td>
+<td>The price of the service package <small>decimal</small></td>
+</tr>
+<tr>
+<td>cost</td>
+<td>The system of the item <small>decimal</small></td>
 </tr>
 </tbody></table>
 <h1 id='purchasing-sources'>Purchasing Sources</h1><h2 id='get-all-purchasing-sources'>Get all purchasing sources</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/purchasing/sources"</span> <span class="se">\</span>
