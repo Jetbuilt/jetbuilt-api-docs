@@ -40,7 +40,7 @@ This endpoint retrieves all of your purchase orders.
 
 ### HTTP Request
 
-`GET <%= api_url('/phases') %>`
+`GET <%= api_url('/purchase_orders') %>`
 
 ### URL Parameters
 
@@ -102,14 +102,14 @@ project_id | an optional project id to filter by
 
 > Status: 200 OK
 
-This endpoint retrieves a purchasing source by ID.
+This endpoint retrieves a purchase order by ID.
 
 ### HTTP Request
 
-`GET <%= api_url('/purchasing/sources/<ID>') %>`
+`GET <%= api_url('/purchase_orders/<ID>') %>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the purchasing source to retrieve
+ID | The ID of the purchase order to retrieve
