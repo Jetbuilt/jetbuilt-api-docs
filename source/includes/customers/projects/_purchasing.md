@@ -26,7 +26,8 @@
       "source": {
         "id": 34,
         "name": "Audio Supplier"
-      }
+      },
+      "sold_change_order": false
     },
     {
       ...
@@ -43,6 +44,8 @@ Line items are consolidated together for purchasing, with a purchase source list
 when set.
 
 Grouped line items will be listed together in the `ids` field.
+
+`sold_change_order` indicates if any of the grouped line items are from a sold change order.
 
 ### HTTP Request
 
