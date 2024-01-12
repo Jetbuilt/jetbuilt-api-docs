@@ -20,10 +20,7 @@
     "updated_at": "2018-11-06T09:32:02.156-08:00",
     "active": true,
     "change_order": false,
-    "room": null,
-    "line_items": [
-      ...
-    ]
+    "room": null
   },
   {
     ...
