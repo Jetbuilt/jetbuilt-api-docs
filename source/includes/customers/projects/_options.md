@@ -34,8 +34,6 @@ This endpoint retrieves the options/change orders in your project.
 
 Options become known as 'Change Orders' once the project moves to the contract stage.
 
-Includes the option's line items.
-
 ### HTTP Request
 
 `GET <%= api_url('/projects/<PROJECT_ID>/options') %>`
