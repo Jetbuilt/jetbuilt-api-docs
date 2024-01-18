@@ -3779,6 +3779,22 @@ when set.</p>
 <td>project_id</td>
 <td>an optional project id to filter by</td>
 </tr>
+<tr>
+<td>min_created_at</td>
+<td>Query purchase orders created after the specified date time.</td>
+</tr>
+<tr>
+<td>max_created_at</td>
+<td>Query purchase orders created before the specified date time.</td>
+</tr>
+<tr>
+<td>min_updated_at</td>
+<td>Query purchase orders updated after the specified date time.</td>
+</tr>
+<tr>
+<td>max_updated_at</td>
+<td>Query purchase orders updated before the specified date time.</td>
+</tr>
 </tbody></table>
 <h2 id='get-a-purchase-order'>Get a purchase order</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/purchase_orders/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
