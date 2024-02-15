@@ -26,7 +26,7 @@
       "currency_iso": "USD"
     },
     "stage": "lost",
-    "contract_numnber": "101",
+    "contract_number": "101",
     "labor_tax": "0.1",
     "requires_engineering?": true,
     "avso": true,
@@ -137,7 +137,7 @@ max_updated_at | Query projects updated before the specified date time.
     "currency_iso": "USD"
   },
   "stage": "lost",
-  "contract_numnber": "101",
+  "contract_number": "101",
   "labor_tax": "0.1",
   "requires_engineering?": true,
   "avso": true,
