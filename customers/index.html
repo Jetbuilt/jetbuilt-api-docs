@@ -1720,7 +1720,7 @@ rather than as JSON.</aside>
       </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lost"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"contract_numnber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"101"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contract_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"101"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"labor_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"requires_engineering?"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="nl">"avso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -1851,7 +1851,7 @@ rather than as JSON.</aside>
     </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lost"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"contract_numnber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"101"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"contract_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"101"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"labor_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"requires_engineering?"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"avso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -2939,6 +2939,15 @@ many of this item appears it&#39;s corresponding room and/or bundle.</p>
   </span><span class="nl">"change_order"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="nl">"room"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
   </span><span class="nl">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3303</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+      </span><span class="nl">"replacement_lineitem_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">374</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+
+    </span><span class="p">},</span><span class="w">
     </span><span class="err">...</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"factors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -2971,6 +2980,7 @@ many of this item appears it&#39;s corresponding room and/or bundle.</p>
 
 <ul>
 <li>Lists factors, along with how much of each factor applies to the option.</li>
+<li>The Item lists replacement_lineitem_ids</li>
 </ul>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/options/&lt;ID&gt;</code></p>
