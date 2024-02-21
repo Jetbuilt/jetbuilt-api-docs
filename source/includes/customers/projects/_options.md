@@ -67,6 +67,15 @@ page | A specific page of results.
   "change_order": false,
   "room": null,
   "line_items": [
+    {
+      "id": 3303,
+      ...
+      "replacement_lineitem_ids": [
+        374
+      ],
+      ...
+
+    },
     ...
   ],
   "factors": [
@@ -97,6 +106,7 @@ Shows additional detail for an option.
 Notably:
 
 - Lists factors, along with how much of each factor applies to the option.
+- The Item lists replacement_lineitem_ids
 
 ### HTTP Request
 
