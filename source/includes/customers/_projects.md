@@ -107,6 +107,7 @@ min_created_at | Query projects created after the specified date time.
 max_created_at | Query projects created before the specified date time.
 min_updated_at | Query projects updated after the specified date time.
 max_updated_at | Query projects updated before the specified date time.
+stage | Filter projects returned by stage
 
 **Note**: You can pass a date or a date time to the timestamp queries. For example:
 `2023-7-28` or `2023-7-28 15:33:33 -700` or `2023-7-28T15:33:33-700`. The time defaults to
