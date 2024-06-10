@@ -232,6 +232,14 @@
               </ul>
           </li>
           <li>
+            <a href="#project-proposals" class="toc-h1 toc-link" data-title="Project Proposals">Project Proposals</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-proposals-in-your-project" class="toc-h2 toc-link" data-title="Get proposals in your project">Get proposals in your project</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#project-purchasing" class="toc-h1 toc-link" data-title="Project Purchasing">Project Purchasing</a>
               <ul class="toc-list-h2">
                   <li>
@@ -3428,6 +3436,65 @@ project, so displaying them for an individual room causes fractional amounts.</p
 <tr>
 <td>page</td>
 <td>A specific page of results.</td>
+</tr>
+</tbody></table>
+<h1 id='project-proposals'>Project Proposals</h1><h2 id='get-proposals-in-your-project'>Get proposals in your project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/proposals"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/proposals"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">304402</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Proposal 8/9/19"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sent_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"purchased_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-08T16:59:50.008-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-08T14:03:12.359-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"private_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.jetbuilt.com/projects/111214/proposals/304402"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"public_link"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry_public_link"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves the proposals in your project.</p>
+
+<p>The <code>public_link</code> field is present when the proposal has been made public.</p>
+
+<p>The <code>expiry_public_link</code> field is present when <code>expiry_public_link</code> parameter is set to <code>true</code>.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/proposals</code></p>
+
+<p><code>GET https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/proposals?page=2</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PROJECT_ID</td>
+<td>The ID of the project</td>
+</tr>
+<tr>
+<td>page</td>
+<td>A specific page of results</td>
+</tr>
+<tr>
+<td>expiry_public_link</td>
+<td>if set to <code>true</code> a public link is generated that expires after 5 minutes</td>
 </tr>
 </tbody></table>
 <h1 id='project-purchasing'>Project Purchasing</h1><h2 id='get-purchasing-info-for-items-in-your-project'>Get purchasing info for items in your project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/purchasing"</span> <span class="se">\</span>
