@@ -43,6 +43,16 @@
       "width_unit": "m",
       "depth_value": "2.0",
       "depth_unit": "m",
+      "commodity_code": "AB123C",
+      "country_of_origin": "United States",
+      "shipping_weight_value": "30.0",
+      "shipping_weight_unit": "lb",
+      "shipping_height_value": "24",
+      "shipping_height_unit": "in",
+      "shipping_width_value": "8",
+      "shipping_width_unit": "in",
+      "shipping_depth_value": "12",
+      "shipping_depth_unit": "in",
       "manufacturer": {
         "id": 458,
         "name": "ACME"
@@ -203,6 +213,16 @@ width_value | The width value <small>decimal</small>
 width_unit | The width unit <small>enum</small> <br \>Possible values: **in, ft, cm, mm**
 depth_value | The depth value <small>decimal</small>
 depth_unit | The depth unit <small>enum</small> <br \>Possible values: **in, ft, cm, mm**
+commodity_code | The commodity code <small>string</small>
+country_of_origin | The country of origin <small>string</small>
+shipping_weight_value | The shipping weight value <small>decimal</small>
+shipping_weight_unit | The shipping weight unit <small>enum</small> <br \>Possible values: **lb, oz, kg, g**
+shipping_height_value | The shipping height value <small>decimal</small>
+shipping_height_unit | The shipping height unit <small>enum</small> <br \>Possible values: **in, ft, cm, mm**
+shipping_width_value | The shipping width value <small>decimal</small>
+shipping_width_unit | The shipping width unit <small>enum</small> <br \>Possible values: **in, ft, cm, mm**
+shipping_depth_value | The shipping depth value <small>decimal</small>
+shipping_depth_unit | The shipping depth unit <small>enum</small> <br \>Possible values: **in, ft, cm, mm**
 
 <aside id='required'><sup>1</sup>The required parameters are the <code>manufacturer_name</code>, and <code>model</code> or the <code>product_id</code>. When the <code>product_id</code> is provided then the <code>manufacturer</code>, and <code>model</code> are ignored and are not required.</aside>
 
