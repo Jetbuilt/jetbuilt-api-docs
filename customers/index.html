@@ -1886,8 +1886,16 @@ rather than as JSON.</aside>
 <td>Query projects updated before the specified date time.</td>
 </tr>
 <tr>
+<td>active</td>
+<td>(true/false) returns projects in an active stage when true; otherwise returns projects in non-active stages</td>
+</tr>
+<tr>
 <td>stage</td>
-<td>Filter projects returned by stage</td>
+<td>Filter projects by stage (a single stage name or a comma separated list - param is ignored when active param is present)</td>
+</tr>
+<tr>
+<td>query</td>
+<td>Filter by project name, custom_id, city, clients company name, clients first or last name</td>
 </tr>
 </tbody></table>
 
