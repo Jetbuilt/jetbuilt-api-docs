@@ -77,8 +77,13 @@
     "image_url": "projects/project-avatar-3.jpg",
     "active": false,
     "shared": false,
-    "original_version_id": 97737
-}
+    "original_version_id": 97737,
+    "equipment_program": {
+      "id": 1939,
+      "name": "Manufacturer discount",
+      "office_id": null
+    }
+  }
 ,
   {
     ...
@@ -191,6 +196,11 @@ query | Filter by project name, custom_id, city, clients company name, clients f
   "active": false,
   "shared": false,
   "original_version_id": 97737,
+  "equipment_program": {
+    "id": 1939,
+    "name": "Manufacturer discount",
+    "office_id": null
+  },
   "rooms": [
     {
       "id": 242060,
