@@ -48,6 +48,10 @@
       "custom": false,
       "product_id": 1251085,
       "custom_product_id": null,
+      "purchasing_source": {
+        "id": 441,
+        "company_name": "Shure"
+      },
       "quantity": "20.0",
       "quantity_per_room": "10.0",
       "quantity_per_bundle": null,
