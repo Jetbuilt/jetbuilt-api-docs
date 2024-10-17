@@ -48,9 +48,13 @@
       "custom": false,
       "product_id": 1251085,
       "custom_product_id": null,
+      "selected_purchasing_vendor": {
+        "id": 169,
+        "name": "Chief"
+      },
       "purchasing_source": {
         "id": 441,
-        "company_name": "Shure"
+        "company_name": "Legrand AV"
       },
       "quantity": "20.0",
       "quantity_per_room": "10.0",
