@@ -20,6 +20,8 @@
     "created_at": "2018-07-16T08:17:33.273-07:00",
     "updated_at": "2018-10-31T14:19:14.241-07:00",
     "close_date": "2018-09-04",
+    "commission_date": "2018-07-16",
+    "estimated_install_on": "2018-08-01",
     "budget": null,
     "paid_to_date": {
       "cents": 500,
@@ -139,6 +141,8 @@ query | Filter by project name, custom_id, city, clients company name, clients f
   "created_at": "2018-07-16T08:17:33.273-07:00",
   "updated_at": "2018-10-31T14:19:14.241-07:00",
   "close_date": "2018-09-04",
+  "commission_date": "2018-07-16",
+  "estimated_install_on": "2018-08-01",
   "budget": null,
   "paid_to_date": {
     "cents": 500,
