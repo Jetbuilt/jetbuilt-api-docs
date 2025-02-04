@@ -117,7 +117,7 @@ This endpoint updates a stock item by ID.
 
 ### HTTP Request
 
-`PUT <%= api_url('/stock/items/<ID>') %>`
+`PATCH <%= api_url('/stock/items/<ID>') %>`
 
 ### Data Parameters
 

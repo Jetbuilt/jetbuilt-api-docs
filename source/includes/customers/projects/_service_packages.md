@@ -83,7 +83,7 @@ ID | The ID of the service package to update
       "cost": 5
     }
 %>
-<%= shell_example('/projects/<PROJECT_ID>/service_packages/<ID>', command: 'PUT', data: data) %>>
+<%= shell_example('/projects/<PROJECT_ID>/service_packages/<ID>', command: 'PATCH', data: data) %>>
 
 > Response: Similar to [Get all project items](#get-all-items-in-your-project)
 
@@ -95,7 +95,7 @@ A service package cannot be updated when the project is locked.
 
 ### HTTP Request
 
-`PUT <%= api_url('/projects/<PROJECT_ID>/service_packages/<ID>') %>`
+`PATCH <%= api_url('/projects/<PROJECT_ID>/service_packages/<ID>') %>`
 
 ### URL Parameters
 

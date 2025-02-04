@@ -123,7 +123,7 @@ This endpoint updates a contact for a client.
 
 ### HTTP Request
 
-`PUT <%= api_url('/clients/<CLIENT_ID>/contacts/<ID>') %>`
+`PATCH <%= api_url('/clients/<CLIENT_ID>/contacts/<ID>') %>`
 
 ### Data Parameters
 

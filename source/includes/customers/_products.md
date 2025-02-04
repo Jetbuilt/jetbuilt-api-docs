@@ -250,7 +250,7 @@ This endpoint updates one of your products.
 
 ### HTTP Request
 
-`PUT <%= api_url('/product_databases/<DB_ID>/products') %>`
+`PATCH <%= api_url('/product_databases/<DB_ID>/products') %>`
 
 ### URL Parameters
 

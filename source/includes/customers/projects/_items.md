@@ -298,7 +298,7 @@ An item's room, system, and tag id cannot be updated if the item belongs to a bu
 
 ### HTTP Request
 
-`PUT <%= api_url('/projects/<PROJECT_ID>/items/<ID>') %>`
+`PATCH <%= api_url('/projects/<PROJECT_ID>/items/<ID>') %>`
 
 ### URL Parameters
 

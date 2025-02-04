@@ -168,7 +168,7 @@ This endpoint updates one of your products.
 
 ### HTTP Request
 
-`PUT <%= api_url('/products/<ID>') %>`
+`PATCH <%= api_url('/products/<ID>') %>`
 
 ### URL Parameters
 

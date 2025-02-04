@@ -182,7 +182,7 @@ This endpoint updates a client by ID.
 
 ### HTTP Request
 
-`PUT <%= api_url('/clients/<ID>') %>`
+`PATCH <%= api_url('/clients/<ID>') %>`
 
 ### Data Parameters
 

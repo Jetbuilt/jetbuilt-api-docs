@@ -123,7 +123,7 @@ This endpoint updates a stock location by ID.
 
 ### HTTP Request
 
-`PUT <%= api_url('/stock/locations/<ID>') %>`
+`PATCH <%= api_url('/stock/locations/<ID>') %>`
 
 ### Data Parameters
 

@@ -405,7 +405,7 @@ This endpoint updates a project by ID.
 
 ### HTTP Request
 
-`PUT <%= api_url('/projects/<ID>') %>`
+`PATCH <%= api_url('/projects/<ID>') %>`
 
 ### Data Parameters
 
