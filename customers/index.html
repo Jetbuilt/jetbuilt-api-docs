@@ -10,7 +10,7 @@
     <title>Jetbuilt Customer API</title>
     <link href="../stylesheets/screen-9ef844c2.css" rel="stylesheet" media="screen" /><link href="../stylesheets/rouge-eb1ca1e3.css" rel="stylesheet" media="screen" />
     <link href="../stylesheets/print-966d6edc.css" rel="stylesheet" media="print" /><link href="../stylesheets/rouge_print-d4e3898f.css" rel="stylesheet" media="print" />
-      <script src="../javascripts/all-b12a2749.js"></script>
+      <script src="../javascripts/all-024da600.js"></script>
 
   </head>
 
@@ -863,7 +863,7 @@ the product database used for each location.</p>
 
 <p>This endpoint updates a client by ID.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>PUT https://app.jetbuilt.com/api/clients/&lt;ID&gt;</code></p>
+<p><code>PATCH https://app.jetbuilt.com/api/clients/&lt;ID&gt;</code></p>
 <h3 id='data-parameters-2'>Data Parameters</h3>
 <table><thead>
 <tr>
@@ -1107,7 +1107,7 @@ the product database used for each location.</p>
 
 <p>This endpoint updates a contact for a client.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>PUT https://app.jetbuilt.com/api/clients/&lt;CLIENT_ID&gt;/contacts/&lt;ID&gt;</code></p>
+<p><code>PATCH https://app.jetbuilt.com/api/clients/&lt;CLIENT_ID&gt;/contacts/&lt;ID&gt;</code></p>
 <h3 id='data-parameters-2'>Data Parameters</h3>
 <table><thead>
 <tr>
@@ -1737,7 +1737,7 @@ rather than as JSON.</aside>
 
 <p>This endpoint updates one of your products.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>PUT https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products</code></p>
+<p><code>PATCH https://app.jetbuilt.com/api/product_databases/&lt;DB_ID&gt;/products</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2327,7 +2327,7 @@ rather than as JSON.</aside>
 
 <p>This endpoint updates a project by ID.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>PUT https://app.jetbuilt.com/api/projects/&lt;ID&gt;</code></p>
+<p><code>PATCH https://app.jetbuilt.com/api/projects/&lt;ID&gt;</code></p>
 <h3 id='data-parameters-2'>Data Parameters</h3>
 <table><thead>
 <tr>
@@ -2899,7 +2899,7 @@ many of this item appears it&#39;s corresponding room and/or bundle.</p>
 
 <p>An item&#39;s room, system, and tag id cannot be updated if the item belongs to a bundle.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>PUT https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items/&lt;ID&gt;</code></p>
+<p><code>PATCH https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -3758,7 +3758,7 @@ when set.</p>
 </tr>
 </tbody></table>
 <h2 id='update-a-project-service-package'>Update a Project Service Package</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/service_packages/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -3767,7 +3767,7 @@ when set.</p>
         "cost": "5"
       }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/service_packages/&lt;ID&gt;"</span> <span class="se">\</span>
-  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-X</span> PATCH <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
   <span class="nt">-F</span> <span class="s2">"&lt;ID&gt;[price]=10"</span> <span class="se">\</span>
@@ -3783,7 +3783,7 @@ when set.</p>
 
 <p>A service package cannot be updated when the project is locked.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>PUT https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/service_packages/&lt;ID&gt;</code></p>
+<p><code>PATCH https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/service_packages/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -4484,7 +4484,7 @@ when set.</p>
 
 <p>This endpoint updates a stock item by ID.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>PUT https://app.jetbuilt.com/api/stock/items/&lt;ID&gt;</code></p>
+<p><code>PATCH https://app.jetbuilt.com/api/stock/items/&lt;ID&gt;</code></p>
 <h3 id='data-parameters-2'>Data Parameters</h3>
 <table><thead>
 <tr>
@@ -4698,7 +4698,7 @@ when set.</p>
 
 <p>This endpoint updates a stock location by ID.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>PUT https://app.jetbuilt.com/api/stock/locations/&lt;ID&gt;</code></p>
+<p><code>PATCH https://app.jetbuilt.com/api/stock/locations/&lt;ID&gt;</code></p>
 <h3 id='data-parameters-2'>Data Parameters</h3>
 <table><thead>
 <tr>
