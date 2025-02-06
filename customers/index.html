@@ -110,6 +110,17 @@
               </ul>
           </li>
           <li>
+            <a href="#labor-presets" class="toc-h1 toc-link" data-title="Labor Presets">Labor Presets</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-labor-presets-in-your-company" class="toc-h2 toc-link" data-title="Get all labor presets in your company">Get all labor presets in your company</a>
+                  </li>
+                  <li>
+                    <a href="#get-one-labor-preset-in-your-company" class="toc-h2 toc-link" data-title="Get one labor preset in your company">Get one labor preset in your company</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#market-segments" class="toc-h1 toc-link" data-title="Market Segments">Market Segments</a>
               <ul class="toc-list-h2">
                   <li>
@@ -1148,6 +1159,92 @@ the product database used for each location.</p>
 <td>If this is the primary contact for the client (true/false) <small>boolean</small></td>
 </tr>
 </tbody></table>
+<h1 id='labor-presets'>Labor Presets</h1><h2 id='get-all-labor-presets-in-your-company'>Get all labor presets in your company</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/labor_presets"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/labor_presets"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Labor Preset Name"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Labor preset description"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"project_item_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-02-04T14:31:52.488-08:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-02-05T12:34:16.028-08:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"labor_values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6218030</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"engineering"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Junior Designer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-02-04T14:31:52.491-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-02-05T12:34:16.024-08:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6218031</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"install"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pre-Wire"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"165.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-02-04T14:31:52.494-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-02-04T14:31:52.494-08:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves the labor presets in your company.</p>
+<h3 id='project-item-count'>Project Item Count</h3>
+<p>A labor preset&#39;s <code>project_item_count</code> is the number of project items that are using this labor preset.</p>
+<h3 id='labor-values'>Labor Values</h3>
+<p>Labor values include Labor Rate settings.</p>
+<h2 id='get-one-labor-preset-in-your-company'>Get one labor preset in your company</h2>
+<p>This endpoint retrieves a single labor preset in your company.</p>
+<div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/labor_presets/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/labor_presets/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Labor Preset Name"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Labor preset description"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"project_item_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-02-04T14:31:52.488-08:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-02-05T12:34:16.028-08:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"labor_values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
 <h1 id='market-segments'>Market Segments</h1><h2 id='get-all-market-segments'>Get all market segments</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/market_segments"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
@@ -2547,6 +2644,7 @@ rather than as JSON.</aside>
         </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAD"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"avso_item_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subwoofer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"msrp_discount_percent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-14.08"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"custom"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1251085</span><span class="p">,</span><span class="w">
@@ -2578,6 +2676,10 @@ rather than as JSON.</aside>
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"phase"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"option"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"labor_preset"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Labor Preset Name"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
       </span><span class="nl">"labor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"install"</span><span class="p">,</span><span class="w">
