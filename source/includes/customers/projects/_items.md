@@ -44,6 +44,7 @@
         "currency_iso": "CAD"
       },
       "avso_item_name": "Subwoofer",
+      "msrp_discount_percent": "-14.08",
       "discount": "0.0",
       "custom": false,
       "product_id": 1251085,
@@ -75,6 +76,10 @@
       },
       "phase": null,
       "option": null,
+      "labor_preset": {
+        "id": 1,
+        "name": "Labor Preset Name"
+      },
       "labor": [
         {
           "category": "install",
