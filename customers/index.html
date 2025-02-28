@@ -121,6 +121,14 @@
               </ul>
           </li>
           <li>
+            <a href="#labor-programs" class="toc-h1 toc-link" data-title="Labor Programs">Labor Programs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-labor-programs" class="toc-h2 toc-link" data-title="Get all labor programs">Get all labor programs</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#market-segments" class="toc-h1 toc-link" data-title="Market Segments">Market Segments</a>
               <ul class="toc-list-h2">
                   <li>
@@ -1245,6 +1253,69 @@ the product database used for each location.</p>
 <blockquote>
 <p>Status: 200 OK</p>
 </blockquote>
+<h1 id='labor-programs'>Labor Programs</h1><h2 id='get-all-labor-programs'>Get all labor programs</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/labor_programs"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/labor_programs"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NYC Labor Package"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"office_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-25T11:38:16.835-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-12-02T00:48:12.397-08:00"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all your labor programs.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/labor_programs</code></p>
+
+<p><code>GET https://app.jetbuilt.com/api/labor_programs?page=2</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>office_id</td>
+<td>Labor programs belonging to the specified office</td>
+</tr>
+<tr>
+<td>page</td>
+<td>A specific page of results.</td>
+</tr>
+<tr>
+<td>min_created_at</td>
+<td>Query results created after the specified date time.</td>
+</tr>
+<tr>
+<td>max_created_at</td>
+<td>Query results created before the specified date time.</td>
+</tr>
+<tr>
+<td>min_updated_at</td>
+<td>Query results updated after the specified date time.</td>
+</tr>
+<tr>
+<td>max_updated_at</td>
+<td>Query results updated before the specified date time.</td>
+</tr>
+</tbody></table>
 <h1 id='market-segments'>Market Segments</h1><h2 id='get-all-market-segments'>Get all market segments</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/market_segments"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
@@ -1933,6 +2004,9 @@ rather than as JSON.</aside>
     </span><span class="nl">"market_segment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">98</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"labor_program"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"exchange_rates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"CAD"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.243825</span><span class="w"> </span><span class="p">},</span><span class="w">
     </span><span class="nl">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/project-avatar-3.jpg"</span><span class="p">,</span><span class="w">
@@ -2081,6 +2155,12 @@ rather than as JSON.</aside>
   </span><span class="nl">"company_location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jetbuilt Testing"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"market_segment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">98</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"labor_program"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"exchange_rates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"CAD"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.243825</span><span class="w"> </span><span class="p">},</span><span class="w">
@@ -2246,6 +2326,8 @@ rather than as JSON.</aside>
 <p>This endpoint creates a new project.</p>
 
 <p>Defaults to the <code>opportunity</code> stage.</p>
+<h3 id='labor-programs'>Labor Programs</h3>
+<p>The default labor program will be assigned unless the <code>labor_program_id</code> key is in the request. Ex: You can pass a <code>null</code> value or a valid Labor Program ID to override your company&#39;s default labor program settings.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://app.jetbuilt.com/api/projects</code></p>
 <h3 id='data-parameters'>Data Parameters</h3>
@@ -2370,6 +2452,10 @@ rather than as JSON.</aside>
 <tr>
 <td>avso_region</td>
 <td>The Projects AVSO Region <small>string</small> <br />All possible values: <strong>Atlantic, National Capital, Ontario, Pacific, Québec, Western</strong> <small>Sending an invalid value will unset the field</small></td>
+</tr>
+<tr>
+<td>labor_program_id</td>
+<td>The project&#39;s labor program <small>integer</small></td>
 </tr>
 </tbody></table>
 <h2 id='update-a-project'>Update a project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
@@ -2543,6 +2629,10 @@ rather than as JSON.</aside>
 <tr>
 <td>avso_region</td>
 <td>The Projects AVSO Region <small>string</small> <br />All possible values: <strong>Atlantic, National Capital, Ontario, Pacific, Québec, Western</strong> <small>Sending an invalid value will unset the field</small></td>
+</tr>
+<tr>
+<td>labor_program_id</td>
+<td>The project&#39;s labor program <small>integer</small></td>
 </tr>
 </tbody></table>
 <h2 id='create-a-project-revision'>Create a project revision</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/revisions"</span> <span class="se">\</span>
