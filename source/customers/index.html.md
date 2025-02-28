@@ -12,6 +12,7 @@ includes:
   - customers/clients
   - customers/clients/contacts
   - customers/labor_presets
+  - customers/labor_programs
   - customers/market_segments
   - customers/phases
   - customers/products

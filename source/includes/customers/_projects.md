@@ -74,6 +74,9 @@
     "market_segment": {
       "id": 98
     },
+    "labor_program": {
+      "id": null
+    },
     "currency": "USD",
     "exchange_rates": { "CAD": 1.243825 },
     "image_url": "projects/project-avatar-3.jpg",
@@ -193,6 +196,12 @@ query | Filter by project name, custom_id, city, clients company name, clients f
   "company_location": {
     "id": 3,
     "name": "Jetbuilt Testing"
+  },
+  "market_segment": {
+    "id": 98
+  },
+  "labor_program": {
+    "id": null
   },
   "currency": "USD",
   "exchange_rates": { "CAD": 1.243825 },
@@ -332,6 +341,9 @@ This endpoint creates a new project.
 
 Defaults to the `opportunity` stage.
 
+### Labor Programs
+The default labor program will be assigned unless the `labor_program_id` key is in the request. Ex: You can pass a `null` value or a valid Labor Program ID to override your company's default labor program settings.
+
 ### HTTP Request
 
 `POST <%= api_url('/projects') %>`
@@ -372,6 +384,7 @@ engineer_id | The user who is the engineer <small>integer</small>
 second_engineer_id | The user who is the engineer <small>integer</small>
 avso | Indicates if the project is an AVSO project <small>boolean</small>
 avso_region | The Projects AVSO Region <small>string</small> <br />All possible values: **Atlantic, National Capital, Ontario, Pacific, Québec, Western** <small>Sending an invalid value will unset the field</small>
+labor_program_id | The project's labor program <small>integer</small>
 
 ## Update a project
 <%
@@ -442,6 +455,7 @@ engineer_id | The user who is the engineer <small>integer</small>
 second_engineer_id | The user who is the engineer <small>integer</small>
 avso | Indicates if the project is an AVSO project <small>boolean</small>
 avso_region | The Projects AVSO Region <small>string</small> <br />All possible values: **Atlantic, National Capital, Ontario, Pacific, Québec, Western** <small>Sending an invalid value will unset the field</small>
+labor_program_id | The project's labor program <small>integer</small>
 
 ## Create a project revision
 <%
