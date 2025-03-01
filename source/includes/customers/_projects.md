@@ -33,6 +33,8 @@
     "requires_engineering?": true,
     "avso": true,
     "avso_region": "Atlantic",
+    "discussion_title": null,
+    "discussion_body": "",
     "project_type": "project",
     "sales_tax": "0.1",
     "equipment_total": "22257.98",
@@ -157,6 +159,8 @@ query | Filter by project name, custom_id, city, clients company name, clients f
   "requires_engineering?": true,
   "avso": true,
   "avso_region": "Atlantic",
+  "discussion_title": null,
+  "discussion_body": "",
   "project_type": "project",
   "sales_tax": "0.1",
   "total_margin": "42.0",
@@ -373,6 +377,8 @@ country | The country of the project (alpha-2 code) <small>string</small>
 price_valid_until | The date the price is valid until (e.g. 2021-02-14) <small>string</small>
 tax | The sales tax of the project <small>decimal</small>
 contract_number | The contract number of the project <small>string</small>
+discussion_title | The discussion page title <small>string</small>
+discussion_body | The discussion page body <small>text</small>
 
 ### Additional Data Parameters for Enterprise Companies
 
@@ -444,6 +450,8 @@ country | The country of the project (alpha-2 code) <small>string</small>
 price_valid_until | The date the price is valid until (e.g. 2021-02-14) <small>string</small>
 tax | The sales tax of the project <small>decimal</small>
 contract_number | The contract number of the project <small>string</small>
+discussion_title | The discussion page title <small>string</small>
+discussion_body | The discussion page body <small>text</small>
 
 ### Additional Data Parameters for Enterprise Companies
 
