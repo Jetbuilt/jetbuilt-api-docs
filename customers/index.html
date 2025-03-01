@@ -3761,7 +3761,13 @@ project, so displaying them for an individual room causes fractional amounts.</p
     </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-08T14:03:12.359-07:00"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"private_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.jetbuilt.com/projects/111214/proposals/304402"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"public_link"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"expiry_public_link"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="nl">"expiry_public_link"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"views"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-02-28T17:02:50.519-08:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
@@ -3797,6 +3803,30 @@ project, so displaying them for an individual room causes fractional amounts.</p
 <tr>
 <td>expiry_public_link</td>
 <td>if set to <code>true</code> a public link is generated that expires after 5 minutes</td>
+</tr>
+<tr>
+<td>min_created_at</td>
+<td>Get proposals created after the specified date time.</td>
+</tr>
+<tr>
+<td>max_created_at</td>
+<td>Get proposals created before the specified date time.</td>
+</tr>
+<tr>
+<td>min_updated_at</td>
+<td>Get proposals updated after the specified date time.</td>
+</tr>
+<tr>
+<td>max_updated_at</td>
+<td>Get proposals updated before the specified date time.</td>
+</tr>
+<tr>
+<td>min_view_date</td>
+<td>Get proposals that had views after the specified date time.</td>
+</tr>
+<tr>
+<td>max_view_date</td>
+<td>Get proposals that had views before the specified date time.</td>
 </tr>
 </tbody></table>
 <h1 id='project-purchasing'>Project Purchasing</h1><h2 id='get-purchasing-info-for-items-in-your-project'>Get purchasing info for items in your project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/purchasing"</span> <span class="se">\</span>
