@@ -89,6 +89,9 @@
       "id": 1939,
       "name": "Manufacturer discount",
       "office_id": null
+    },
+    "custom_fields": {
+      "invoice_number": "IV1002"
     }
   }
 ,
