@@ -291,7 +291,10 @@ query | Filter by project name, custom_id, city, clients company name, clients f
       "description": null,
       "locked": false
     }
-  ]
+  ],
+  "custom_fields": {
+    "invoice_number": "IV1002"
+  }
 }
 ```
 
