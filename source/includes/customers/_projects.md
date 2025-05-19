@@ -39,7 +39,10 @@
     "sales_tax": "0.1",
     "equipment_total": "22257.98",
     "labor_total": "33000.0",
-    "shipping_total": "0.0",
+    "shipping_total": {
+      "cents": 287900,
+      "currency_iso": "USD"
+    },
     "tax_total": "3366.5",
     "total": "58624.48",
     "address": "",
@@ -170,7 +173,10 @@ query | Filter by project name, custom_id, city, clients company name, clients f
   "equipment_margin": "27.5",
   "equipment_total": "22257.98",
   "labor_total": "33000.0",
-  "shipping_total": "0.0",
+  "shipping_total": {
+      "cents": 287900,
+      "currency_iso": "USD"
+    },
   "tax_total": "3366.5",
   "total": "58624.48",
   "address": "",
