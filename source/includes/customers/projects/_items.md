@@ -95,6 +95,10 @@
       ],
       "metadata": {
         "my_integration": { "my": ["data"] }
+      },
+      "item_type": {
+        "id": 25,
+        "name": "Audio"
       }
     },
     {
