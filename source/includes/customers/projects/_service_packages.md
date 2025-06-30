@@ -19,7 +19,9 @@
       "cost": "100.0",
       "sold": true,
       "taxed": false,
-      "taxable_amount_percent": "100.0"
+      "taxable_amount_percent": "100.0",
+      "calculated_price": "200.0",
+      "calculated_cost": "100.0"
     },
     {
       ...
@@ -31,6 +33,9 @@
 > Status: 200 OK
 
 This endpoint retrieves the service_packages in your project.
+
+### Calculated Price/Cost
+Calculated price/cost will apply percentage-based pricing calculations.
 
 ### URL Parameters
 
@@ -56,7 +61,9 @@ page | A specific page of service package results.
   "cost": "100.0",
   "sold": true,
   "taxed": false,
-  "taxable_amount_percent": "100.0"
+  "taxable_amount_percent": "100.0",
+  "calculated_price": "200.0",
+  "calculated_cost": "100.0"
 }
 ```
 
