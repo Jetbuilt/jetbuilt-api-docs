@@ -14,6 +14,7 @@
     "rank": "low",
     "preferred": false,
     "purchasing_source": "AV R Us",
+    "purchasing_sources": [{ id: 1, company_name: "AV R Us"}],
     "price_list_date": "Jan 2022",
     "discount_percentage": "0",
     "dealer_pricing_status": "approved",
