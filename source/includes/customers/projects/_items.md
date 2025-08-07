@@ -20,6 +20,7 @@
       "mapp": "699.0",
       "price": "699.0",
       "cost": "433.38",
+      "project_cost": "433.38",
       "currency_iso": "USD",
       "short_description": "Subwoofer Gloss BlackWireless subwoofer",
       "shipping_price": "0.0",
@@ -223,6 +224,9 @@ Parameter | Description
 --------- | -----------
 PROJECT_ID | The ID of the project
 page | A specific page of line item results. All factors are always returned.
+
+### "Cost" vs "Project Cost"
+The "Project Cost" is the item's cost in the project currency.
 
 ## Create a Project Item
 <%
