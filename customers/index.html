@@ -2736,6 +2736,7 @@ rather than as JSON.</aside>
       </span><span class="nl">"mapp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"699.0"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"699.0"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"433.38"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"project_cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"433.38"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"short_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subwoofer Gloss BlackWireless subwoofer"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"shipping_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
@@ -2948,6 +2949,8 @@ many of this item appears it&#39;s corresponding room and/or bundle.</p>
 <td>A specific page of line item results. All factors are always returned.</td>
 </tr>
 </tbody></table>
+<h3 id='quot-cost-quot-vs-quot-project-cost-quot'>&quot;Cost&quot; vs &quot;Project Cost&quot;</h3>
+<p>The &quot;Project Cost&quot; is the item&#39;s cost in the project currency.</p>
 <h2 id='create-a-project-item'>Create a Project Item</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/items/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-X</span> POST <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
