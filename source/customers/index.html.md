@@ -28,6 +28,7 @@ includes:
   - customers/projects/service_packages
   - customers/purchasing/sources
   - customers/purchase_orders
+  - customers/service_cases
   - customers/tasks
   - customers/time_sessions
   - customers/stock/items
