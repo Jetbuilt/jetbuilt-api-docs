@@ -303,6 +303,17 @@
               </ul>
           </li>
           <li>
+            <a href="#service-cases" class="toc-h1 toc-link" data-title="Service Cases">Service Cases</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-service-cases" class="toc-h2 toc-link" data-title="Get all service cases">Get all service cases</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-service-case" class="toc-h2 toc-link" data-title="Get a service case">Get a service case</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#tasks" class="toc-h1 toc-link" data-title="Tasks">Tasks</a>
               <ul class="toc-list-h2">
                   <li>
@@ -4299,6 +4310,195 @@ when set.</p>
 <tr>
 <td>ID</td>
 <td>The ID of the purchase order to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='service-cases'>Service Cases</h1><h2 id='get-all-service-cases'>Get all service cases</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/service_cases"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/service_cases"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"office_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"client_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">46</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">98</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"asset_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"closed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-15T18:26:29.461-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_by_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-08-20T21:06:32.078-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-04-15T18:26:30.152-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ticket_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AV Troubleshoot &amp; Update – Exec Conf Room"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client reported intermittent video dropouts and distorted audio during hybrid meetings in their executive conference room."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"resolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Signal Path Repair &amp; Firmware Updates"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves all of your service cases.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/service_cases</code></p>
+
+<p><code>GET https://app.jetbuilt.com/api/service_cases?page=2</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>A specific page of results.</td>
+</tr>
+<tr>
+<td>min_created_at</td>
+<td>Query service cases created after the specified date time.</td>
+</tr>
+<tr>
+<td>max_created_at</td>
+<td>Query service cases created before the specified date time.</td>
+</tr>
+<tr>
+<td>min_updated_at</td>
+<td>Query service cases updated after the specified date time.</td>
+</tr>
+<tr>
+<td>max_updated_at</td>
+<td>Query service cases updated before the specified date time.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Note</strong>: You can pass a date or a date time to the timestamp queries. For example:
+<code>2023-7-28</code> or <code>2023-7-28 15:33:33 -700</code> or <code>2023-7-28T15:33:33-700</code>. The time defaults to
+<code>00:00:00</code> when not included, and the timezone defaults to UTC.</p>
+<h2 id='get-a-service-case'>Get a service case</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/service_cases/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/service_cases/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"office_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"client_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">309</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">745</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"asset_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"closed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-08-07T22:31:54.152-07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_by_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-05-30T00:47:14.252-07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-08-07T22:31:54.252-07:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ticket_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AV Troubleshoot &amp; Update – Exec Conf Room"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client reported intermittent video dropouts and distorted audio during hybrid meetings in their executive conference room."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Signal Path Repair &amp; Firmware Updates"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expenses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"equipment"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fiber HDMI Extender Set (20m)"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"equipment_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OptiLink Pro Systems FHE-20K Ultra"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"shipping_taxed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"shipping_cost"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"shipping_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"taxed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">38000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">48000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">89</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parking"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Travel Fee"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"other"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Firmware Update &amp; System Recompile"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"total_labor_hours"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"total_labor_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">80000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"total_equipment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">48000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"total_other_expenses"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">148000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"total_tax"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">1440</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"total_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"cents"</span><span class="p">:</span><span class="w"> </span><span class="mi">149440</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency_iso"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Status: 200 OK</p>
+</blockquote>
+
+<p>This endpoint retrieves a service case by ID.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.jetbuilt.com/api/service_cases/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the service case to retrieve</td>
 </tr>
 </tbody></table>
 <h1 id='tasks'>Tasks</h1><h2 id='get-all-tasks'>Get All Tasks</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/tasks"</span> <span class="se">\</span>
