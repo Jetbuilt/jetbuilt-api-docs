@@ -11,6 +11,9 @@
   {
     "id": 12345,
     "company_name": "Smith's AV World",
+    "website": "smithsavworld.com",
+    "phone": "123-456-7890",
+    "description": "example description",
     "delinquent": false,
     "payment_schedule": null,
     "created_at": "2017-03-08T08:22:16.929-08:00",
@@ -51,6 +54,9 @@
       {
         "id": 4444,
         "company_name": "Smith's AV Regional Branch"
+        "website": "example.com",
+        "phone": "123-456-7890",
+        "description": "example description",
         "delinquent": false,
         "payment_schedule": null,
         "created_at": "2017-03-08T08:22:16.929-08:00",
