@@ -137,3 +137,22 @@ phone_number_1 | The first phone number for the contact <small>string</small>
 phone_number_2 | A second phone number for the contact <small>string</small>
 description | A description for the contact <small>string</small>
 primary | If this is the primary contact for the client (true/false) <small>boolean</small>
+
+## Delete a contact
+
+<%= shell_example('/clients/<CLIENT_ID>contacts/<ID>', command: 'DELETE') %>
+
+> Status: 204 No Content
+
+This endpoint allows you to delete a contact.
+
+### HTTP Request
+
+`DELETE <%= api_url('/clients/<CLIENT_ID>contacts/<ID>') %>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+CLIENT_ID | The ID of the client
+ID | The ID of the contact to delete

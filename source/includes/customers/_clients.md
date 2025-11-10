@@ -206,3 +206,21 @@ website | A website for the client <small>string</small>
 phone | A phone number for the client <small>string</small>
 description | A description for the client <small>string</small>
 parent_id | The parent of the client <small>string</small>
+
+## Delete a client
+
+<%= shell_example('/clients/<ID>', command: 'DELETE') %>
+
+> Status: 204 No Content
+
+This endpoint allows you to delete a client.
+
+### HTTP Request
+
+`DELETE <%= api_url('/clients/<ID>') %>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the client to delete
