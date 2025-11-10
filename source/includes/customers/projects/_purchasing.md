@@ -59,3 +59,5 @@ Parameter | Description
 --------- | -----------
 PROJECT_ID | The ID of the project
 page | A specific page of line item results
+
+**Note**: Timestamp-based queries are not supported by this endpoint.

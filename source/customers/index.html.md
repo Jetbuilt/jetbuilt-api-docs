@@ -7,6 +7,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 includes:
   - intro
+  - customers/intro
   - customers/auth
   - customers/company
   - customers/clients
