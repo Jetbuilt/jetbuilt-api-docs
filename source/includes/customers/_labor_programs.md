@@ -35,7 +35,3 @@ Parameter | Description
 --------- | -----------
 office_id | Labor programs belonging to the specified office
 page | A specific page of results.
-min_created_at | Query results created after the specified date time.
-max_created_at | Query results created before the specified date time.
-min_updated_at | Query results updated after the specified date time.
-max_updated_at | Query results updated before the specified date time.

@@ -48,10 +48,6 @@ Parameter | Description
 --------- | -----------
 page | A specific page of results.
 project_id | an optional project id to filter by
-min_created_at | Query purchase orders created after the specified date time.
-max_created_at | Query purchase orders created before the specified date time.
-min_updated_at | Query purchase orders updated after the specified date time.
-max_updated_at | Query purchase orders updated before the specified date time.
 
 ## Get a purchase order
 
