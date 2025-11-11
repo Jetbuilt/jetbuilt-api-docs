@@ -87,6 +87,9 @@
                   <li>
                     <a href="#update-a-client" class="toc-h2 toc-link" data-title="Update a client">Update a client</a>
                   </li>
+                  <li>
+                    <a href="#delete-a-client" class="toc-h2 toc-link" data-title="Delete a client">Delete a client</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -103,6 +106,9 @@
                   </li>
                   <li>
                     <a href="#update-a-client-contact" class="toc-h2 toc-link" data-title="Update a client contact">Update a client contact</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-contact" class="toc-h2 toc-link" data-title="Delete a contact">Delete a contact</a>
                   </li>
               </ul>
           </li>
@@ -968,6 +974,35 @@ the product database used for each location.</p>
 <td>The parent of the client <small>string</small></td>
 </tr>
 </tbody></table>
+<h2 id='delete-a-client'>Delete a client</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Status: 204 No Content</p>
+</blockquote>
+
+<p>This endpoint allows you to delete a client.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE https://app.jetbuilt.com/api/clients/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the client to delete</td>
+</tr>
+</tbody></table>
 <h1 id='client-contacts'>Client Contacts</h1><h2 id='get-all-contacts-for-a-client'>Get all contacts for a client</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;CLIENT_ID&gt;/contacts"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
@@ -1194,6 +1229,39 @@ the product database used for each location.</p>
 <tr>
 <td>primary</td>
 <td>If this is the primary contact for the client (true/false) <small>boolean</small></td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-contact'>Delete a contact</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;CLIENT_ID&gt;contacts/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell--kv"><code>curl <span class="s2">"https://app.jetbuilt.com/api/clients/&lt;CLIENT_ID&gt;contacts/&lt;ID&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span>
+</code></pre></div>
+<blockquote>
+<p>Status: 204 No Content</p>
+</blockquote>
+
+<p>This endpoint allows you to delete a contact.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE https://app.jetbuilt.com/api/clients/&lt;CLIENT_ID&gt;contacts/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CLIENT_ID</td>
+<td>The ID of the client</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>The ID of the contact to delete</td>
 </tr>
 </tbody></table>
 <h1 id='labor-presets'>Labor Presets</h1><h2 id='get-all-labor-presets-in-your-company'>Get all labor presets in your company</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/labor_presets"</span> <span class="se">\</span>
