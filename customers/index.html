@@ -56,6 +56,9 @@
                   <li>
                     <a href="#pagination" class="toc-h2 toc-link" data-title="Pagination">Pagination</a>
                   </li>
+                  <li>
+                    <a href="#querying-by-timestamp" class="toc-h2 toc-link" data-title="Querying by timestamp">Querying by timestamp</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -517,6 +520,35 @@ than the response body.</p>
 
 <p>The response also includes a <code>X-Total-Count</code> header, which is the total number of
 resources in the collection.</p>
+<h2 id='querying-by-timestamp'>Querying by timestamp</h2>
+<p>Endpoints that retrieve multiple records support querying data by timestamps, unless otherwise specified.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>min_created_at</td>
+<td>Query records created after the specified date time.</td>
+</tr>
+<tr>
+<td>max_created_at</td>
+<td>Query records created before the specified date time.</td>
+</tr>
+<tr>
+<td>min_updated_at</td>
+<td>Query records updated after the specified date time.</td>
+</tr>
+<tr>
+<td>max_updated_at</td>
+<td>Query records updated before the specified date time.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Note</strong>: You can pass a date or a date time to the timestamp queries. For example:
+<code>2023-7-28</code> or <code>2023-7-28 15:33:33 -700</code> or <code>2023-7-28T15:33:33-700</code>. The time defaults to <code>00:00:00</code> when not included, and the timezone defaults to UTC.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>Sample request with Authorization:</p>
@@ -1296,22 +1328,6 @@ the product database used for each location.</p>
 <td>page</td>
 <td>A specific page of results.</td>
 </tr>
-<tr>
-<td>min_created_at</td>
-<td>Query results created after the specified date time.</td>
-</tr>
-<tr>
-<td>max_created_at</td>
-<td>Query results created before the specified date time.</td>
-</tr>
-<tr>
-<td>min_updated_at</td>
-<td>Query results updated after the specified date time.</td>
-</tr>
-<tr>
-<td>max_updated_at</td>
-<td>Query results updated before the specified date time.</td>
-</tr>
 </tbody></table>
 <h1 id='market-segments'>Market Segments</h1><h2 id='get-all-market-segments'>Get all market segments</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/market_segments"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
@@ -1522,22 +1538,6 @@ database across all office locations.)</p>
 <tr>
 <td>page</td>
 <td>A specific page of results.</td>
-</tr>
-<tr>
-<td>min_created_at</td>
-<td>Query products created after the specified date time.</td>
-</tr>
-<tr>
-<td>max_created_at</td>
-<td>Query products created before the specified date time.</td>
-</tr>
-<tr>
-<td>min_updated_at</td>
-<td>Query products updated after the specified date time.</td>
-</tr>
-<tr>
-<td>max_updated_at</td>
-<td>Query products updated before the specified date time.</td>
 </tr>
 </tbody></table>
 
@@ -2050,22 +2050,6 @@ rather than as JSON.</aside>
 <td>A specific page of results.</td>
 </tr>
 <tr>
-<td>min_created_at</td>
-<td>Query projects created after the specified date time.</td>
-</tr>
-<tr>
-<td>max_created_at</td>
-<td>Query projects created before the specified date time.</td>
-</tr>
-<tr>
-<td>min_updated_at</td>
-<td>Query projects updated after the specified date time.</td>
-</tr>
-<tr>
-<td>max_updated_at</td>
-<td>Query projects updated before the specified date time.</td>
-</tr>
-<tr>
 <td>active</td>
 <td>(true/false) returns projects in an active stage when true; otherwise returns projects in non-active stages</td>
 </tr>
@@ -2078,10 +2062,6 @@ rather than as JSON.</aside>
 <td>Filter by project name, custom_id, city, clients company name, clients first or last name</td>
 </tr>
 </tbody></table>
-
-<p><strong>Note</strong>: You can pass a date or a date time to the timestamp queries. For example:
-<code>2023-7-28</code> or <code>2023-7-28 15:33:33 -700</code> or <code>2023-7-28T15:33:33-700</code>. The time defaults to
-<code>00:00:00</code> when not included, and the timezone defaults to UTC.</p>
 <h2 id='get-a-project'>Get a project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
@@ -3752,6 +3732,8 @@ project, so displaying them for an individual room causes fractional amounts.</p
 <td>A specific page of results.</td>
 </tr>
 </tbody></table>
+
+<p><strong>Note</strong>: Timestamp-based queries are not supported by this endpoint.</p>
 <h1 id='project-proposals'>Project Proposals</h1><h2 id='get-proposals-in-your-project'>Get proposals in your project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/proposals"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
@@ -3815,22 +3797,6 @@ project, so displaying them for an individual room causes fractional amounts.</p
 <tr>
 <td>expiry_public_link</td>
 <td>if set to <code>true</code> a public link is generated that expires after 5 minutes</td>
-</tr>
-<tr>
-<td>min_created_at</td>
-<td>Get proposals created after the specified date time.</td>
-</tr>
-<tr>
-<td>max_created_at</td>
-<td>Get proposals created before the specified date time.</td>
-</tr>
-<tr>
-<td>min_updated_at</td>
-<td>Get proposals updated after the specified date time.</td>
-</tr>
-<tr>
-<td>max_updated_at</td>
-<td>Get proposals updated before the specified date time.</td>
 </tr>
 <tr>
 <td>min_view_date</td>
@@ -3912,6 +3878,8 @@ when set.</p>
 <td>A specific page of line item results</td>
 </tr>
 </tbody></table>
+
+<p><strong>Note</strong>: Timestamp-based queries are not supported by this endpoint.</p>
 <h1 id='project-service-packages'>Project Service Packages</h1><h2 id='get-all-service-packages-in-your-project'>Get all service packages in your project</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/projects/&lt;PROJECT_ID&gt;/service_packages"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
@@ -4212,22 +4180,6 @@ when set.</p>
 <td>project_id</td>
 <td>an optional project id to filter by</td>
 </tr>
-<tr>
-<td>min_created_at</td>
-<td>Query purchase orders created after the specified date time.</td>
-</tr>
-<tr>
-<td>max_created_at</td>
-<td>Query purchase orders created before the specified date time.</td>
-</tr>
-<tr>
-<td>min_updated_at</td>
-<td>Query purchase orders updated after the specified date time.</td>
-</tr>
-<tr>
-<td>max_updated_at</td>
-<td>Query purchase orders updated before the specified date time.</td>
-</tr>
 </tbody></table>
 <h2 id='get-a-purchase-order'>Get a purchase order</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/purchase_orders/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
@@ -4352,27 +4304,7 @@ when set.</p>
 <td>page</td>
 <td>A specific page of results.</td>
 </tr>
-<tr>
-<td>min_created_at</td>
-<td>Query service cases created after the specified date time.</td>
-</tr>
-<tr>
-<td>max_created_at</td>
-<td>Query service cases created before the specified date time.</td>
-</tr>
-<tr>
-<td>min_updated_at</td>
-<td>Query service cases updated after the specified date time.</td>
-</tr>
-<tr>
-<td>max_updated_at</td>
-<td>Query service cases updated before the specified date time.</td>
-</tr>
 </tbody></table>
-
-<p><strong>Note</strong>: You can pass a date or a date time to the timestamp queries. For example:
-<code>2023-7-28</code> or <code>2023-7-28 15:33:33 -700</code> or <code>2023-7-28T15:33:33-700</code>. The time defaults to
-<code>00:00:00</code> when not included, and the timezone defaults to UTC.</p>
 <h2 id='get-a-service-case'>Get a service case</h2><div class="highlight"><pre class="highlight shell tab-shell--json"><code>curl <span class="s2">"https://app.jetbuilt.com/api/service_cases/&lt;ID&gt;"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Token token=YOURAPIKEY"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Accept: application/vnd.jetbuilt.v1"</span> <span class="se">\</span>
