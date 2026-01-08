@@ -23,10 +23,7 @@
     "commission_date": "2018-07-16",
     "estimated_install_on": "2018-08-01",
     "budget": null,
-    "paid_to_date": {
-      "cents": 500,
-      "currency_iso": "USD"
-    },
+    "paid_to_date": "5.00",
     "stage": "lost",
     "contract_number": "101",
     "labor_tax": "0.1",
@@ -144,10 +141,7 @@ query | Filter by project name, custom_id, city, clients company name, clients f
   "commission_date": "2018-07-16",
   "estimated_install_on": "2018-08-01",
   "budget": null,
-  "paid_to_date": {
-    "cents": 500,
-    "currency_iso": "USD"
-  },
+  "paid_to_date": "5.00",
   "stage": "lost",
   "contract_number": "101",
   "labor_tax": "0.1",
