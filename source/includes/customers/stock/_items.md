@@ -17,7 +17,8 @@
     "created_at": "2021-08-30T22:10:13.965-07:00",
     "updated_at": "2021-08-31T16:27:14.917-07:00",
     "company_product_id": 1599279,
-    "name": "Tannoy DI 5 DC BLACK"
+    "name": "Tannoy DI 5 DC BLACK",
+    "assigned_project_id": 97484
   },
   {
     ...
