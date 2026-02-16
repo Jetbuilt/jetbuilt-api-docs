@@ -93,6 +93,17 @@ page | A specific page of results.
     {
       ...
     }
+  ],
+  "labor_credits": [
+    {
+      "labor_type": "labor credit",
+      "category": "install",
+      "hours": "4",
+      "unit_cost": "1",
+      "unit_price": "1",
+      "total_cost": "4",
+      "total_price": "4"
+    }
   ]
 }
 ```
