@@ -32,6 +32,9 @@
     "external_ids": {
       "acumatica_id": "5"
     },
+    "metadata": {
+      "crm_id": "ABC123"
+    },
     "parent_id": 2345,
     "contacts": [
       {
@@ -73,6 +76,7 @@
         "zipcode": "32312",
         "country": "US",
         "external_ids": null,
+        "metadata": {},
       },
       {
         ...
@@ -132,7 +136,8 @@ ID | The ID of the client to retrieve
       "state": "CA",
       "zipcode": "92626",
       "country": "US",
-      "parent_id": 456
+      "parent_id": 456,
+      "metadata": { "crm_id": "ABC123" }
     }
 %>
 <%= shell_example('/clients', command: 'POST', data: data) %>
@@ -162,6 +167,7 @@ website | A website for the client <small>string</small>
 phone | A phone number for the client <small>string</small>
 description | A description for the client <small>string</small>
 parent_id | The parent of the client <small>string</small>
+metadata | A JSON object for storing custom key-value data (e.g. external system IDs) <small>object</small>
 
 ## Update a client
 <%
@@ -175,7 +181,8 @@ parent_id | The parent of the client <small>string</small>
       "state": "CA",
       "zipcode": "92626",
       "country": "US",
-      "parent_id": 456
+      "parent_id": 456,
+      "metadata": { "crm_id": "ABC123" }
     }
 %>
 <%= shell_example('/clients/<ID>', command: 'PATCH', data: data) %>
@@ -206,6 +213,7 @@ website | A website for the client <small>string</small>
 phone | A phone number for the client <small>string</small>
 description | A description for the client <small>string</small>
 parent_id | The parent of the client <small>string</small>
+metadata | A JSON object for storing custom key-value data (e.g. external system IDs). Replaces the entire object on update. <small>object</small>
 
 ## Delete a client
 
