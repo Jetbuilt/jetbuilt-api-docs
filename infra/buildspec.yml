@@ -9,7 +9,7 @@ phases:
       - bundle install --jobs 4 --retry 3
   build:
     commands:
-      - bundle exec middleman build
+      - bundle exec middleman build --verbose
   post_build:
     commands:
       - |
