@@ -36,6 +36,7 @@ activate :autoprefixer do |config|
   config.browsers = ['last 2 version', 'Firefox ESR']
   config.cascade  = false
   config.inline   = true
+  config.ignore   = ['/stylesheets/rouge.css', '/stylesheets/rouge_print.css']
 end
 
 # Github pages require relative links
