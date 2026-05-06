@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      ruby: 3.3
+    commands:
+      - gem install bundler --no-document
+      - bundle install --jobs 4 --retry 3
+  build:
+    commands:
+      - bundle exec middleman build
+  post_build:
+    commands:
+      - |
+        if [ "$CODEBUILD_BUILD_SUCCEEDING" = "1" ]; then
+          aws s3 sync build/ s3://$S3_BUCKET/ --delete
+        else
+          echo "Build failed, skipping deploy"
+          exit 1
+        fi
